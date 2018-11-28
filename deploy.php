@@ -4,10 +4,10 @@ namespace Deployer;
 require 'recipe/laravel.php';
 
 // Project name
-set('application', 'microfarmmanager');
+set('application', 'my_project');
 
 // Project repository
-set('repository', 'git@domain.com:smallfri/microfarmmanager.git');
+set('repository', 'https://github.com/smallfri/MicroFarm.git');
 
 // [Optional] Allocate tty for git clone. Default value is false.
 set('git_tty', true); 
@@ -22,10 +22,17 @@ add('writable_dirs', []);
 
 // Hosts
 
-host('app.microfarmmanager.com')
-    ->user('appmicro')
-    ->set('deploy_path', '~/public_html');
-    
+host('ec2-54-90-83-33.compute-1.amazonaws.com')
+    ->user('ubuntu')
+    ->port(22)
+    ->configFile('~/.ssh/config')
+    ->identityFile('~/.ssh/appmicrokey.pem')
+    ->forwardAgent(true)
+    ->multiplexing(true)
+    ->addSshOption('UserKnownHostsFile', '/dev/null')
+    ->addSshOption('StrictHostKeyChecking', 'no')
+    ->set('deploy_path', '~/var/www/html/MicroFarm/public');
+
 // Tasks
 
 task('build', function () {
