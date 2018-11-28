@@ -42,7 +42,7 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => 'aws:rds:us-east-1:774064829364:db:mfmdbinstance',
+            'host' => 'mfmdbinstance.cjsxndgdnfzl.us-east-1.rds.amazonaws.com',
             'port' => env('DB_PORT', '3306'),
             'database' => 'appmicro_fb',
             'username' => 'appmicro_user',
