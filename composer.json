@@ -12,7 +12,7 @@
         "deployer/deployer": "^6.3",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.7.*",
-        "laravel/nova": "*",
+        "laravel/nova": "~1.0",
         "laravel/tinker": "^1.0"
     },
     "require-dev": {
@@ -64,8 +64,8 @@
     },
     "repositories": [
         {
-            "type": "path",
-            "url": "./nova"
+            "type": "composer",
+            "url": "https://nova.laravel.com"
         }
     ]
 }
