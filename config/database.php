@@ -42,7 +42,7 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => 'appmicrodbinstance-cluster.cluster-cjsxndgdnfzl.us-east-1.rds.amazonaws.com',
+            'host' => 'mfmappcluster.cluster-cjsxndgdnfzl.us-east-1.rds.amazonaws.com',
             'port' => 3306,
             'database' => 'appmicro_db',
             'username' => 'appmicro_user',
