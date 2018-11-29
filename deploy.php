@@ -19,9 +19,12 @@ add('shared_dirs', []);
 // Writable dirs by web server 
 add('writable_dirs', ['nova']);
 
+task('build', '
+    php artisan nova:user
+    echo "Build done";
+');
 
 // Hosts
-
 host('ec2-54-90-83-33.compute-1.amazonaws.com')
     ->user('ubuntu')
     ->port(22)
