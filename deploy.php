@@ -25,7 +25,7 @@ task('build', '
 ');
 
 // Hosts
-host('http://ec2-52-55-171-22.compute-1.amazonaws.com/')
+host('ec2-35-175-208-140.compute-1.amazonaws.com')
     ->user('ubuntu')
     ->port(22)
     ->configFile('~/.ssh/config')
