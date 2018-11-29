@@ -47,6 +47,7 @@ return [
             'database' => 'appmicro_db',
             'username' => 'appmicro_user',
 //            'password'  qq=> '2%3KQA^AFpq6MCi',
+//            'password' => '3eoEE0PUT9&ahSg',
             'password' => '3eoEE0PUT9&ahSg',
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
