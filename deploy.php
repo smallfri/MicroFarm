@@ -25,7 +25,7 @@ task('build', '
 ');
 
 // Hosts
-host('ec2-54-90-83-33.compute-1.amazonaws.com')
+host('http://ec2-52-55-171-22.compute-1.amazonaws.com/')
     ->user('ubuntu')
     ->port(22)
     ->configFile('~/.ssh/config')
@@ -34,7 +34,7 @@ host('ec2-54-90-83-33.compute-1.amazonaws.com')
     ->multiplexing(true)
     ->addSshOption('UserKnownHostsFile', '/dev/null')
     ->addSshOption('StrictHostKeyChecking', 'no')
-    ->set('deploy_path', '~/var/www/html/MicroFarm/public');
+    ->set('deploy_path', '~/var/www/html/microfarm');
 
 // Tasks
 
