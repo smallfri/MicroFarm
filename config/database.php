@@ -42,13 +42,13 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => 'mfmappcluster.cluster-cjsxndgdnfzl.us-east-1.rds.amazonaws.com',
+            'host' => 'mfmappcluster1.cluster-cjsxndgdnfzl.us-east-1.rds.amazonaws.com',
             'port' => 3306,
             'database' => 'appmicro_db',
-            'username' => 'appmicro_user',
+            'username' => 'mfmdbinstance1',
 //            'password'  qq=> '2%3KQA^AFpq6MCi',
 //            'password' => '3eoEE0PUT9&ahSg',
-            'password' => '3eoEE0PUT9&ahSg',
+            'password' => '0nGkal8J3wb9#E&',
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
