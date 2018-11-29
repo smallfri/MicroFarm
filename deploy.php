@@ -34,7 +34,7 @@ host('ec2-54-90-83-33.compute-1.amazonaws.com')
     ->multiplexing(true)
     ->addSshOption('UserKnownHostsFile', '/dev/null')
     ->addSshOption('StrictHostKeyChecking', 'no')
-    ->set('deploy_path', '~/var/www/html/microfarm/public');
+    ->set('deploy_path', '~/var/www/html/MicroFarm/public');
 
 // Tasks
 
