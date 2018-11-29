@@ -24,6 +24,37 @@ task('build', '
     echo "Build done";
 ');
 
+
+
+
+env('lock_path', '{{deploy_path}}/deploy.lock');
+
+task('deploy:lock', function() {
+    $res = run('[ -f {{lock_path}} ] && echo Locked || echo OK');
+
+    if (trim($res) === "Locked") {
+        throw new RuntimeException("Deployement is locked.");
+    }
+
+    run('touch {{lock_path}}');
+});
+
+task('deploy:unlock', function() {
+    $res = run('[ -f {{lock_path}} ] && echo Locked || echo OK');
+
+    if (trim($res) === "Locked") {
+        run('rm {{lock_path}}');
+    }
+});
+
+after('deploy:prepare', 'deploy:lock');
+after('deploy:symlink', 'deploy:unlock');
+
+
+
+
+
+
 // Hosts
 host('ec2-35-175-208-140.compute-1.amazonaws.com')
     ->user('ubuntu')
