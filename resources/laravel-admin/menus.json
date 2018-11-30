@@ -1,0 +1,136 @@
+{
+    "menus": [
+        {
+            "section":[
+                {
+                    "title":"Dashboard",
+                    "url":"\/",
+                    "permission": "access.dashboard"
+                }
+            ]
+        },
+        {
+            "section": [
+                {
+                    "title": "My Profile",
+                    "url": "\/admin\/profile",
+                    "icon": "fa fa-users",
+                    "permission": "access.tickets"
+                }
+            ]
+        },
+        
+        
+        {
+            "section": [
+                {
+                    "title": "User",
+                    "icon": "fa fa-users",
+                    "permission": "access.users"
+                }
+            ],
+            "items": [
+               
+                {
+                    "title": "List User",
+                    "url": "\/admin\/users",
+                    "icon": "fa fa-list",
+                    "permission": "access.users"
+                }
+            ]
+        },
+
+        {
+            "section": [
+                {
+                    "title": "Suppliers",
+                    "icon": "fa fa-users",
+                    "permission": "access.users"
+                }
+            ],
+            "items": [
+               {
+                    "title": "Add Supplier",
+                    "url": "\/admin\/supplier\/create",
+                    "icon": "fa fa-plus",
+                    "permission": "access.seeds.users"
+                },
+                {
+                    "title": "List Supplier",
+                    "url": "\/admin\/supplier",
+                    "icon": "fa fa-list",
+                    "permission": "access.users"
+                }
+            ]
+        },
+
+        {
+            "section": [
+                {
+                    "title": "Variety",
+                    "icon": "fa fa-users",
+                    "permission": "access.users"
+                }
+            ],
+            "items": [
+               {
+                    "title": "Add Variety",
+                    "url": "\/admin\/variety\/create",
+                    "icon": "fa fa-plus",
+                    "permission": "access.seeds.users"
+                },
+                {
+                    "title": "List Variety",
+                    "url": "\/admin\/variety",
+                    "icon": "fa fa-list",
+                    "permission": "access.users"
+                }
+            ]
+        },
+        {
+            "section": [
+                {
+                    "title": "Seed",
+                    "icon": "fa fa-users",
+                    "permission": "access.users"
+                }
+            ],
+            "items": [
+                {
+                    "title": "Add Seed",
+                    "url": "\/admin\/seeds\/create",
+                    "icon": "fa fa-plus",
+                    "permission": "access.seeds.users"
+                },
+                {
+                    "title": "List Seed",
+                    "url": "\/admin\/seeds",
+                    "icon": "fa fa-list",
+                    "permission": "access.users"
+                }
+            ]
+        },
+       
+        {
+            "section":[
+                {
+                    "title":"Contact",
+                    "url":"\/admin\/contact",
+                    "permission": "access.users"
+                }
+            ]
+        },
+
+        {
+            "section":[
+                {
+                    "title":"Setting",
+                    "url":"\/admin\/setting",
+                    "permission": "access.users"
+                }
+            ]
+        }
+
+
+    ]
+}

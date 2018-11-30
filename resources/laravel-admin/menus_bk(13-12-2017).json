@@ -1,0 +1,50 @@
+{
+    "menus": [
+        {
+            "section": "User Manager",
+            "items": [
+                {
+                    "title": "Dashboard",
+                    "url": "\/admin",
+                    "permission": "access.tickets",
+                    "icon": "fa fa-pencil"
+                },
+                {
+                    "title": "Users",
+                    "url": "\/admin\/users",
+                    "permission": "access.users",
+                    "icon": "fa fa-users"
+                },
+                {
+                    "title": "Roles",
+                    "url": "\/admin\/roles",
+                    "permission": "access.roles",
+                    "icon": "fa fa-cubes"
+                },
+                {
+                    "title": "Permissions",
+                    "url": "\/admin\/permissions",
+                    "permission": "access.permissions",
+                    "icon": "fa fa-lock"
+                },
+                {
+                    "title": "Give Role Permissions",
+                    "url": "\/admin\/give-role-permissions",
+                    "permission": "access.rolesx",
+                    "icon": "fa fa-book"
+                }
+            ]
+        },
+        {
+            "section": "Tools",
+            "items": [
+                {
+                    "title": "Generator",
+                    "url": "\/admin\/generator",
+                    "permission": "access.generator",
+                    "icon": "fa fa-magic"
+                }
+            ]
+        }
+    ]
+}

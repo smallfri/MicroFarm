@@ -4,9 +4,13 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\Request;
+use App\Notifications\AdminMail;
+use Auth;
+use Session;
 
 class RegisterController extends Controller
 {
@@ -28,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -43,30 +47,118 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            //'password' => 'required|string|min:8|confirmed|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}/',
+            'password' => 'required|confirmed',
         ]);
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
-     * @return \App\User
+     * @param  array $data
+     * @return User
      */
     protected function create(array $data)
     {
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' => bcrypt($data['password']),
+            'activation_token' => sha1(time() . uniqid() . $data['email']),
+            'activation_time' => \Carbon\Carbon::now(),
         ]);
+
     }
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        $user = $this->create($request->all());
+
+        event(new Registered($user));
+
+        $this->afterRegister($user);
+
+        
+        return $this->registered($request, $user)
+            ?: redirect($this->redirectPath())->with('flash_success', 'Registration Successful. Please check your email for activation link');
+
+        
+    }
+    public function afterRegister($user)
+    {
+        $this->sendEmail($user);
+		$this->sendadminEmail($user);
+    }
+    
+     /**
+     * Send Email Helper
+     *
+     * @param User $user
+     */
+    public function sendEmail(User $user)
+    {
+      
+        return $user->notify(new  \App\Notifications\ActivationLink($user));
+    }
+
+    public function activateAccount($token)
+    {
+
+        $user = User::where('activation_token', $token)->first();
+        if (!$user) {
+            Session::flash('flash_error', 'This link is expired.');
+            return redirect('/');
+        }
+
+        $user->activation_token = null;
+        $user->activation_time = null;
+        $user->is_active = 1;
+        $user->save();
+
+
+        if (!$this->guard()->check()) {
+           // $this->guard()->login($user);
+        }
+       return redirect('/login')->with('flash_success', 'Your account has been activated.');
+       // return redirect()->intended($this->redirectPath())
+
+    }
+	
+	 public function sendadminEmail(User $user)
+    {
+         $admin=User::find(1);
+        return $admin->notify(new  \App\Notifications\AdminMail($user));
+    }
+	
+	public function resendActivationEmail(Request $request)
+    {
+        return view('auth.passwords.resendmail');
+    }
+    public function resendActivationEmailToUser(Request $request)
+    {
+
+
+         $user = User::where('email', $request->email)->first();
+        
+        if($user && $user->is_active == 0){
+            $user->activation_token = sha1(time() . uniqid() .$request->email);
+            $user->save();
+
+         $this->sendEmail($user);
+            return back()->with('flash_success', 'We resent you account activation email. Please check your email inbox.');
+        }else{
+            return back()->with('flash_error', 'No user Found.');
+        }
+      
+    }
+     
+	
 }

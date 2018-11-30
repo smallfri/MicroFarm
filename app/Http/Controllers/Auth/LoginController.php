@@ -4,6 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\User;
+use Hash;
+use App\ActionLog;
+use Illuminate\Http\Request;
+use Auth;
+use Session;
 
 class LoginController extends Controller
 {
@@ -20,20 +26,75 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
+    
+	
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
     }
+    public function authenticate(Request $request)
+    {
+		$credentials = array(
+            'email' => $request->get('email'),
+            'password' => $request->get('password'),
+            'is_active' => 1
+        );
+
+        $user = User::where("email", $request->email)->where('status','active')->first();
+
+        if ($user) {
+            if (Hash::check($request->password, $user->password)) {
+
+                if ($user->is_active == 1 && Auth::attempt($credentials)) {
+                    Session::flash('flash_success',"Login Success !!");
+					if(Auth::user()->hasRole('SU')){
+						return redirect('/admin');
+					}else{
+						return redirect('/seed/create');
+					}
+                    
+                } else {
+                    Session::flash('flash_error',"Your Account Has Not Activated Yet");
+                    Session::flash('is_active_error', 'Yes');
+                }
+            } else {
+                Session::flash('flash_error',"Invalid Username or Password");
+            }
+        } else {
+            Session::flash('flash_error',"Invalid Username or Password");
+        }
+       
+
+        return redirect()->back()->withInput();
+
+    }
+	public function logout(Request $request)
+    {
+        $user = User::find($request->user()->id);
+        $user->last_login = date('Y-m-d H:i:s ');
+        $user->save();
+        $this->guard()->logout();
+
+        $request->session()->flush();
+
+        $request->session()->regenerate();
+
+        return redirect('/login');
+    }
+
+    
+
 }
