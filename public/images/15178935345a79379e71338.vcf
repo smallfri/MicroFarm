@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION;TYPE=WORK:3.0
+FN;CHARSET=UTF-8:Danny
+N;CHARSET=UTF-8:Danny;;;;
+PROFILE:VCARD
+ADR;CHARSET=UTF-8:;;Wassenaarweg 40;Arnhem;Gelderland;6843NW;Netherlands
+EMAIL:support@mc4wp.com
+ORG;CHARSET=UTF-8:ibericode
+URL:https://mc4wp.com/
+END:VCARD

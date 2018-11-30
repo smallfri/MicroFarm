@@ -13,6 +13,6 @@ class FarmhouseController extends Controller {
     
     public function dashboard(){
         return view('user-backend.index');
-    }   
+    }
 
 }

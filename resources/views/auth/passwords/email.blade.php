@@ -1,50 +1,91 @@
-@extends('layouts.frontend_innerpage')
-@section('title','Forget Password')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('body_class','login-banner-container')
-@section('content')
-<div class="login-area clearfix">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+    <title>MicroFarmManager.com - Reset Password</title>
+    <!-- ===== Bootstrap CSS ===== -->
+    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ===== Animation CSS ===== -->
+    <link href="/css/animate.css" rel="stylesheet">
+    <!-- ===== Custom CSS ===== -->
+    <link href="/css/style.css" rel="stylesheet">
+    <!-- ===== Color CSS ===== -->
+    <link href="/css/colors/default.css" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
 
-    <div class="login-card login-cardboard clearfix">
+<body>
+<!-- Preloader -->
+<div class="preloader">
+    <div class="cssload-speeding-wheel"></div>
+</div>
+<section id="wrapper" class="login-register">
+    @if(session('status'))
+    {
+        <div class="alert alert-success">Thanks, an email has been set with password reset instructions.</div>
+    }
+    @endif
+    <div class="login-box">
+        <div class="white-box">
+            <form class="form-horizontal" role="form" method="POST" action="{{ route('password.email') }}">
+                <h1>Password Reset</h1>
+                {{ csrf_field() }}
 
-           <h2 class="title-part wow fadeInUp animated animation-name-1" >Forgot Password</h2>
-            
-            <div class="sign-up-form">
-                    @if (session('status'))
-                    <div class="alert alert-success">
-                        {{ session('status') }}
-                    </div>
-                @endif
-                <form class="form-horizontal" method="POST" action="{{ route('password.email') }}">
-                        {{ csrf_field() }}
-                    <div class="field-group top">
-                        <input type="email" id="" name="email" class="input-field" placeholder="Email address" value="{{ old('email') }}">
-                        @if ($errors->has('email'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('email') }}</strong>
-                        </span>
+                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                    @if ($errors->has('email'))
+                        <span class="help-block"><strong>{{ $errors->first('email') }}</strong></span>
                     @endif
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Email"/>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-default submit">Send Password Reset Link</button>
+                    <a class="reset_pass" href="{{route('login')}}">Login</a>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="separator">
+
+                    <div class="clearfix"></div>
+                    <br />
+
+                    <div>
+                        <h3>MicroFarmManager.com</h3>
+                        <p>&copy; 2018 All Rights Reserved.</p>
                     </div>
-                    
-                    <div class="field-group">
-                            <button type="submit" class="signup-btn">
-                                    submit
-                            </button>
-                    </div>
+                </div>
+            </form>
 
-                    
-                </form>
-            </div>
+        </div>
+    </div>
+</section>
+<!-- jQuery -->
+<script src="/plugins/components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Menu Plugin JavaScript -->
+<script src="/js/sidebarmenu.js"></script>
+<!--slimscroll JavaScript -->
+<script src="/js/jquery.slimscroll.js"></script>
+<!--Wave Effects -->
+<script src="/js/waves.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="/js/custom.js"></script>
+<!--Style Switcher -->
+<script src="/plugins/components/styleswitcher/jQuery.style.switcher.js"></script>
+</body>
 
-    </div><!-- end login div -->
-
-
-
-
-</div><!-- end of login-area -->
-
-   @include('include.frontend.page_bottom_content')    
-@endsection
-
-
-
+</html>

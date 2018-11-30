@@ -16,8 +16,8 @@ class ContactController extends Controller
     } 
     public function index()
     {
-        $setting=Setting::where('id','1')->first();
-        return view('contact.create',compact('setting'));
+//        $setting=Setting::where('id','1')->first();
+//        return view('contact.create',compact('setting'));
     }
 	
 	  /**

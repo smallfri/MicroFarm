@@ -14,7 +14,7 @@ class Userseed extends Model
      * @var array
      */
     protected $fillable = [
-       'user_id','user_seed_id','status','deleted_at'
+       'user_id','variety_id','status','deleted_at'
     ];
 
     /**
@@ -27,15 +27,15 @@ class Userseed extends Model
     ];
 
      public function userseedName(){
-         return $this->hasMany('App\Seeds','id','user_seed_id')->where('status','active');
+         return $this->hasMany('App\Seeds','id','variety_id')->where('status','active');
     }
 
     public function userseedDetail(){
-         return $this->hasMany('App\SeedsDetail','seed_id','user_seed_id')->with('germinationDays','maturityDays');
+         return $this->hasMany('App\SeedsDetail','seed_id','variety_id')->with('germinationDays','maturityDays');
     }
 
     public function seedsupplierName(){
-         return $this->hasMany('App\SeedSupplier','supplier_seed_id','user_seed_id')
+         return $this->hasMany('App\SeedSupplier','supplier_seed_id','variety_id')
          ->join('supplier','supplier.id','=','seed_supplier.supplier_id')
          ;
     }

@@ -134,7 +134,7 @@ class RegisterController extends Controller
 	
 	 public function sendadminEmail(User $user)
     {
-         $admin=User::find(1);
+         $admin=User::find(2);
         return $admin->notify(new  \App\Notifications\AdminMail($user));
     }
 	

@@ -50,7 +50,7 @@ class SeedsdetailController extends Controller
             if($status == 'active' ){
                 $seeds->status= 'inactive';
                 $seeds->update();   
-                $userseed=Userseed::where('user_seed_id','=',$id)->delete();
+                $userseed=Userseed::where('variety_id','=',$id)->delete();
                 $userseeddetail=UserseedDetail::where('seed_id','=',$id)->delete();				
                 return redirect()->back();
             }else{
@@ -210,7 +210,7 @@ class SeedsdetailController extends Controller
        
         $seeds = Seeds::find($id);
         $seedsdetail=SeedsDetail::where('seed_id','=',$id)->delete();
-		 $userseed=Userseed::where('user_seed_id','=',$id)->delete();
+		 $userseed=Userseed::where('variety_id','=',$id)->delete();
 		  $userseeddetail=UserseedDetail::where('seed_id','=',$id)->delete();
 		
         $seeds->delete();

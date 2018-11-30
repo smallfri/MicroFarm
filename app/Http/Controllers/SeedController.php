@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\SeedsVariety;
 use Illuminate\Http\Request;
 use App\Seeds;
+use Illuminate\Support\Facades\DB;
 use Session;
 use App\Userseed;
 use App\Supplier;
@@ -13,77 +15,85 @@ use App\UserseedDetail;
 use App\Days;
 use App\GrowNotes;
 use Auth;
-use DB;
 
 class SeedController extends Controller
 {
     public function index(Request $request)
     {
-        $user_id=Auth::user()->id;
-        $days = Days::pluck('name','id'); 
-      
-        $userfirstseed=Userseed::where('user_id',$user_id)->first();
 
-        if(!$userfirstseed){ 
-			return redirect('/Dashboard');
-			
-		}else{
-			$userseedlist=Userseed::where('user_id',$user_id)->get();
-			$checkuserseedexist=UserseedDetail::where('user_userseed_id','=',$user_id)->where('seed_id','=',$userfirstseed->user_seed_id)->with('germinationDays','maturityDays')->first();
-			if($checkuserseedexist){
-			   $userseeddetail=UserseedDetail::where('user_userseed_id','=',$user_id)->where('seed_id','=',$userfirstseed->user_seed_id)->with('germinationDays','maturityDays','seedsupplierName')->first();
-			}else{
-			   $userseeddetail=SeedsDetail::where('seed_id','=',$userfirstseed->user_seed_id)->with('germinationDays','maturityDays','userseedName','seedsupplierName')->first();
+
+        print_r('class:'.__CLASS__.' file:'.__FILE__.' line:' .__LINE__);
+
+        $user_id=Auth::user()->id;
+        $days = Days::pluck('name','id');
+
+        $userfirstseed=Userseed::where('user_id',$user_id)->first();;
+        if(!$userfirstseed){
+            return redirect('/dashboard');
+
+        }else{
+            $userseedlist=Userseed::where('user_id',$user_id)->get();
+            $checkuserseedexist=UserseedDetail::where('variety_id','=',$user_id)->where('seed_id','=',$userfirstseed->variety_id)->with('germinationDays','maturityDays')->first();
+            if($checkuserseedexist){
+                $userseeddetail=UserseedDetail::where('variety_id','=',$user_id)->where('seed_id','=',$userfirstseed->variety_id)->with('germinationDays','maturityDays','seedsupplierName')->first();
+            }else{
+                $userseeddetail=SeedsDetail::where('seed_id','=',$userfirstseed->variety_id)->with('germinationDays','maturityDays','userseedName','seedsupplierName')->first();
             }
             $notes= GrowNotes::select('grow_notes.*',DB::raw("DATEDIFF('".date('Y-m-d')."' ,DATE(created_at)) AS days"))->where('user_id',$user_id)->orderby('id','desc')->get();
-            
+
             return view('user-backend.seed.index',compact('userseedlist','days','userseeddetail','notes'));
-		}
-       
+        }
+
     }
     public function create(Request $request){
+        print_r('class:'.__CLASS__.' file:'.__FILE__.' line:' .__LINE__);
+
         $user_id=Auth::user()->id;
-        $userseed=Userseed::select('user_seed_id')->where('user_id',$user_id)->get();
-        $supplier=Supplier::where('status','active')->pluck('name','id')->prepend('All','0'); 
+        $userseed=Userseed::select('variety_id')->where('user_id',$user_id)->get();
+        $supplier=Supplier::where('status','active')->pluck('name','id')->prepend('All','0');
         $seed=Seeds::where('status','active')->get();
-        return view('user-backend.seed.create',compact('seed','userseed','supplier'));
+        $count = count($seed);
+        print_r('class:'.__CLASS__.' file:'.__FILE__.' line:' .__LINE__);
+
+        return view('user-backend.seed.create',compact('seed','userseed','supplier', 'count'));
     }
     public function supplierseed(Request $request,$id){
-       $user_id=Auth::user()->id;
+        $user_id=Auth::user()->id;
         $supplier=Supplier::where('status','active')->pluck('name','id')->prepend('All','0');
         if($id>0) {
-              $seed=SeedSupplier::where('supplier_id',$id)->with('seedname')->get();
-        }     
+            $seed=SeedSupplier::where('supplier_id',$id)->with('seedname')->get();
+        }
         else{
-              $seed=SeedSupplier::with('seedname')->get();
+            $seed=SeedSupplier::with('seedname')->get();
         }
         $allseed=SeedSupplier::with('seedname')->get();
+
         return response()->json(['seed'=>$seed,'allseed'=>$allseed],200);
     }
     public function store(Request $request)
     {
-       
-		$rules = [
-        'user_seed_id' => 'required|min:1'
-         ];
+
+        $rules = [
+            'user_seed_id' => 'required|min:1'
+        ];
 
         $customMessages = [
             'user_seed_id.required' => 'Please Select Atleast 1 Checkbox',
         ];
 
         $this->validate($request, $rules, $customMessages);
-		$data = $request->all();
+        $data = $request->all();
         $user_id=Auth::user()->id;
-        if(!empty($request->input('user_seed_id'))){
+        if(!empty($request->input('variety_id'))){
             $userseed=Userseed::where('user_id',$user_id)->delete();
-            foreach($request->input('user_seed_id') as $user_seed_id){
+            foreach($request->input('variety_id') as $variety_id){
 
-                    $userseed = new Userseed();
-                    $userseed->user_id = $user_id;
-                    $userseed->user_seed_id = $user_seed_id;
-                    $userseed->save();
+                $userseed = new Userseed();
+                $userseed->user_id = $user_id;
+                $userseed->variety_id = $variety_id;
+                $userseed->save();
             }
-                        
+
             Session::flash('flash_message', 'Seed added!');
 
             return redirect('/seed');
@@ -92,30 +102,30 @@ class SeedController extends Controller
     public function edit(Request $request,$id)
     {
         $user_id=Auth::user()->id;
-        $days = Days::pluck('name','id'); 
+        $days = Days::pluck('name','id');
         $userseedlist=Userseed::where('user_id',$user_id)->get();
-        $checkuserseedexist=UserseedDetail::where('seed_id','=',$id)->where('user_userseed_id','=',$user_id)->with('germinationDays','maturityDays')->first();
+        $checkuserseedexist=UserseedDetail::where('seed_id','=',$id)->where('variety_id','=',$user_id)->with('germinationDays','maturityDays')->first();
         if($checkuserseedexist){
-           $userseeddetail=UserseedDetail::where('seed_id',$id)->where('user_userseed_id',$user_id)->with('germinationDays','maturityDays','seedsupplierName')->first();
+            $userseeddetail=UserseedDetail::where('seed_id',$id)->where('variety_id',$user_id)->with('germinationDays','maturityDays','seedsupplierName')->first();
         }else{
-           $userseeddetail=SeedsDetail::where('seed_id',$id)->with('germinationDays','maturityDays','userseedName','seedsupplierName')->first();
+            $userseeddetail=SeedsDetail::where('seed_id',$id)->with('germinationDays','maturityDays','userseedName','seedsupplierName')->first();
         }
         $checkuserseedexist=Userseed::where('user_id',$user_id)->where('user_seed_id',$id)->first();
-        $notes= GrowNotes::select('grow_notes.*',DB::raw("DATEDIFF('".date('Y-m-d')."' ,DATE(created_at)) AS days"))->where('user_id',$user_id)->where('seed_id',$id)->orderby('id','desc')->get();        
-        
+        $notes= GrowNotes::select('grow_notes.*',DB::raw("DATEDIFF('".date('Y-m-d')."' ,DATE(created_at)) AS days"))->where('user_id',$user_id)->where('seed_id',$id)->orderby('id','desc')->get();
+
         if($checkuserseedexist){
-			
-        return view('user-backend.seed.editseed',compact('userseeddetail','days','userseedlist','id','notes'));
-		}else{
-			 return redirect('/seed');
-		}
-	
+
+            return view('user-backend.seed.editseed',compact('userseeddetail','days','userseedlist','id','notes'));
+        }else{
+            return redirect('/seed');
+        }
+
     }
     public function update(Request $request,$id)
     {
-      $this->validate($request,[
-           'seed_name'=>'required',
-           'supplier_name'=>'required',
+        $this->validate($request,[
+            'seed_name'=>'required',
+            'supplier_name'=>'required',
             'density'=>'required',
             'measurement'=>'required',
             'tray_size'=>'required',
@@ -126,19 +136,19 @@ class SeedController extends Controller
             'maturity'=>'required',
             'yield'=>'required|numeric',
             'seeds_measurement'=>'required',
-            
+
         ]);
-        $user_id=Auth::user()->id; 
-              
-        $seedsexist = UserseedDetail::where('seed_id',$id)->where('user_userseed_id',$user_id)->first(); 
-		 $seed = Seeds::where('name',$request->seed_name)->first(); 
-        if($seedsexist){   
-     
+        $user_id=Auth::user()->id;
+
+        $seedsexist = UserseedDetail::where('seed_id',$id)->where('variety_id',$user_id)->first();
+        $seed = Seeds::where('name',$request->seed_name)->first();
+        if($seedsexist){
+
             $seedsexist->seed_name=$request->seed_name;
             $seedsexist->seed_id=$seed->id;
             $seedsexist->supplier_name=$request->supplier_id;
             $seedsexist->density=$request->density;
-            $seedsexist->user_userseed_id=$user_id;
+            $seedsexist->variety_id=$user_id;
             $seedsexist->measurement=$request->measurement;
             $seedsexist->tray_size=$request->tray_size;
             $seedsexist->soak_status=$request->soak_status;
@@ -151,12 +161,12 @@ class SeedController extends Controller
             $seedsexist->notes=$request->notes;
             $seedsexist->update();
         }else{
-            $seedsdetail = new UserseedDetail();          
+            $seedsdetail = new UserseedDetail();
             $seedsdetail->seed_name=$request->seed_name;
             $seedsdetail->seed_id=$seed->id;
             $seedsdetail->supplier_name=$request->supplier_id;
             $seedsdetail->density=$request->density;
-            $seedsdetail->user_userseed_id=$user_id;
+            $seedsdetail->variety_id=$user_id;
             $seedsdetail->measurement=$request->measurement;
             $seedsdetail->tray_size=$request->tray_size;
             $seedsdetail->soak_status=$request->soak_status;
@@ -178,16 +188,16 @@ class SeedController extends Controller
             $growNotes->notes = $request->notes;
             $growNotes->save();
         }
-            Session::flash('flash_message', 'Seed added!');
-            return redirect('/seed/edit/'.$id);
-               
+        Session::flash('flash_message', 'Seed added!');
+        return redirect('/seed/edit/'.$id);
+
     }
 
     public function seedupdate(Request $request)
     {
-      $this->validate($request,[
-           'seed_name'=>'required',
-           'supplier_name'=>'required',
+        $this->validate($request,[
+            'seed_name'=>'required',
+            'supplier_name'=>'required',
             'density'=>'required',
             'measurement'=>'required',
             'tray_size'=>'required',
@@ -199,17 +209,17 @@ class SeedController extends Controller
             'notes'=>'required',
             'yield'=>'required|numeric',
             'seeds_measurement'=>'required',
-            
+
         ]);
-        $user_id=Auth::user()->id; 
-        $seedsexist = UserseedDetail::where('user_userseed_id',$user_id)->first();        
-		 $seed = Seeds::where('name',$request->seed_name)->first(); 
-        if($seedsexist){        
+        $user_id=Auth::user()->id;
+        $seedsexist = UserseedDetail::where('variety_id',$user_id)->first();
+        $seed = Seeds::where('name',$request->seed_name)->first();
+        if($seedsexist){
             $seedsexist->seed_name=$request->seed_name;
             $seedsexist->seed_id=$seed->id;
             $seedsexist->supplier_name=$request->supplier_id;
             $seedsexist->density=$request->density;
-            $seedsexist->user_userseed_id=$user_id;
+            $seedsexist->variety_id=$user_id;
             $seedsexist->measurement=$request->measurement;
             $seedsexist->tray_size=$request->tray_size;
             $seedsexist->soak_status=$request->soak_status;
@@ -222,12 +232,12 @@ class SeedController extends Controller
             $seedsexist->notes=$request->notes;
             $seedsexist->update();
         }else{
-            $seedsdetail = new UserseedDetail();          
+            $seedsdetail = new UserseedDetail();
             $seedsdetail->seed_name=$request->seed_name;
             $seedsdetail->seed_id=$seed->id;
             $seedsdetail->supplier_name=$request->supplier_id;
             $seedsdetail->density=$request->density;
-            $seedsdetail->user_userseed_id=$user_id;
+            $seedsdetail->variety_id=$user_id;
             $seedsdetail->measurement=$request->measurement;
             $seedsdetail->tray_size=$request->tray_size;
             $seedsdetail->soak_status=$request->soak_status;
@@ -240,7 +250,7 @@ class SeedController extends Controller
             $seedsdetail->notes=$request->notes;
             $seedsdetail->save();
         }
-            
+
         if($request->notes != null)
         {
             $growNotes = new GrowNotes();
@@ -249,9 +259,9 @@ class SeedController extends Controller
             $growNotes->notes = $request->notes;
             $growNotes->save();
         }
-            Session::flash('flash_message', 'Seed added!');
+        Session::flash('flash_message', 'Seed added!');
 
-                return redirect('/seed');
-               
+        return redirect('/seed');
+
     }
 }

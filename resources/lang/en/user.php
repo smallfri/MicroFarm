@@ -36,8 +36,6 @@ return [
     'id' => 'ID',
     'profile' => 'Profile',
     'name' => 'Name',
-    'email' => 'Email',
-    'role' => 'Role',
     'company' => 'Company',
     'status' => 'Status',
     'actions' => 'Actions',

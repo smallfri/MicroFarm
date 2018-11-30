@@ -11,7 +11,7 @@
 								<div class="row">
 									<div class="col-lg-4 col-md-4 col-sm-12 clearfix">
 										<div class="page-title">
-											<h4><span class="text-semibold font-head"><a href="{{url('/Dashboard')}}">Dashboard</a> / GROWING SUMMARY</h4>
+											<h4><span class="text-semibold font-head"><a href="{{url('/dashboard')}}">Dashboard</a> / GROWING SUMMARY</h4>
 										</div>
 									</div>
 									<div class="col-lg-8 col-md-8 col-sm-12 clearfix">
@@ -38,38 +38,8 @@
 			                	</ul>
 		                	</div>
 						</div>
-					@if (Session::has('flash_message'))
-                        <div class="alert alert-success">
-                            <button type="button" class="close" data-dismiss="alert"
-                                    aria-hidden="true">&times;</button>
-                            {{ Session::get('flash_message') }}
-                        </div>
-                    @endif
-                    @if (Session::has('flash_error'))
-                        <div class="alert alert-error">
-                            <button type="button" class="close" data-dismiss="alert"
-                                    aria-hidden="true">&times;</button>
-                            {{ Session::get('flash_error') }}
-                        </div>
-                    @endif
-                    @if (Session::has('flash_success'))
-                        <div class="alert alert-success">
-                            <button type="button" class="close" data-dismiss="alert"
-                                    aria-hidden="true">&times;</button>
-                            {{ Session::get('flash_success') }}
-                        </div>
-                    @endif
 
-                    @include('flash::message')
 						<div class="panel-body">
-                            @if ($errors->any())
-								<ul class="alert alert-danger">
-									@foreach ($errors->all() as $error)
-										<li>{{ $error }}</li>
-									@endforeach
-								</ul>
-							@endif
-         
 							<div class="col-md-12 col-sm-12 no-padding border-1">
 								<div class="col-md-3 col-sm-3 no-padding">
 									<div class="panel-1">
@@ -78,7 +48,7 @@
                                                 <div class="tabbable">
                                                     <ul class="nav nav-tabs nav-tabs-solid nav-justified">                                                      
                                                         @foreach($userseedlist as $key => $value)
-                                                        <li class="{{ ($value->userseedname[0]->id == $id) ? 'active' : '' }}" id="li_{{$value->userseedname[0]->id}}"><a href="{{url('seed/edit/'.$value->userseedname[0]->id)}}" aria-expanded="true">{{$value->userseedname[0]->name}}</a></li>
+                                                        <li class="{{ ($value->id == $id) ? 'active' : '' }}" id="li_{{$value->id}}"><a href="{{url('seed/edit/'.$value->id)}}" aria-expanded="true">{{$value->name}}</a></li>
                                                        
                                                         @endforeach
                                                     </ul>
@@ -104,11 +74,11 @@
                                                                 <label for="seed-name" class="label-1">SEED NAME</label>
                                                             </div>
                                                             <div class="col-md-12">
-                                                                @if(isset($userseeddetail->userseedName[0]->name))
-                                                                {!! Form::text('seed_name', $userseeddetail->userseedName[0]->name, ['class' => 'form-control','readonly'=>'readonly']) !!}
-                                                                <input type="hidden" name="seed_id" value="{{$userseeddetail->userseedName[0]->id}}">
+                                                                @if(isset($userseeddetail->name))
+                                                                {!! Form::text('seed_name', $userseeddetail->name, ['class' => 'form-control','readonly'=>'readonly']) !!}
+                                                                <input type="hidden" name="seed_id" value="{{$userseeddetail->id}}">
                                                                 @else
-                                                                {!! Form::text('seed_name', $userseeddetail->seed_name, ['class' => 'form-control','readonly'=>'readonly']) !!}
+                                                                {!! Form::text('seed_name', $userseeddetail->name, ['class' => 'form-control','readonly'=>'readonly']) !!}
 															
                                                                 @endif
                                                             </div>    

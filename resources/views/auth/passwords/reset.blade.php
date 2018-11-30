@@ -1,64 +1,85 @@
-@extends('layouts.frontend_innerpage')
-@section('title','Change Password - Farm House')
-@section('body_class','login-banner-container')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-<div class="login-area margin-area clearfix">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="/plugins/images/favicon.png">
+    <title>MicroFarmManager.com - Reset Password</title>
+    <!-- ===== Bootstrap CSS ===== -->
+    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ===== Animation CSS ===== -->
+    <link href="/css/animate.css" rel="stylesheet">
+    <!-- ===== Custom CSS ===== -->
+    <link href="/css/style.css" rel="stylesheet">
+    <!-- ===== Color CSS ===== -->
+    <link href="/css/colors/default.css" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
 
-        <div class="login-card login-cardboard clearfix">
+<body>
+<!-- Preloader -->
+<div class="preloader">
+    <div class="cssload-speeding-wheel"></div>
+</div>
+<section id="wrapper" class="login-register">
+    <div class="login-box">
+        <div class="white-box">
+            <form class="form-horizontal" role="form" method="POST" action="{{ route('password.email') }}">
+                <h1>Password Reset</h1>
+                {{ csrf_field() }}
 
-                <h3 class="txt-1 login-txt">Change Password</h3>
-                
-                <div class="sign-up-form">
-                        <form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
-                                {{ csrf_field() }}
-                                <input type="hidden" name="token" value="{{ $token }}">
-                               
-                         <div class="field-group">
-                                <input value="" placeholder="E-mail" class="input-field" data-rule-required="true"
-                                name="email" type="text" value="{{ old('email') }}"/>
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                            <strong>{{ $errors->first('email') }}</strong>
-                                        </span>
-                                 @endif
-                        </div>
-
-                        <div class="field-group">
-                            <input type="password" name="password" id="new-password" class="input-field" placeholder="New Password">
-                                 @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                        </div>
-                     
-                        <div class="field-group">
-                                <input type="password" id="confirm-password" class="input-field" placeholder="Confirm Password" name="password_confirmation" required>
-
-                                @if ($errors->has('password_confirmation'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                    </span>
-                                @endif
-                           
-                        </div>
-                         
-                        <div class="field-group">
-                            <button type="submit" class="signup-btn">Change Password</button>
-                        </div>
-
-                        
-                    </form>
+                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                    @if ($errors->has('email'))
+                        <span class="help-block"><strong>{{ $errors->first('email') }}</strong></span>
+                    @endif
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Email"/>
                 </div>
 
-        </div><!-- end login div -->
+                <div>
+                    <button type="submit" class="btn btn-default submit">Send Password Reset Link</button>
+                    <a class="reset_pass" href="{{route('login')}}">Login</a>
+                </div>
 
+                <div class="clearfix"></div>
 
+                <div class="separator">
 
-  
-</div><!-- end of login-area -->
-  @include('include.frontend.page_bottom_content')
-     
-@endsection
+                    <div class="clearfix"></div>
+                    <br />
 
+                    <div>
+                        <h1><i class="fa fa-paw"></i> MicroFarmManager.com</h1>
+                        <p>&copy; 2018 All Rights Reserved.</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- jQuery -->
+<script src="/plugins/components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Menu Plugin JavaScript -->
+<script src="/js/sidebarmenu.js"></script>
+<!--slimscroll JavaScript -->
+<script src="/js/jquery.slimscroll.js"></script>
+<!--Wave Effects -->
+<script src="/js/waves.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="/js/custom.js"></script>
+<!--Style Switcher -->
+<script src="/plugins/components/styleswitcher/jQuery.style.switcher.js"></script>
+</body>
+
+</html>

@@ -8,8 +8,8 @@ use App\User;
 use Hash;
 use App\ActionLog;
 use Illuminate\Http\Request;
-use Auth;
 use Session;
+use Auth;
 
 class LoginController extends Controller
 {
@@ -39,11 +39,16 @@ class LoginController extends Controller
      *
      * @return void
      */
-    
+
 	
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function showLoginForm()
+    {
+        return view('auth.login');
     }
     public function authenticate(Request $request)
     {
@@ -76,24 +81,11 @@ class LoginController extends Controller
         } else {
             Session::flash('flash_error',"Invalid Username or Password");
         }
-       
 
         return redirect()->back()->withInput();
 
     }
-	public function logout(Request $request)
-    {
-        $user = User::find($request->user()->id);
-        $user->last_login = date('Y-m-d H:i:s ');
-        $user->save();
-        $this->guard()->logout();
 
-        $request->session()->flush();
-
-        $request->session()->regenerate();
-
-        return redirect('/login');
-    }
 
     
 

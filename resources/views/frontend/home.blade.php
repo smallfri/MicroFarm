@@ -2,7 +2,7 @@
 @section('title','Home')
 
 @section('content')
- 
+
                     @if (Session::has('flash_message'))
                         <div class="alert alert-success">
                             <button type="button" class="close" data-dismiss="alert"
@@ -31,19 +31,19 @@
         <div class="banner-vidoe-img-div">
             <img src="hero-img-2.jpg" alt="" class="mobile-hide">
         </div>
-        
+
         <div class="banner-caption-div clearfix">
-            <h2><span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span></h2>
+            <h2><span>Microgreens: Health Benefits, Nutrition and How to Grow Them</span></h2>
             <h3>
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+                <span>Use Our Super Convenient MicroFarmManager To Take Control of Your Garden.</span>
             </h3>
         </div>
     </div><!-- end of banner-container -->
-    
-    
+
+
     <div class="content-area clearfix">
-     
-       
+
+
 		<section class="our-work-part-section" id="our-work-park-section">
             <div class="our-work-part-div">
                 <div class="container">
@@ -75,5 +75,5 @@
             </div><!-- end of our-work-part-div -->
         </section><!-- end of our-work-part-section -->
 
-         @include('include.frontend.page_bottom_content') 
+         @include('include.frontend.page_bottom_content')
 @endsection

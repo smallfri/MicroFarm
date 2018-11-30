@@ -2,6 +2,7 @@
 
 Auth::routes();
 Route::post('login','Auth\LoginController@authenticate')->name('login');
+Route::get('login','Auth\LoginController@showLoginForm');
 Route::get('/activate-account/{token}', 'Auth\RegisterController@activateAccount');
 Route::get('/resend-activation', 'Auth\RegisterController@resendActivationEmail');
 Route::post('/resend-activation', 'Auth\RegisterController@resendActivationEmailToUser');
@@ -67,7 +68,7 @@ Route::resource('/contact', 'ContactController');
 
 Route::group(['middleware' => ['auth']], function () {
 
-Route::get('/Dashboard', 'FarmhouseController@dashboard');
+Route::get('/dashboard', 'FarmhouseController@dashboard');
 Route::get('/profile', 'ProfileController@edit');
 Route::get('/profile/view', 'ProfileController@show');
 Route::post('/profile', 'ProfileController@update');

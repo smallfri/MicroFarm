@@ -99,7 +99,7 @@
                                     <li><a href="#contactus" class="down-arrow">contact us</a></li>
                                    
                                         @if (Auth::check())
-											<li><a href="{{url('/Dashboard')}}" class="singup-link">Dashboard</a></li>
+											<li><a href="{{url('/dashboard')}}" class="singup-link">Dashboard</a></li>
                                             <li><a href="#" class="singup-link" onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">Logout</a></li>
 											
