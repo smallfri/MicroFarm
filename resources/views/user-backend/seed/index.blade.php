@@ -21,11 +21,10 @@
 
                     <div class="tab-content">
                         @foreach($userseedlist as $key => $value)
-
                             <div role="tabpanel" class="tab-pane {{ $key == 0 ? 'active' : '' }}"
                                  id="li-{{$value->variety_id}}">
                                 <form action="#" method="post" name="{{$value->variety_id}}">
-                                    <input type="hidden" value="{{$value->supplier_id}}" name="variety_id" id="xyz">
+                                    <input type="hidden" value="{{$value->variety_id}}" name="variety_id" id="xyz">
                                     {{csrf_field()}}
                                 <div class="col-md-6">
                                     <label for="supplier-1">SEED NAME</label>
@@ -47,20 +46,12 @@
                                 </div>
                                 <div class="col-md-6" style="margin-top:20px;">
                                 <label for="supplier-1">MEASUREMENT</label>
-                                    @if(isset($value->measurement))
                                         {!! Form::select('measurement',['OUNCES'=>'OUNCES','GRAMS'=>'GRAMS','ML'=>'ML', 'POUNDS'=>'POUNDS', 'KILOS'=>'KILOS'] ,(isset($value->measurement) && $value->measurement != '' ) ? $value->measurement : '', ['class' => 'form-control']) !!}
-                                    @else
-                                        {!! Form::select('measurement',['OUNCES'=>'OUNCES','GRAMS'=>'GRAMS','ML'=>'ML', 'POUNDS'=>'POUNDS', 'KILOS'=>'KILOS'] ,(isset($value->measurement) && $value->measurement != '' ) ? $value->measurement : '', ['class' => 'form-control']) !!}
-                                    @endif
                                 </div>
 
                                 <div class="col-md-6" style="margin-top:20px;">
                                     <label for="supplier-1">TRAY SIZE</label>
-                                    @if(isset($value->tray_size))
-                                        {!! Form::select('tray_size',['10 X 20'=>'10 X 20','5 X 5'=>'5 X 5','18 X 26'=>'18 X 26'] ,(isset($userseeddetail->tray_size) && $userseeddetail->tray_size != '' ) ? $userseeddetail->tray_size : '', ['class' => 'form-control']) !!}
-                                    @else
-                                        {!! Form::select('tray_size',['10 X 20'=>'10 X 20','5 X 5'=>'5 X 5','18 X 26'=>'18 X 26'] ,(isset($userseeddetail->tray_size) && $userseeddetail->tray_size != '' ) ? $userseeddetail->tray_size : '', ['class' => 'form-control']) !!}
-                                    @endif
+                                        {!! Form::select('tray_size',['10 X 20'=>'10 X 20','5 X 5'=>'5 X 5','18 X 26'=>'18 X 26'] ,(isset($value->tray_size) && $value->tray_size != '' ) ? $value->tray_size : '', ['class' => 'form-control']) !!}
                                 </div>
                                 <div class="col-md-6" style="margin-top:20px;">
                                     <label for="supplier-1">SOAK</label>
@@ -78,7 +69,7 @@
                                 <div class="col-md-6" style="margin-top:20px;">
                                     <label for="supplier-1">GERMINATION DAYS</label>
                                     //TODO fix this
-                                    {!! Form::select('germination',$days,(isset($value->germinationDays[0]->id) && $value->germinationDays[0]->id != '' ) ? $value->germinationDays[0]->id : '', ['class' => 'form-control']) !!}
+                                    {!! Form::select('germination',$days,(isset($value->germination) && $value->germination != '' ) ? $value->germination : '', ['class' => 'form-control']) !!}
                                 </div>
                                 <div class="col-md-6" style="margin-top:20px;">
                                     <label for="supplier-1">SITUATION</label>
@@ -91,7 +82,7 @@
                                 </div>
                                 <div class="col-md-6" style="margin-top:20px;">
                                     <label for="supplier-1">DAYS TO MATURITY</label>
-                                    {!! Form::select('maturity',$days,(isset($value->maturityDays[0]->id) && $value->maturityDays[0]->id != '' ) ? $value->maturityDays[0]->id : '', ['class' => 'form-control']) !!}
+                                    {!! Form::select('maturity',$days,(isset($value->maturity) && $value->maturity != '' ) ? $value->maturity: '', ['class' => 'form-control']) !!}
                                 </div>
 
                                 <div class="clearfix"></div>
@@ -114,7 +105,7 @@
                                 </div>
                                 @if($notes != null)
                                     @foreach($notes as $note)
-                                        @if($note->seed_id == $userseedlist[0]->variety_id)
+                                        @if($note->seed_id == $value->variety_id)
                                             <label for="supplier-1">NOTES</label>
                                             <div class="col-md-12">
                                                 <div class="comment">

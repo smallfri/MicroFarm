@@ -14,7 +14,7 @@ class Userseed extends Model
      * @var array
      */
     protected $fillable = [
-       'user_id','variety_id','status','deleted_at'
+       'user_id','variety_id','status','deleted_at, density'
     ];
 
     /**

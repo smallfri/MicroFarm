@@ -40,6 +40,7 @@ class SeedController extends Controller
                 'url',
                 'userseeds_detail.density',
                 'userseeds_detail.tray_size',
+                'userseeds_detail.maturity',
                 'userseeds_detail.measurement',
                 'userseeds_detail.soak_status',
                 'userseeds_detail.germination',
@@ -52,6 +53,8 @@ class SeedController extends Controller
                 ->join('seeds', 'seeds.id','=','seeds_variety.seed_id')
                 ->leftJoin('userseeds_detail', 'userseeds_detail.variety_id','=','seeds_variety.id')
                 ->get();
+
+//            dd($userseedlist);
 
             $suppliers = Supplier::pluck('name','id')->prepend('Select One', '0');
 
@@ -160,89 +163,84 @@ class SeedController extends Controller
 //
 //    }
 
-    public function update(Request $request, $id)
-    {
-        echo '<pre style="border:solid 1px red">';
-        print_r($request->all());
-        echo '</pre>';
-
-        exit;
-        $this->validate($request, [
-            'seed_name' => 'required|numeric',
-            'supplier_name' => 'required',
-            'density' => 'required',
-            'measurement' => 'required',
-            'tray_size' => 'required',
-            'soak_status' => 'required',
-            'germination' => 'required',
-            'situation' => 'required',
-            'medium' => 'required',
-            'maturity' => 'required',
-            'yield' => 'required|numeric',
-            'seeds_measurement' => 'required',
-
-        ]);
-        $user_id = Auth::user()->id;
-
-        $seedsexist = UserseedDetail::where('variety_id', $id)->where('user_id', $user_id)->first();
-        $seed = Seeds::where('name', $request->seed_name)->first();
-        if ($seedsexist) {
-
-            $seedsexist->seed_name = $request->seed_name;
-            $seedsexist->seed_id = $seed->id;
-            $seedsexist->supplier_name = $request->supplier_id;
-            $seedsexist->density = $request->density;
-            $seedsexist->user_id = $user_id;
-            $seedsexist->measurement = $request->measurement;
-            $seedsexist->tray_size = $request->tray_size;
-            $seedsexist->soak_status = $request->soak_status;
-            $seedsexist->germination = $request->germination;
-            $seedsexist->situation = $request->situation;
-            $seedsexist->medium = $request->medium;
-            $seedsexist->maturity = $request->maturity;
-            $seedsexist->yield = $request->yield;
-            $seedsexist->seeds_measurement = $request->seeds_measurement;
-            $seedsexist->notes = $request->notes;
-            $seedsexist->update();
-        } else {
-            $seedsdetail = new UserseedDetail();
-            $seedsdetail->seed_name = $request->seed_name;
-            $seedsdetail->seed_id = $seed->id;
-            $seedsdetail->supplier_name = $request->supplier_id;
-            $seedsdetail->density = $request->density;
-            $seedsdetail->user_id = $user_id;
-            $seedsdetail->measurement = $request->measurement;
-            $seedsdetail->tray_size = $request->tray_size;
-            $seedsdetail->soak_status = $request->soak_status;
-            $seedsdetail->germination = $request->germination;
-            $seedsdetail->situation = $request->situation;
-            $seedsdetail->medium = $request->medium;
-            $seedsdetail->maturity = $request->maturity;
-            $seedsdetail->yield = $request->yield;
-            $seedsdetail->seeds_measurement = $request->seeds_measurement;
-            $seedsdetail->notes = $request->notes;
-            $seedsdetail->save();
-        }
-
-        if ($request->notes != null) {
-            $growNotes = new GrowNotes();
-            $growNotes->seed_id = $seed->id;
-            $growNotes->user_id = $user_id;
-            $growNotes->notes = $request->notes;
-            $growNotes->save();
-        }
-        Session::flash('flash_message', 'Seed(s) updated!');
-        return redirect('/seed/edit/' . $id);
-
-    }
+//    public function update(Request $request, $id)
+//    {
+//        echo '<pre style="border:solid 1px red">';
+//        print_r($request->all());
+//        echo '</pre>';
+//
+//        exit;
+//        $this->validate($request, [
+//            'seed_name' => 'required|numeric',
+//            'supplier_name' => 'required',
+//            'density' => 'required',
+//            'measurement' => 'required',
+//            'tray_size' => 'required',
+//            'soak_status' => 'required',
+//            'germination' => 'required',
+//            'situation' => 'required',
+//            'medium' => 'required',
+//            'maturity' => 'required',
+//            'yield' => 'required|numeric',
+//            'seeds_measurement' => 'required',
+//
+//        ]);
+//        $user_id = Auth::user()->id;
+//
+//        $seedsexist = UserseedDetail::where('variety_id', $id)->where('user_id', $user_id)->first();
+//        $seed = Seeds::where('name', $request->seed_name)->first();
+//        if ($seedsexist) {
+//
+//            $seedsexist->seed_name = $request->seed_name;
+//            $seedsexist->seed_id = $seed->id;
+//            $seedsexist->supplier_name = $request->supplier_id;
+//            $seedsexist->density = $request->density;
+//            $seedsexist->user_id = $user_id;
+//            $seedsexist->measurement = $request->measurement;
+//            $seedsexist->tray_size = $request->tray_size;
+//            $seedsexist->soak_status = $request->soak_status;
+//            $seedsexist->germination = $request->germination;
+//            $seedsexist->situation = $request->situation;
+//            $seedsexist->medium = $request->medium;
+//            $seedsexist->maturity = $request->maturity;
+//            $seedsexist->yield = $request->yield;
+//            $seedsexist->seeds_measurement = $request->seeds_measurement;
+//            $seedsexist->notes = $request->notes;
+//            $seedsexist->update();
+//        } else {
+//            $seedsdetail = new UserseedDetail();
+//            $seedsdetail->seed_name = $request->seed_name;
+//            $seedsdetail->seed_id = $seed->id;
+//            $seedsdetail->supplier_name = $request->supplier_id;
+//            $seedsdetail->density = $request->density;
+//            $seedsdetail->user_id = $user_id;
+//            $seedsdetail->measurement = $request->measurement;
+//            $seedsdetail->tray_size = $request->tray_size;
+//            $seedsdetail->soak_status = $request->soak_status;
+//            $seedsdetail->germination = $request->germination;
+//            $seedsdetail->situation = $request->situation;
+//            $seedsdetail->medium = $request->medium;
+//            $seedsdetail->maturity = $request->maturity;
+//            $seedsdetail->yield = $request->yield;
+//            $seedsdetail->seeds_measurement = $request->seeds_measurement;
+//            $seedsdetail->notes = $request->notes;
+//            $seedsdetail->save();
+//        }
+//
+//        if ($request->notes != null) {
+//            $growNotes = new GrowNotes();
+//            $growNotes->seed_id = $seed->id;
+//            $growNotes->user_id = $user_id;
+//            $growNotes->notes = $request->notes;
+//            $growNotes->save();
+//        }
+//        Session::flash('flash_message', 'Seed(s) updated!');
+//        return redirect('/seed/edit/' . $id);
+//
+//    }
 
     public function seedupdate(Request $request)
     {
-
-        echo '<pre style="border:solid 1px red">';
-        print_r($_POST);
-        echo '</pre>';
-exit;
         $this->validate($request, [
             'seed_name' => 'required',
             'supplier_id' => 'required',
