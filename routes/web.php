@@ -84,3 +84,8 @@ Route::get('/seed/edit/{id}', 'SeedController@edit');
 
 });
 
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

@@ -15,6 +15,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
+
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 	display: block
 }
@@ -22,9 +23,7 @@ body {
 	line-height: 1;
 	
 }
-.error {
-    color: red;
-}
+
 ol, ul {
 	list-style: none
 }
@@ -58,12 +57,6 @@ table {
 }
 .help-block strong{
     color: red !important;
-}
-.alert-error{
-background-color: #fbe9e7;
-border-color: #ff5722;
-color: #9c1f1f;
-border: 1px solid #9c1f1f !important;
 }
 /* #Basic Styles
 ================================================== */
@@ -320,7 +313,7 @@ footer_social_icons .list-inline{
 .our-work-part-section{margin: 0;padding: 0;position: relative;}
 .our-work-part-div{    background: #fff;padding: 75px 0 100px 0;}
 
-.our-work-part-div h2.title-part {margin: 0 0 40px 0;padding: 0px;float: left;width: 100%;text-align: center;    color: #fff;font-size: 55px;line-height: 50px;position: relative;font-family: 'Poiret One', cursive;color: #a5c556;}
+.our-work-part-div h2.title-part {margin: 0 0 40px 0;padding: 0px;float: left;width: 100%;text-align: center;color: #fff;font-size: 55px;line-height: 50px;position: relative;font-family: 'Poiret One', cursive;color: #a5c556;}
 .our-work-part-div h2.title-part:after {content: "";height: 2px;width: 119px;background: rgba(255, 255, 255, 0.5);bottom: -20px;position: absolute;left: 50%;margin: 0 0 0 -55px;background: url(../images/title-tagline-green-1.png) 0 0 no-repeat;}
 .our-work-part-div .our-works-bg {    margin: 50px 0 0 0;padding: 25px;width: 100%;background: #a5c556;border: 1px solid #a5c556}
 .our-work-part-div .work-title-part {margin: 0;padding: 0 0 20px 0;border-bottom: 1px solid rgba(255, 255, 255, 0.7);width: 100%;text-align: center;color: #fff;font-size: 28px;font-family: 'Poiret One', cursive;font-weight: normal;}
@@ -338,7 +331,7 @@ footer_social_icons .list-inline{
     padding: 50px 0 50px 0;
 }
 .p-10{padding: 10px;}
-.contactus-div h2.title-part {margin: 0 0 40px 0;padding: 0px;float: left;width: 100%;text-align: center; color: #fff;font-size: 55px;line-height: 50px;position: relative;font-family: 'Poiret One', cursive;color: #a5c556;}
+.contactus-div h2.title-part {margin: 0 0 40px 0;padding: 0px;float: left;width: 100%;text-align: center;color: #fff;font-size: 55px;line-height: 50px;position: relative;font-family: 'Poiret One', cursive;color: #a5c556;}
 .contactus-div h2.title-part:after {content: "";height: 2px;width: 119px;background: rgba(255, 255, 255, 0.5);bottom: -20px;position: absolute;left: 50%;margin: 0 0 0 -55px;background: url(../images/title-tagline-green-1.png) 0 0 no-repeat;}
 .contactus-div .contactus-bg {    margin: 0px 0 0 0;padding: 25px 25px;width: 100%;background: transparent;border: 0px solid #fff}
 .contactus-div .work-title-part {margin: 0;padding: 0 0 20px 0;border-bottom: 1px solid rgba(255, 255, 255, 0.7);width: 100%;text-align: center;color: #fff;font-size: 28px;font-family: 'Poiret One', cursive;font-weight: normal;}

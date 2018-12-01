@@ -9,16 +9,17 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.12",
+        "andreasindal/laravel-markdown": "^1.1",
+        "barryvdh/laravel-debugbar": "*",
         "deployer/deployer": "^6.3",
+        "dougsisk/laravel-country-state": "*",
         "fideloper/proxy": "^4.0",
         "laracasts/flash": "^3.0",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "~5.0",
-        "andreasindal/laravel-markdown": "^1.1",
-        "barryvdh/laravel-debugbar": "*",
-        "yajra/laravel-datatables-oracle": "*",
-        "dougsisk/laravel-country-state": "*"
+        "tcg/voyager": "^1.1",
+        "yajra/laravel-datatables-oracle": "*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -67,10 +68,14 @@
             "@php artisan key:generate --ansi"
         ]
     },
-    "repositories": [
-        {
+    "repositories": {
+        "0": {
             "type": "composer",
             "url": "https://nova.laravel.com"
+        },
+        "hooks": {
+            "type": "composer",
+            "url": "https://larapack.io"
         }
-    ]
+    }
 }

@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class SeedsVariety extends Model
 {
-  use SoftDeletes;
-  public $table="seed_variety";
-   /**
+    use SoftDeletes;
+    public $table="seeds_variety";
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -23,6 +23,10 @@ class SeedsVariety extends Model
      * @var array
      */
     protected $hidden = [
-      'created_at', 'updated_at'
+        'created_at', 'updated_at'
     ];
+
+    public function seedname(){
+        return $this->hasMany('App\Seeds','id','supplier_seed_id')->where('status',1);
+    }
 }

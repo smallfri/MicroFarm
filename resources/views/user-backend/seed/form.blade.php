@@ -1,6 +1,6 @@
 <?php
 $userSeeds = array();
-foreach ($userseed as $userseeds)
+foreach ($userseedlist as $userseeds)
     $userSeeds[] = $userseeds->variety_id;
 ?>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -43,102 +43,102 @@ foreach ($userseed as $userseeds)
 $userSeeds = '[' . implode(', ', $userSeeds) . ']';
 ?>
 @push('script-head')
-<script type="text/javascript">
-    var userSeeds = <?php echo $userSeeds ?>;
+    <script type="text/javascript">
+        var userSeeds = <?php echo $userSeeds ?>;
 
-    $('#supplier').change(function () {
-        var supplierID = $(this).val();
+        $('#supplier').change(function () {
+            var supplierID = $(this).val();
 
-        if(supplierID == 0)
-        {
-            $("#seedlist").empty();
-            $("#seedlist").empty();
-            $("#submit-two").hide();
-            return;
-        }
-
-
-        if (supplierID) {
-            $("#supplier").val(supplierID);
-            $('#dvLoading').show();
-            $("#submit-two").hide();
-            $.ajax({
-                type: "GET",
-                url: "{{url('seed/supplierseed')}}/" + supplierID,
-
-                success: function (res) {
-                    var i = 1;
-
-                    if (res) {
-                        $('.supplier-btn').empty();
-
-                        $("#seedlist").empty();
-                        $("#seedlist2").empty();
-                        $("#submit-two").hide();
-                        $.each(res.seed, function (key, value) {
-
-                            if (value.variety_id  > 0) {
-                                exists = (jQuery.inArray(value.id, userSeeds) > -1);
-
-                                var check = '';
-
-                                if (exists) {
-                                    check = 'checked="checked"';
-                                }
+            if(supplierID == 0)
+            {
+                $("#seedlist").empty();
+                $("#seedlist").empty();
+                $("#submit-two").hide();
+                return;
+            }
 
 
-                                var count = $("#count").val();
-                                var finalCount;
-                                if (count > res.count) {
-                                    finalCount = res.count;
-                                }
-                                else {
-                                    finalCount = count;
-                                }
-                                if (i >= finalCount / 2) {
+            if (supplierID) {
+                $("#supplier").val(supplierID);
+                $('#dvLoading').show();
+                $("#submit-two").hide();
+                $.ajax({
+                    type: "GET",
+                    url: "{{url('seed/supplierseed')}}/" + supplierID,
 
-                                    $("#seedlist2").append('<li><input type="checkbox" class="check" name="variety_id[]" id="variety_id" value="' + value.id + '" ' + check + '><label for="variety_id">' + value.name + ' ' + value.vname + '</label></li>');
-                                }
-                                else {
-                                    $("#seedlist").append('<li><input type="checkbox" class="check" name="variety_id[]" id="variety_id" value="' + value.id + '" ' + check + '><label for="variety_id">' + value.name + ' ' + value.vname + '</label></li>');
-                                }
-                                $("#submit-two").show();
+                    success: function (res) {
+                        var i = 1;
 
-                                i++;
+                        if (res) {
+                            $('.supplier-btn').empty();
 
-                            }
-                        });
-
-                        $("input[type='checkbox']").iCheck({
-                            checkboxClass: 'icheckbox_square-green'
-                        });
-
-                        var count = $('input:checkbox').length;
-                        if (count === 0) {
                             $("#seedlist").empty();
                             $("#seedlist2").empty();
-                            $('.supplier-btn').append('<div class="text-center">No Seeds Found</div>');
+                            $("#submit-two").hide();
+                            $.each(res.seed, function (key, value) {
+
+                                if (value.name.length > 0) {
+                                    exists = (jQuery.inArray(value.id, userSeeds) > -1);
+
+                                    var check = '';
+
+                                    if (exists) {
+                                        check = 'checked="checked"';
+                                    }
+
+
+                                    var count = $("#count").val();
+                                    var finalCount;
+                                    if (count > res.count) {
+                                        finalCount = res.count;
+                                    }
+                                    else {
+                                        finalCount = count;
+                                    }
+                                    if (i >= finalCount / 2) {
+
+                                        $("#seedlist2").append('<li><input type="checkbox" class="check" name="variety_id[]" id="variety_id" value="' + value.id + '" ' + check + '><label for="variety_id">' + value.name + ' ' + value.vname + '</label></li>');
+                                    }
+                                    else {
+                                        $("#seedlist").append('<li><input type="checkbox" class="check" name="variety_id[]" id="variety_id" value="' + value.id + '" ' + check + '><label for="variety_id">' + value.name + ' ' + value.vname + '</label></li>');
+                                    }
+                                    $("#submit-two").show();
+
+                                    i++;
+
+                                }
+                            });
+
+                            $("input[type='checkbox']").iCheck({
+                                checkboxClass: 'icheckbox_square-green'
+                            });
+
+                            var count = $('input:checkbox').length;
+                            if (count === 0) {
+                                $("#seedlist").empty();
+                                $("#seedlist2").empty();
+                                $('.supplier-btn').append('<div class="text-center">No Seeds Found</div>');
+                            } else {
+                                $('.supplier-btn').append('<div class="text-right"><button type="submit" class="btn btn-success pull-left"><div class="ladda-progress">Submit</div></button></div>');
+                            }
+
                         } else {
-                            $('.supplier-btn').append('<div class="text-right"><button type="submit" class="btn btn-success pull-left"><div class="ladda-progress">Submit</div></button></div>');
+                            $("#seedlist").empty();
+                            $("#seedlist2").empty();
+                            $('.supplier-btn').remove();
                         }
-
-                    } else {
-                        $("#seedlist").empty();
-                        $("#seedlist2").empty();
-                        $('.supplier-btn').remove();
+                        $('#dvLoading').hide();
                     }
-                    $('#dvLoading').hide();
-                }
 
-            });
-        } else {
-            $("#seedlist").empty();
-            $("#seedlist2").empty();
-        }
-    });
-    $('#supplier')
-        .trigger('change');
+                });
+            } else {
+                $("#seedlist").empty();
+                $("#seedlist2").empty();
+            }
+        });
+        $('#supplier')
+            .trigger('change');
 
 
-</script>
+    </script>
 @endpush
