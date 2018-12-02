@@ -44,25 +44,25 @@
 				{{--</ul>--}}
 			{{--</li>--}}
 			<li>
-				<a href="/seed">
+				<a href="/seed/create">
 					<i class="fas fa fa-leaf"></i>
 					<span>SEEDS<span class="label label-theme m-l-5">NEW</span></span>
 				</a>
 			</li>
 			<li>
-				<a href="/create-seed">
+				<a href="/seed">
 					<i class="fa fa-clipboard fas"></i>
 					<span>GROW JOURNAL<span class="label label-theme m-l-5">NEW</span></span>
 				</a>
 			</li>
 			<li>
-				<a href="/create-seed">
+				<a href="#">
 					<i class="fa fa-graduation-cap fas"></i>
 					<span>ClASS ROOM<span class="label label-theme m-l-5">NEW</span></span>
 				</a>
 			</li>
 			<li>
-				<a href="/create-seed">
+				<a href="#">
 					<i class="fa fa-newspaper fas"></i>
 					<span>COUPONS<span class="label label-theme m-l-5">NEW</span></span>
 				</a>

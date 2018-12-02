@@ -3,29 +3,7 @@
 
 @section('content')
 
-                    @if (Session::has('flash_message'))
-                        <div class="alert alert-success">
-                            <button type="button" class="close" data-dismiss="alert"
-                                    aria-hidden="true">&times;</button>
-                            {{ Session::get('flash_message') }}
-                        </div>
-                    @endif
-                    @if (Session::has('flash_error'))
-                        <div class="alert alert-error">
-                            <button type="button" class="close" data-dismiss="alert"
-                                    aria-hidden="true">&times;</button>
-                            {{ Session::get('flash_error') }}
-                        </div>
-                    @endif
-                    @if (Session::has('flash_success'))
-                        <div class="alert alert-success">
-                            <button type="button" class="close" data-dismiss="alert"
-                                    aria-hidden="true">&times;</button>
-                            {{ Session::get('flash_success') }}
-                        </div>
-                    @endif
 
-                    @include('flash::message')
 	<div class="banner-container">
 
         <div class="banner-vidoe-img-div">
@@ -74,6 +52,4 @@
                 </div><!-- end of container -->
             </div><!-- end of our-work-part-div -->
         </section><!-- end of our-work-part-section -->
-
-         @include('include.frontend.page_bottom_content')
 @endsection

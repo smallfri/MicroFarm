@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a4dbc67290960b1a6390525acd369d5",
+    "content-hash": "9b003fc02270fa403dd79fa0c891777a",
     "packages": [
         {
             "name": "andreasindal/laravel-markdown",
@@ -1699,6 +1699,49 @@
                 "laravel"
             ],
             "time": "2018-09-11T15:39:10+00:00"
+        },
+        {
+            "name": "garygreen/pretty-routes",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/garygreen/pretty-routes.git",
+                "reference": "94854378748907822b87d71fc6c557c45d8e3f22"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/garygreen/pretty-routes/zipball/94854378748907822b87d71fc6c557c45d8e3f22",
+                "reference": "94854378748907822b87d71fc6c557c45d8e3f22",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "PrettyRoutes\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PrettyRoutes\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gary Green",
+                    "email": "holegary@gmail.com"
+                }
+            ],
+            "description": "Pretty routes for Laravel 5.",
+            "time": "2018-09-05T18:59:58+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
