@@ -4053,7 +4053,7 @@ table.focus-on tbody tr.focused td, table.focus-on tbody tr.focused th {
 }
 
 .login-register {
-    background: url(/images/microgreens_home1.jpg) center center/cover no-repeat !important;
+    background: url(/images/microGreensLogin.jpg) center center/cover no-repeat !important;
     height: 100%;
     position: fixed
 }

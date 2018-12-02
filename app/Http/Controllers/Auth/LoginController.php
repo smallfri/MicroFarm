@@ -50,7 +50,7 @@ class LoginController extends Controller
     {
         return view('auth.login');
     }
-    public function authenticate(Request $request)
+    public function login(Request $request)
     {
 		$credentials = array(
             'email' => $request->get('email'),
@@ -66,7 +66,7 @@ class LoginController extends Controller
                 if ($user->is_active == 1 && Auth::attempt($credentials)) {
                     Session::flash('flash_success',"Login Success !!");
 					if(Auth::user()->hasRole('SU')){
-						return redirect('/admin');
+						return redirect('/home');
 					}else{
 						return redirect('/seed/create');
 					}

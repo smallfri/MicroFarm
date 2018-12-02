@@ -12,7 +12,7 @@ class GrowNotes extends Model
      * @var array
      */
     protected $fillable = [
-        'seed_id','user_id','notes'
+        'variety_id','user_id','notes'
     ];
 
     /**

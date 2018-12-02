@@ -1,18 +1,35 @@
 <?php
 
-Auth::routes();
-Route::post('login','Auth\LoginController@authenticate')->name('login');
-Route::get('login','Auth\LoginController@showLoginForm');
+// Authentication Routes...
+$this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
+$this->post('login', 'Auth\LoginController@authenticate');
+$this->post('logout', 'Auth\LoginController@logout')->name('logout');
+
+// Registration Routes...
+$this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+$this->post('register', 'Auth\RegisterController@register');
+
+// Password Reset Routes...
+$this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
+$this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+$this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
+$this->post('password/reset', 'Auth\ResetPasswordController@reset');
+
 Route::get('/activate-account/{token}', 'Auth\RegisterController@activateAccount');
 Route::get('/resend-activation', 'Auth\RegisterController@resendActivationEmail');
 Route::post('/resend-activation', 'Auth\RegisterController@resendActivationEmailToUser');
 Route::group(['middleware' => ['auth', 'admin']], function () {
-
-    //Route::get('/admin', 'Admin\AdminController@index');
-    
-    Route::group(['prefix' => 'admin'], function () {
-
-
+        Route::get('/home', 'HomeController@index')->name('home');
+        Route::get('logout', function(){
+        Session::flush();
+        Auth::logout();
+            return Redirect::to("/home");
+            });
+        Route::get('/', function (){
+            return view('auth.login');
+            });
+        Route::get('/admin', 'Admin\AdminController@index');
+        Route::group(['prefix' => 'admin'], function () {
         Route::get('/', 'Admin\AdminController@index');
 
         //generator
@@ -24,7 +41,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
         Route::resource('/permissions', 'Admin\PermissionsController');
         Route::get('/give-role-permissions', 'Admin\AdminController@getGiveRolePermissions');
         Route::post('/give-role-permissions', 'Admin\AdminController@postGiveRolePermissions');
-        
+
         //users
         Route::resource('/users', 'Admin\UsersController');
         Route::get('/users/create', 'Admin\UsersController@create');
@@ -36,7 +53,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
         Route::patch('/profile/edit', 'Admin\ProfileController@update');
         Route::get('/profile/changepassword', 'Admin\ProfileController@changePassword')->name('profile.changepassword');
         Route::patch('/profile/changepassword', 'Admin\ProfileController@updatePassword');
-        
+
          //Seeds
         Route::resource('/seeds', 'Admin\SeedsdetailController');
         Route::get('/seedsdata', ['as' => 'SeedsData', 'uses' => 'Admin\SeedsdetailController@datatable']);
@@ -75,7 +92,7 @@ Route::post('/profile', 'ProfileController@update');
 Route::get('/profile/change-password', 'ProfileController@changePassword')->name('profile.password');
 Route::patch('/profile/change-password', 'ProfileController@updatePassword');
 Route::get('/seed/create', 'SeedController@create');
-Route::post('/seed/create', 'SeedController@store');
+Route::post('/seed/create', 'SeedController@seedupdate');
 Route::get('/seed/supplierseed/{id}', 'SeedController@supplierseed');
 Route::get('/seed', 'SeedController@index');
 Route::post('/seed', 'SeedController@seedupdate');
