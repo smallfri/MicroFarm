@@ -20,12 +20,8 @@ define('LARAVEL_START', microtime(true));
 | loading any of our classes later on. It feels great to relax.
 |
 */
-//exit("HERE");
-
-
 
 require __DIR__.'/../vendor/autoload.php';
-//exit("nere");
 /*
 |--------------------------------------------------------------------------
 | Turn On The Lights

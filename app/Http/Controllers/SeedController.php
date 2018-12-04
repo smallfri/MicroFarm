@@ -68,10 +68,12 @@ class SeedController extends Controller
         $user_id = Auth::user()->id;
         $userseedlist= Userseed::select('variety_id')->where('user_id', $user_id)->get();
 
-        $supplier = Supplier::where('status', 'active')->pluck('name', 'id')->prepend('Select One', '0');
+        $supplier = Supplier::pluck('name', 'id')->prepend('Select One', '0');
         $seed = Seeds::select('seeds_variety.id', 'seeds.name', 'seeds_variety.name as vname')->where('status', 'active')->join('seeds_variety','seeds_variety.seed_id','=','seeds.id')->get();
 
         $count =  count($seed);
+
+//        dd($seed);
 
         return view('user-backend.seed.create', compact('seed','userseedlist', 'supplier', 'count'));
     }
@@ -103,8 +105,40 @@ class SeedController extends Controller
         return response()->json(['seed' => $seed, 'allseed' => $allseed, 'count'=> count($seed)], 200);
     }
 
+    public function store(Request $request)
+    {
+
+        $rules = [
+            'variety_id' => 'required|min:1'
+        ];
+
+        $customMessages = [
+            'variety_id.required' => 'Please Select Atleast 1 Checkbox',
+        ];
+
+        $this->validate($request, $rules, $customMessages);
+        $data = $request->all();
+        $user_id=Auth::user()->id;
+        if(!empty($request->input('variety_id'))){
+            $userseed=Userseed::where('user_id',$user_id)->delete();
+            foreach($request->input('variety_id') as $variety_id){
+
+                $userseed = new Userseed();
+                $userseed->user_id = $user_id;
+                $userseed->variety_id = $variety_id;
+                $userseed->save();
+            }
+
+            Session::flash('flash_message', 'Seed added!');
+
+            return redirect('/seed');
+        }
+    }
+
+
     public function seedupdate(Request $request)
     {
+
 // $validatedData = $request->validate([
 //            'seed_name' => 'required|max:255',
 //            'supplier_id' => 'required',
@@ -164,7 +198,8 @@ class SeedController extends Controller
             $growNotes->user_id = $user_id;
             $growNotes->notes = $request->notes;
             $growNotes->save();
-        }
+        } 
+        
         Session::flash('flash_message', 'Seed(s) added!');
 
         return redirect('/seed');

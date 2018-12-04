@@ -18,7 +18,7 @@ class User extends Authenticatable
     use Notifiable, HasRoles;
 
 
-//    use  BaseModelTrait;
+    use  BaseModelTrait;
 
 
     /**

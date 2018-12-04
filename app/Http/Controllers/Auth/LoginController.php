@@ -59,10 +59,8 @@ class LoginController extends Controller
         );
 
         $user = User::where("email", $request->email)->where('status','active')->first();
-
         if ($user) {
             if (Hash::check($request->password, $user->password)) {
-
                 if ($user->is_active == 1 && Auth::attempt($credentials)) {
                     Session::flash('flash_success',"Login Success !!");
 					if(Auth::user()->hasRole('SU')){

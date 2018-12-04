@@ -1,26 +1,25 @@
 <?php
-Route::auth();
+//Route::auth();
 
-Route::get('logout', function(){
-        Session::flush();
-        Auth::logout();
-        return Redirect::to("/login");
-    });
+//Route::get('logout', function(){
+//        Session::flush();
+//        Auth::logout();
+//        return Redirect::to("/login");
+//    });
 Route::get('/', 'HomeController@index')->name('home');
-$this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
-$this->post('login', 'Auth\LoginController@authenticate');
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@authenticate');
 Route::get('/seed/create', 'SeedController@create');
-Route::post('/seed/create', 'SeedController@seedupdate');
+Route::post('/seed/create', 'SeedController@store');
 Route::get('/seed/supplierseed/{id}', 'SeedController@supplierseed');
 Route::get('/seed', 'SeedController@index');
 Route::post('/seed', 'SeedController@seedupdate');
-
-
-//// Authentication Routes...
-//$this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
-//$this->post('login', 'Auth\LoginController@authenticate');
-//$this->post('logout', 'Auth\LoginController@logout')->name('logout');
 //
+//$this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
+//$this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+//$this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
+//$this->post('password/reset', 'Auth\ResetPasswordController@reset');
+
 //// Registration Routes...
 //$this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 //$this->post('register', 'Auth\RegisterController@register');

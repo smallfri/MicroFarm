@@ -257,7 +257,7 @@
                                                     <table id="data-table-responsive"
                                                        class="table table-striped table-bordered dataTable no-footer dtr-inline"
                                                        role="grid" aria-describedby="data-table-responsive_info"
-                                                       style="width: 812px;">
+                                                       style="">
                                                     <thead>
                                                     <tr role="row">
                                                         <th class="sorting_asc" tabindex="0"

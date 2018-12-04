@@ -25,19 +25,21 @@ foreach ($userseedlist as $userseeds)
                 <div class="col-md-9">
                     {!!Form::select('supplier',$supplier,'null',array('class'=>'form-control','id'=>'supplier'))!!}
                 </div>
-                <button type="submit" form="formSeed" class="btn btn-green">SUBMIT</button>
+                <div class="col-md-3">
+                    <button type="submit" form="formSeed" class="btn btn-green">SUBMIT</button>
 
+                </div>
             </div>
 
         </div>
         <div id="div1">
-            <div class="icheck-list" id="seedlist">
+            <div id="seedlist">
 
 
             </div>
         </div>
         <div id="div2">
-            <div class="icheck-list" id="seedlist2">
+            <div id="seedlist2">
             </div>
         </div>
     </div>
@@ -50,7 +52,7 @@ $userSeeds = '[' . implode(', ', $userSeeds) . ']';
 
 <script type="text/javascript">
     var userSeeds = <?php echo $userSeeds ?>;
-
+alert("HERE");
     $('#supplier').change(function () {
         var supplierID = $(this).val();
 

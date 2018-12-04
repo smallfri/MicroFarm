@@ -41,18 +41,18 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4">
-                            
+
                         </div>
                         <div class="col-md-8">
                             <div class="social_icons">
                                 <ul class="social_logos list-inline">
                                 @if($_setting->facebook)
                                     <li class="fb"><a href="{{$_setting->facebook}}" alt="Facebook icon" title="Facebook" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-                                @endif  
-                                @if($_setting->twitter)  
+                                @endif
+                                @if($_setting->twitter)
                                     <li class="tw"><a href="{{$_setting->twitter}}" alt="Twitter icon" title="Twitter" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
                                 @endif
-                                @if($_setting->googleplus) 
+                                @if($_setting->googleplus)
                                     <li class="gp"><a href="{{$_setting->googleplus}}" alt="Google Plus icon" title="Google Plus" target="_blank"><i class="fab fa-google-plus-square"></i></a></li>
                                 @endif
                                 @if($_setting->youtube)
@@ -69,7 +69,7 @@
 
             <!-- navigation -->
         <!-- end of header -->
- 
+
 </header>
 <div class="header-div">
 
@@ -81,7 +81,7 @@
                     </div><!-- end of logo-div -->
                     <div class="nav-div clearfix">
                         <nav class="navbar clearfix">
-                            
+
                             <!-- Brand and toggle get grouped for better mobile display -->
                             <div class="navbar-header clearfix">
                                 <button type="button" class="navbar-toggle collapsed clearfix" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -91,24 +91,24 @@
                                     <span class="icon-bar"></span>
                                 </button>
                             </div>
-                                    
+
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse clearfix" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav clearfix">
                                     <li><a href="{{url('/')}}" class="active">Home</a></li>
                                     <li><a href="#contactus" class="down-arrow">contact us</a></li>
-                                   
+
                                         @if (Auth::check())
 											<li><a href="{{url('/dashboard')}}" class="singup-link">Dashboard</a></li>
                                             <li><a href="#" class="singup-link" onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">Logout</a></li>
-											
-                                            
+
+
                                         @else
                                             <li><a href="{{url('register')}}">Sign Up</a></li>
                                             <li><a href="{{url('login')}}">Log In</a></li>
                                         @endif
-                                   
+
                                 </ul>
                             </div><!-- /.navbar-collapse -->
                         </nav>
@@ -122,7 +122,7 @@
                        {{ csrf_field() }}
         </form>
      @endif
-	
+
     @yield('content')
 
         <footer>
@@ -139,11 +139,11 @@
                                 <ul class="social_logos-footer list-inline">
                                     @if($_setting->facebook)
                                     <li class="fb"><a href="{{$_setting->facebook}}" alt="Facebook icon" title="Facebook" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-                                @endif  
-                                @if($_setting->twitter)  
+                                @endif
+                                @if($_setting->twitter)
                                     <li class="tw"><a href="{{$_setting->twitter}}" alt="Twitter icon" title="Twitter" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
                                 @endif
-                                @if($_setting->googleplus) 
+                                @if($_setting->googleplus)
                                     <li class="gp"><a href="{{$_setting->googleplus}}" alt="Google Plus icon" title="Google Plus" target="_blank"><i class="fab fa-google-plus-square"></i></a></li>
                                 @endif
                                 @if($_setting->youtube)
@@ -158,16 +158,16 @@
         </footer>
 
     </div><!-- end of content-area -->
-    
+
 
 </div><!-- end of wrapper -->
 
 
-<script src="{{ asset('frontend/js/jquery.min.js')}}" type="text/javascript"></script> 
+<script src="{{ asset('frontend/js/jquery.min.js')}}" type="text/javascript"></script>
 <script src="{{ asset('frontend/js/bootstrap.min.js')}}" type="text/javascript"></script>
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
-<script type="text/javascript" src="{{ asset('frontend/js/custom.js')}}"></script> 
+<script type="text/javascript" src="{{ asset('frontend/js/custom.js')}}"></script>
 
 <script>
     $(".down-arrow").click(function(e) {
@@ -176,18 +176,18 @@
 		$("html, body").animate({
 			scrollTop: $(section).offset().top-0
 		});
-		
+
 	});
 </script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
         <script type="text/javascript">
- 
+
     $("#formContact").validate({
-        
-        rules: { 
-          
+
+        rules: {
+
             name:{
                 required:true
             },
@@ -201,10 +201,10 @@
             subject:{
                 required:true
             }
-            
+
         },
         messages: {
-            
+
             name:{
                 required:"Name Is required"
             },
