@@ -52,7 +52,6 @@ $userSeeds = '[' . implode(', ', $userSeeds) . ']';
 
 <script type="text/javascript">
     var userSeeds = <?php echo $userSeeds ?>;
-alert("HERE");
     $('#supplier').change(function () {
         var supplierID = $(this).val();
 

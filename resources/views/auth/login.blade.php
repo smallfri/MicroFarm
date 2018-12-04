@@ -21,7 +21,7 @@
         <div class="login login-with-news-feed">
             <!-- begin news-feed -->
             <div class="news-feed">
-                <div class="news-image" style="background-image: url(/assets/img/login-bg/microGreensLogin.jpg)"></div>
+                <div class="news-image" style="background-image: url(/assets/img/login-bg/microGreensLogin.png)"></div>
                 <div class="news-caption">
                     <h4 class="caption-title"><b>Micro</b> Farm Manager</h4>
                     <p>
@@ -56,10 +56,9 @@
                             @endif
                         </div>
                         <div class="form-group m-b-15">
-                            <input type="password" class="form-control form-control-lg" placeholder="Password" required />
+                            <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" required />
                         </div>
                         <div class="checkbox checkbox-css m-b-30">
-                            <input type="password" name="password" id="password" class="form-control" placeholder="Password">
                             @if ($errors->has('password'))
                                 <span class="help-block">
                                 <strong>{{ $errors->first('password') }}</strong>

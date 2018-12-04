@@ -40,7 +40,7 @@ class LoginController extends Controller
      * @return void
      */
 
-	
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
@@ -52,16 +52,20 @@ class LoginController extends Controller
     }
     public function authenticate(Request $request)
     {
-		$credentials = array(
+        $credentials = array(
             'email' => $request->get('email'),
             'password' => $request->get('password'),
             'is_active' => 1
         );
 
         $user = User::where("email", $request->email)->where('status','active')->first();
+
         if ($user) {
-            if (Hash::check($request->password, $user->password)) {
+
+            if (Hash::check($request->get('password'), $user->password)) {
+
                 if ($user->is_active == 1 && Auth::attempt($credentials)) {
+
                     Session::flash('flash_success',"Login Success !!");
 					if(Auth::user()->hasRole('SU')){
 						return redirect('/seed/create');

@@ -142,6 +142,7 @@ class RegisterController extends Controller
     {
         return view('auth.passwords.resendmail');
     }
+
     public function resendActivationEmailToUser(Request $request)
     {
 
@@ -159,6 +160,12 @@ class RegisterController extends Controller
         }
       
     }
-     
-	
+
+    public function showRegister()
+    {
+        dd("HERE");
+        return view('auth.register');
+    }
+
+
 }

@@ -21,7 +21,7 @@
         <div class="login login-with-news-feed">
             <!-- begin news-feed -->
             <div class="news-feed">
-                <div class="news-image" style="background-image: url(/assets/img/login-bg/microGreensLogin.jpg)"></div>
+                <div class="news-image" style="background-image: url(/assets/img/login-bg/microGreensLogin.png)"></div>
                 <div class="news-caption">
                     <h4 class="caption-title"><b>Micro</b> Farm Manager</h4>
                     <p>
