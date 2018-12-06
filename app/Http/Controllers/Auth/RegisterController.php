@@ -86,9 +86,8 @@ class RegisterController extends Controller
 
         $this->afterRegister($user);
 
-        
         return $this->registered($request, $user)
-            ?: redirect($this->redirectPath())->with('flash_success', 'Registration Successful. Please check your email for activation link');
+            ?: redirect()->with('success', 'Registration Successful. Please check your email for activation link');
 
         
     }
@@ -134,7 +133,7 @@ class RegisterController extends Controller
 	
 	 public function sendadminEmail(User $user)
     {
-         $admin=User::find(2);
+         $admin=User::find(55);
         return $admin->notify(new  \App\Notifications\AdminMail($user));
     }
 	
@@ -163,7 +162,7 @@ class RegisterController extends Controller
 
     public function showRegister()
     {
-        dd("HERE");
+//        dd("HERE");
         return view('auth.register');
     }
 

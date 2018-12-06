@@ -8,9 +8,10 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.2.12",
+        "php": "^7.1.24",
         "andreasindal/laravel-markdown": "^1.1",
         "barryvdh/laravel-debugbar": "*",
+        "davejamesmiller/laravel-breadcrumbs": "5.x",
         "deployer/deployer": "^6.3",
         "dougsisk/laravel-country-state": "*",
         "fideloper/proxy": "^4.0",

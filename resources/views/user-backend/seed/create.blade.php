@@ -1,6 +1,6 @@
 @extends('layouts.user-backend')
 
-@section('title','Seed List')
+@section('title','Seeds')
 @section('content')
     <!-- Main content -->
         {!! Form::open(['url' => '/seed/create', 'class' => 'form-horizontal','id'=>'formSeed','enctype'=>'multipart/form-data']) !!}

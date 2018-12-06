@@ -1,8 +1,17 @@
 @extends('layouts.user-backend')
 
-@section('title','Seed List')
+@section('title','Seeds')
 
 @section('content')
+    <ol class="breadcrumb pull-right">
+        <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+        <li class="breadcrumb-item"><a href="javascript:;">Page Options</a></li>
+        <li class="breadcrumb-item active">Blank Page</li>
+    </ol>
+    <!-- end breadcrumb -->
+    <!-- begin page-header -->
+    <h1 class="page-header">@yield('title','Seeds')</h1>
+
     <div style="max-width:800px">
     <div class="panel panel-default panel-with-tabs" data-sortable-id="ui-unlimited-tabs-2">
         <!-- begin panel-heading -->

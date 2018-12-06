@@ -42,7 +42,7 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => 'localhost',
+            'host' => env('DB_HOST', 'localhost'),
             'port' => 3306,
             'database' => env('DB_DATABASE', ''),
             'username' => env('DB_USERNAME', ''),
@@ -54,6 +54,14 @@ return [
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
+            'modes'       => [
+                'ONLY_FULL_GROUP_BY',
+                'STRICT_TRANS_TABLES',
+                'NO_ZERO_IN_DATE',
+                'NO_ZERO_DATE',
+                'ERROR_FOR_DIVISION_BY_ZERO',
+                'NO_ENGINE_SUBSTITUTION',
+            ],
         ]
 //
 //        'pgsql' => [

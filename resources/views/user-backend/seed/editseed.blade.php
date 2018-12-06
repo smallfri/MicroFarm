@@ -1,6 +1,6 @@
 @extends('layouts.user-backend')
 
-@section('title','Seed List')
+@section('title','Seeds')
 @section('content')
 <!-- Main content -->
 				<div class="content-wrapper">
@@ -27,7 +27,6 @@
 				<!-- Content area -->
 				<div class="content">
 
-				
 					<!-- Form horizontal -->
 					<div class="panel panel-flat">
 						<div class="panel-heading">

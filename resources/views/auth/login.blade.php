@@ -4,7 +4,9 @@
     <title>@yield('title','Login') | {{ config('app.name') }}</title>
     @include('include.user-backend.cssfilesColor')
 </head>
-
+<div style="margin:20px;z-index:6;">
+@include('flash-message')
+</div>
 <body class="mini-sidebar">
 <!-- begin page-cover -->
 <div class="page-cover"></div>
@@ -14,9 +16,9 @@
 <div id="page-loader" class="fade show"><span class="spinner"></span></div>
 <!-- end #page-loader -->
 
+
 <!-- begin #page-container -->
 <div id="page-container" class="fade page-sidebar-fixed page-header-fixed">
-    @include('include.user-backend.topnavColor')
     <div class="container-fluid">
         <div class="login login-with-news-feed">
             <!-- begin news-feed -->

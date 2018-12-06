@@ -1,6 +1,4 @@
 <?php
-//Route::auth();
-
 Route::get('logout', function(){
         Session::flush();
         Auth::logout();
@@ -14,6 +12,12 @@ Route::post('/seed/create', 'SeedController@store');
 Route::get('/seed/supplierseed/{id}', 'SeedController@supplierseed');
 Route::get('/seed', 'SeedController@index');
 Route::post('/seed', 'SeedController@seedupdate');
+
+
+Auth::routes();
+Route::get('/activate-account/{token}', 'Auth\RegisterController@activateAccount');
+Route::get('/resend-activation', 'Auth\RegisterController@resendActivationEmail');
+Route::post('/resend-activation', 'Auth\RegisterController@resendActivationEmailToUser');
 
 // Registration Routes...
 Route::get('register', 'Auth\RegisterController@showRegister')->name('register');

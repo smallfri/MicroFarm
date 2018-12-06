@@ -16,7 +16,7 @@ foreach ($userseedlist as $userseeds)
             <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i
                         class="fa fa-times"></i></a>
         </div>
-        <h4 class="panel-title">Seed List</h4>
+        <h4 class="panel-title">Seeds</h4>
     </div>
     <div class="panel-body">
         <div class="input-group" id="divinput">

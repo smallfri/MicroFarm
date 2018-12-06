@@ -5,7 +5,7 @@
     @include('include.user-backend.cssfilesColor')
     <script src="/assets/plugins/jquery/jquery-3.3.1.min.js"></script>
 </head>
-
+<?php use Illuminate\Contracts\Session\Session;?>
 <body class="mini-sidebar">
 <!-- begin page-cover -->
 <div class="page-cover"></div>
