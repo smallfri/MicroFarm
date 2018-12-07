@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+return;
 trait HasRoles
 {
     /**
@@ -9,10 +9,10 @@ trait HasRoles
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function roles()
-    {
-        return $this->belongsToMany(Role::class);
-    }
+//    public function roles()
+//    {
+//        return $this->belongsToMany(Role::class);
+//    }
 
     /**
      * Assign the given role to the user.
@@ -21,12 +21,12 @@ trait HasRoles
      *
      * @return mixed
      */
-    public function assignRole($role)
-    {
-        return $this->roles()->save(
-            Role::whereName($role)->firstOrFail()
-        );
-    }
+//    public function assignRole($role)
+//    {
+//        return $this->roles()->save(
+//            Role::whereName($role)->firstOrFail()
+//        );
+//    }
 
     /**
      * Determine if the user has the given role.
@@ -35,14 +35,14 @@ trait HasRoles
      *
      * @return boolean
      */
-    public function hasRole($role)
-    {
-        if (is_string($role)) {
-            return $this->roles->contains('name', $role);
-        }
-
-        return !!$role->intersect($this->roles)->count();
-    }
+//    public function hasRole($role)
+//    {
+//        if (is_string($role)) {
+//            return $this->roles->contains('name', $role);
+//        }
+//
+//        return !!$role->intersect($this->roles)->count();
+//    }
 
     /**
      * Determine if the user may perform the given permission.
@@ -51,10 +51,10 @@ trait HasRoles
      *
      * @return boolean
      */
-    public function hasPermission(Permission $permission)
-    {
-        return $this->hasRole($permission->roles);
-    }
+//    public function hasPermission(Permission $permission)
+//    {
+//        return $this->hasRole($permission->roles);
+//    }
 }
 
 

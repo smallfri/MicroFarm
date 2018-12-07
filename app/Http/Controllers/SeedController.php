@@ -108,7 +108,6 @@ class SeedController extends Controller
     public function store(Request $request)
     {
 
-        dd($request);
         $rules = [
             'variety_id' => 'required|min:1'
         ];

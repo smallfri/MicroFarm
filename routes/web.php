@@ -1,4 +1,9 @@
 <?php
+
+
+
+
+
 Route::get('logout', function(){
         Session::flush();
         Auth::logout();
@@ -22,3 +27,8 @@ Route::post('/resend-activation', 'Auth\RegisterController@resendActivationEmail
 // Registration Routes...
 Route::get('register', 'Auth\RegisterController@showRegister')->name('register');
 Route::post('register', 'Auth\RegisterController@register');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

@@ -1,5 +1,5 @@
 <?php
-
+return;
 use Illuminate\Http\Request;
 
 /*

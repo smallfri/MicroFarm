@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\HasRoles;
 use App\Traits\BaseModelTrait;
 use DB;
-class User extends Authenticatable
+class User extends \TCG\Voyager\Models\User
 {
 
 
@@ -38,18 +38,18 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token', 'created_at', 'updated_at', 'created_by'
     ];
-
-    public function role()
-    {
-        return $this->belongsToMany('App\Role','role_user','user_id','role_id');
-    }
-
-
-    public function checkrole()
-    {
-        return $this->belongsToMany('App\Role','role_user','user_id','role_id');
-    }
-    
+//
+//    public function role()
+//    {
+//        return $this->belongsToMany('App\Role','role_user','user_id','role_id');
+//    }
+//
+//
+//    public function checkrole()
+//    {
+//        return $this->belongsToMany('App\Role','role_user','user_id','role_id');
+//    }
+//
     public function session(){
         return $this->hasOne('App\Session','user_id','id');
     }
