@@ -1,5 +1,4 @@
-@extends('layouts.app')
-@include('include.user-backend.cssfilesColor')
+@extends('layouts.application')
 @section('content')
 <div class="container">
     <div class="row">

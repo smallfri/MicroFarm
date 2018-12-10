@@ -1,9 +1,0 @@
-Date,"Transaction Id",Supplier,Type,"Original Value","Net Value",Cost
-2017-11-11,2,supplier,Anticipation,120000,120000,0
-2017-11-11,2,supplier,Cession,145632,145630,2
-2017-11-21,8,supplier,Anticipation,200000,200000,0
-November-2017,,,,465632,199998,2
-2017-12-21,9,supplier,Cession,412000,412000,0
-December-2017,,,,412000,412000,2
-2018-01-21,10,supplier,Cession,145632,145630,2
-January-2018,,,,145632,145630,2

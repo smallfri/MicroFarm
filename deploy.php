@@ -14,32 +14,22 @@ set('git_tty', true);
 
 // Shared files/dirs between deploys 
 add('shared_files', []);
-add('shared_dirs', ['nova']);
+add('shared_dirs', []);
 
 // Writable dirs by web server 
-add('writable_dirs', ['nova']);
-
-task('build', '
-    php artisan nova:user
-    echo "Build done";
-');
-
-
-
-
-
+add('writable_dirs', []);
 
 // Hosts
-host('ec2-35-175-208-140.compute-1.amazonaws.com')
+host('ubuntu@ec2-54-144-81-208.compute-1.amazonaws.com')
     ->user('ubuntu')
     ->port(22)
     ->configFile('~/.ssh/config')
-    ->identityFile('~/.ssh/appmicrokey.pem')
+    ->identityFile('~/.ssh/microfarmmanager_lemp.pem')
     ->forwardAgent(true)
     ->multiplexing(true)
     ->addSshOption('UserKnownHostsFile', '/dev/null')
     ->addSshOption('StrictHostKeyChecking', 'no')
-    ->set('deploy_path', '~/var/www/html/app/public');
+    ->set('deploy_path', '~/var/www/microfarm/');
 
 // Tasks
 

@@ -77,31 +77,6 @@ class RegisterController extends Controller
         ]);
 
     }
-    public function register(Request $request)
-    {
-        $this->validator($request->all())->validate();
-        $user = $this->create($request->all());
-
-        event(new Registered($user));
-
-        $this->afterRegister($user);
-
-        return $this->registered($request, $user)
-            ?: redirect()->with('success', 'Registration Successful. Please check your email for activation link');
-
-        
-    }
-    public function afterRegister($user)
-    {
-        $this->sendEmail($user);
-		$this->sendadminEmail($user);
-    }
-    
-     /**
-     * Send Email Helper
-     *
-     * @param User $user
-     */
     public function sendEmail(User $user)
     {
       
