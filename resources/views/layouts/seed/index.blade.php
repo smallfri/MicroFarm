@@ -68,7 +68,7 @@
                     Growing Summary
                 </a>
             </div>
-            <div id="accordion-1" class="collapse" data-parent="#accordion" style="padding:20px;">
+            <div id="accordion-1" class="collapse show" data-parent="#accordion" style="padding:20px;">
             <div class="card-datatable table-responsive">
                 <table class="table" id="summary-table">
                     <thead>
