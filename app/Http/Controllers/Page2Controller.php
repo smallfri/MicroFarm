@@ -9,6 +9,6 @@ class Page2Controller extends Controller
 {
     public function __invoke()
     {
-        return view('page-2', ['title' => 'Page 2']);
+        return view('layouts.seed.index', ['title' => 'Seeds']);
     }
 }

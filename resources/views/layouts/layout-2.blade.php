@@ -22,9 +22,9 @@
                 </div>
                 <!-- / Content -->
 
-                <!-- Layout footer -->
                 @include('layouts.includes.layout-footer')
-            </div>
+
+            </div> <!-- Layout footer -->
             <!-- Layout content -->
 
         </div>

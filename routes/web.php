@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'HomeController')->name('home');
-Route::get('/page-2', 'Page2Controller')->name('page-2');
+Route::get('/seed', 'Page2Controller')->name('seed');
 
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
@@ -35,3 +35,10 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
 Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
 Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+
+// Mail Routes
+Route::get('/seed/create', 'SeedController@create')->name('seed/create');
+Route::post('/seed/create', 'SeedController@store');
+Route::get('/seed/supplierseed/{id}', 'SeedController@supplierseed');
+Route::get('/seed', 'SeedController@index')->name('seed');
+Route::post('/seed', 'SeedController@seedupdate');
