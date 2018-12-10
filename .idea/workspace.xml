@@ -2,245 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5850e08c-3697-4661-a4d6-80c2734f0c6c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Model/Contact.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Days.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/GrowNotes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/HasRoles.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Permission.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Role.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/SeedSupplier.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Seeds.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/SeedsDetail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/SeedsVariety.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Setting.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Supplier.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Trait.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Userseed.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/UserseedDetail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Variety.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/seed/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/seed/form.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/seed/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/appwork.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/appwork.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Page2Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Page2Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/cache/packages.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/packages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/cache/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/css/appwork.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/css/appwork.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/css/colors.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/css/colors.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/css/pages/account.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/css/pages/account.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/css/pages/authentication.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/css/pages/authentication.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/css/pages/chat.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/css/pages/chat.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/css/pages/clients.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/css/pages/clients.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/css/pages/contacts.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/css/pages/contacts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/css/pages/file-manager.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/css/pages/file-manager.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/css/pages/messages.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/css/pages/messages.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/css/pages/products.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/css/pages/products.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/css/pages/projects.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/css/pages/projects.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/css/pages/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/css/pages/search.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/css/pages/tasks.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/css/pages/tasks.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/css/pages/tickets.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/css/pages/tickets.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/css/pages/users.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/css/pages/users.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/css/theme-corporate.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/css/theme-corporate.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/css/uikit.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/css/uikit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/js/dropdown-hover.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/js/dropdown-hover.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/js/layout-helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/js/layout-helpers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/js/material-ripple.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/js/material-ripple.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/js/mega-dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/js/mega-dropdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/js/pace.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/js/pace.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/js/sidenav.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/js/sidenav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/js/theme-settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/js/theme-settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/animate-css/animate.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/animate-css/animate.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/autosize/autosize.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/autosize/autosize.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/block-ui/block-ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/block-ui/block-ui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/blueimp-gallery/gallery-fullscreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/blueimp-gallery/gallery-fullscreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/blueimp-gallery/gallery-indicator.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/blueimp-gallery/gallery-indicator.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/blueimp-gallery/gallery-indicator.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/blueimp-gallery/gallery-indicator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/blueimp-gallery/gallery-video.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/blueimp-gallery/gallery-video.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/blueimp-gallery/gallery-video.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/blueimp-gallery/gallery-video.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/blueimp-gallery/gallery-vimeo.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/blueimp-gallery/gallery-vimeo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/blueimp-gallery/gallery-youtube.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/blueimp-gallery/gallery-youtube.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/blueimp-gallery/gallery.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/blueimp-gallery/gallery.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/blueimp-gallery/gallery.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/blueimp-gallery/gallery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/blueimp-gallery/jquery.gallery.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/blueimp-gallery/jquery.gallery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootbox/bootbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootbox/bootbox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-duallistbox/bootstrap-duallistbox.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-duallistbox/bootstrap-duallistbox.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-duallistbox/bootstrap-duallistbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-duallistbox/bootstrap-duallistbox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-markdown/bootstrap-markdown.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-markdown/bootstrap-markdown.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-markdown/bootstrap-markdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-markdown/bootstrap-markdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-material-datetimepicker/bootstrap-material-datetimepicker.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-material-datetimepicker/bootstrap-material-datetimepicker.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-material-datetimepicker/bootstrap-material-datetimepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-material-datetimepicker/bootstrap-material-datetimepicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-maxlength/bootstrap-maxlength.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-maxlength/bootstrap-maxlength.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-maxlength/bootstrap-maxlength.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-maxlength/bootstrap-maxlength.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-menu/bootstrap-menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-menu/bootstrap-menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-multiselect/bootstrap-multiselect.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-multiselect/bootstrap-multiselect.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-multiselect/bootstrap-multiselect.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-multiselect/bootstrap-multiselect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-select/bootstrap-select.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-select/bootstrap-select.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-select/bootstrap-select.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-select/bootstrap-select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-slider/bootstrap-slider.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-slider/bootstrap-slider.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-slider/bootstrap-slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-slider/bootstrap-slider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-sortable/bootstrap-sortable.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-sortable/bootstrap-sortable.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-sortable/bootstrap-sortable.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-sortable/bootstrap-sortable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-sweetalert/bootstrap-sweetalert.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-sweetalert/bootstrap-sweetalert.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-sweetalert/bootstrap-sweetalert.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-sweetalert/bootstrap-sweetalert.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/bootstrap-table.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/bootstrap-table.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/bootstrap-table.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/bootstrap-table.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/accent-neutralise/accent-neutralise.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/accent-neutralise/accent-neutralise.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/auto-refresh/auto-refresh.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/auto-refresh/auto-refresh.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/auto-refresh/auto-refresh.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/auto-refresh/auto-refresh.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/click-edit-row/click-edit-row.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/click-edit-row/click-edit-row.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/click-edit-row/click-edit-row.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/click-edit-row/click-edit-row.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/cookie/cookie.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/cookie/cookie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/copy-rows/copy-rows.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/copy-rows/copy-rows.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/editable/editable.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/editable/editable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/export/export.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/export/export.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/filter-control/filter-control.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/filter-control/filter-control.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/filter-control/filter-control.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/filter-control/filter-control.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/filter/filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/filter/filter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/flat-json/flat-json.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/flat-json/flat-json.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/group-by-v2/group-by-v2.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/group-by-v2/group-by-v2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/group-by-v2/group-by-v2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/group-by-v2/group-by-v2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/group-by/group-by.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/group-by/group-by.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/group-by/group-by.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/group-by/group-by.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/key-events/key-events.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/key-events/key-events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/mobile/mobile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/mobile/mobile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/multi-column-toggle/multi-column-toggle.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/multi-column-toggle/multi-column-toggle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/multiple-search/multiple-search.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/multiple-search/multiple-search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/multiple-selection-row/multiple-selection-row.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/multiple-selection-row/multiple-selection-row.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/multiple-selection-row/multiple-selection-row.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/multiple-selection-row/multiple-selection-row.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/multiple-sort/multiple-sort.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/multiple-sort/multiple-sort.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/natural-sorting/natural-sorting.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/natural-sorting/natural-sorting.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/print/print.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/print/print.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/reorder-columns/reorder-columns.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/reorder-columns/reorder-columns.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/reorder-rows/reorder-rows.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/reorder-rows/reorder-rows.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/reorder-rows/reorder-rows.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/reorder-rows/reorder-rows.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/resizable/resizable.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/resizable/resizable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/select2-filter/select2-filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/select2-filter/select2-filter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/sticky-header/sticky-header.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/sticky-header/sticky-header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/sticky-header/sticky-header.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/sticky-header/sticky-header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/toolbar/toolbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/toolbar/toolbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/tree-column/tree-column.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/tree-column/tree-column.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/tree-column/tree-column.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-table/extensions/tree-column/tree-column.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-tagsinput/bootstrap-tagsinput.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-tagsinput/bootstrap-tagsinput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-tour/bootstrap-tour.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-tour/bootstrap-tour.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-tour/bootstrap-tour.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/bootstrap-tour/bootstrap-tour.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/c3/c3.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/c3/c3.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/c3/c3.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/c3/c3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/chartist/chartist.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/chartist/chartist.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/chartist/chartist.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/chartist/chartist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/chartjs/chartjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/chartjs/chartjs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/clipboard/clipboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/clipboard/clipboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/cropper/cropper.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/cropper/cropper.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/cropper/cropper.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/cropper/cropper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/d3/d3.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/d3/d3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/datatables/datatables.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/datatables/datatables.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/datatables/datatables.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/datatables/datatables.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/dragula/dragula.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/dragula/dragula.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/dragula/dragula.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/dragula/dragula.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/dropzone/dropzone.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/dropzone/dropzone.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/dropzone/dropzone.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/dropzone/dropzone.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/eve/eve.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/eve/eve.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/flot/flot.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/flot/flot.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/flot/flot.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/flot/flot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/flow-js/flow.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/flow-js/flow.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/flow-js/flow.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/flow-js/flow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/fullcalendar/fullcalendar.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/fullcalendar/fullcalendar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/fullcalendar/fullcalendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/fullcalendar/fullcalendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/fullcalendar/locale-all.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/fullcalendar/locale-all.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/gmaps/gmaps.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/gmaps/gmaps.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/growl/growl.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/growl/growl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/growl/growl.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/growl/growl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/idletimer/idletimer.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/idletimer/idletimer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/jstree/jstree.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/jstree/jstree.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/jstree/themes/default-dark/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/jstree/themes/default-dark/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/jstree/themes/default/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/jstree/themes/default/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/knob/knob.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/knob/knob.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/ladda/ladda.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/ladda/ladda.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/ladda/ladda.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/ladda/ladda.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/mapael/mapael.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/mapael/mapael.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/mapael/maps/france_departments.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/mapael/maps/france_departments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/mapael/maps/usa_states.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/mapael/maps/usa_states.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/mapael/maps/world_countries.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/mapael/maps/world_countries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/mapael/maps/world_countries_mercator.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/mapael/maps/world_countries_mercator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/mapael/maps/world_countries_miller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/mapael/maps/world_countries_miller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/markdown/markdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/markdown/markdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/masonry/masonry.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/masonry/masonry.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/minicolors/minicolors.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/minicolors/minicolors.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/minicolors/minicolors.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/minicolors/minicolors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/moment/moment.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/moment/moment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/morris/morris.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/morris/morris.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/morris/morris.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/morris/morris.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/nestable/nestable.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/nestable/nestable.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/nestable/nestable.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/nestable/nestable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/nouislider/nouislider.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/nouislider/nouislider.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/nouislider/nouislider.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/nouislider/nouislider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/numeral/numeral.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/numeral/numeral.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/photoswipe/photoswipe.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/photoswipe/photoswipe.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/photoswipe/photoswipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/photoswipe/photoswipe.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/plyr/plyr.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/plyr/plyr.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/plyr/plyr.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/plyr/plyr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/popper/popper.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/popper/popper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/pwstrength-bootstrap/pwstrength-bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/pwstrength-bootstrap/pwstrength-bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/quill/editor.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/quill/editor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/quill/quill.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/quill/quill.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/quill/typography.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/quill/typography.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/raphael/raphael.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/raphael/raphael.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/select2/select2.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/select2/select2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/select2/select2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/select2/select2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/smartwizard/smartwizard.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/smartwizard/smartwizard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/smartwizard/smartwizard.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/smartwizard/smartwizard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/sortablejs/sortable.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/sortablejs/sortable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/sparkline/sparkline.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/sparkline/sparkline.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/spin/spin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/spin/spin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/spinkit/spinkit.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/spinkit/spinkit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/swiper/swiper.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/swiper/swiper.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/swiper/swiper.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/swiper/swiper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/tableexport/tableexport.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/tableexport/tableexport.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/timepicker/timepicker.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/timepicker/timepicker.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/timepicker/timepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/timepicker/timepicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/toastr/toastr.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/toastr/toastr.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/toastr/toastr.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/toastr/toastr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/typeahead-js/typeahead.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/typeahead-js/typeahead.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/typeahead-js/typeahead.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/typeahead-js/typeahead.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/validate/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/validate/validate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/vanilla-text-mask/text-mask-addons.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/vanilla-text-mask/text-mask-addons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/vanilla-text-mask/vanilla-text-mask.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/vanilla-text-mask/vanilla-text-mask.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/vegas/vegas.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/vegas/vegas.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/vendor/libs/vegas/vegas.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/vendor/libs/vegas/vegas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SeedController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SeedController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/application.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/application.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/includes/layout-navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/includes/layout-navbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/includes/layout-sidenav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/includes/layout-sidenav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/layout-2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/layout-2.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/sWUHdn4sqXhIZYGKYqlap0jEI1WbfvB7pOLBm3T1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/v0BRSzgks7BdK2ZD2W4IYjg6FZjfOV7X49Hu9sic" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/189e90d8cd722a077885423eaff777a05426cf2c.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/189e90d8cd722a077885423eaff777a05426cf2c.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/53ffffeb3fc6712c670006c8d39eb1b773840ad5.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/53ffffeb3fc6712c670006c8d39eb1b773840ad5.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/seed/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/seed/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/views/8d698664b119995e60a0cc89408c1e2eeff97994.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/8d698664b119995e60a0cc89408c1e2eeff97994.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/edcf97a0bb61b2f3e0642a9d65d44183ba259da1.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/edcf97a0bb61b2f3e0642a9d65d44183ba259da1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/logs/laravel-2018-12-09.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel-2018-12-09.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/9670b37872cb56bb8d2263f7968dd23dc50338bd.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/9670b37872cb56bb8d2263f7968dd23dc50338bd.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel-2018-12-10.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel-2018-12-10.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -265,22 +33,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/application.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="71" selection-start-line="8" selection-start-column="71" selection-end-line="8" selection-end-column="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/css/default/style.css">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/css/default/style.min.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="59" selection-start-line="5" selection-start-column="59" selection-end-line="5" selection-end-column="59" />
+            <state relative-caret-position="780">
+              <caret line="60" column="29" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -309,11 +63,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/seed/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+            <state relative-caret-position="249">
+              <caret line="68" column="81" selection-start-line="68" selection-start-column="81" selection-end-line="68" selection-end-column="81" />
               <folding>
-                <element signature="e#830#851#0#HTML" expanded="true" />
-                <element signature="e#15264#15287#0#HTML" expanded="true" />
+                <element signature="e#290#2033#0#HTML" />
+                <element signature="e#2727#2752#0#HTML" expanded="true" />
+                <element signature="e#6939#9802#0#HTML" />
+                <element signature="e#18088#18111#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/appwork-v1_2_1 4/html-demo/tables_bootstrap-sortable.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="1194" column="10" selection-start-line="1194" selection-start-column="10" selection-end-line="1269" />
+              <folding>
+                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#51694#51700#0" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#2;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#3;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -322,11 +96,25 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SeedController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="68" column="107" selection-start-line="68" selection-start-column="107" selection-end-line="68" selection-end-column="107" />
+            <state relative-caret-position="-597">
+              <caret line="166" selection-end-line="220" selection-end-column="1" />
               <folding>
                 <element signature="e#40#67#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="412">
+              <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -336,18 +124,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="95">
               <caret line="5" column="70" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/seed/form.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-              <folding>
-                <element signature="n#script#0;n#!!top" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -442,13 +218,14 @@
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$USER_HOME$/Downloads/appwork-v1_2_1/html-demo/ui_accordion.html" />
         <option value="$PROJECT_DIR$/resources/views/layouts/layout-2.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/application.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/includes/layout-navbar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/seed/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/seed/form.blade.php" />
         <option value="$PROJECT_DIR$/public/assets/css/default/style.min.css" />
         <option value="$PROJECT_DIR$/resources/views/layouts/includes/layout-sidenav.blade.php" />
+        <option value="$USER_HOME$/Downloads/appwork-v1_2_1 4/html-demo/tables_bootstrap-sortable.html" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/application.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/seed/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SeedController.php" />
       </list>
@@ -562,10 +339,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="174" />
+    <option name="x" value="356" />
     <option name="y" value="23" />
-    <option name="width" value="2674" />
-    <option name="height" value="1469" />
+    <option name="width" value="1607" />
+    <option name="height" value="972" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -599,6 +376,14 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Http" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appwork" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appwork" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Auth" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="appwork" type="b2602c69:ProjectViewProjectNode" />
@@ -730,25 +515,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1544283445288</updated>
-      <workItem from="1544283446580" duration="40423000" />
+      <workItem from="1544283446580" duration="45688000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40423000" />
+    <option name="totallyTimeSpent" value="45688000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="174" y="23" width="2674" height="1469" extended-state="0" />
+    <frame x="356" y="23" width="1607" height="972" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10600304" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17827477" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" sideWeight="0.49921995" weight="0.32954547" />
-      <window_info anchor="bottom" id="Terminal" sideWeight="0.49921995" visible="true" weight="0.21060276" />
+      <window_info anchor="bottom" id="Terminal" sideWeight="0.49921995" visible="true" weight="0.32954547" />
       <window_info anchor="bottom" id="Event Log" sideWeight="0.50078005" side_tool="true" weight="0.32954547" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -768,20 +553,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_08_214738_create_subscriptions_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Exceptions/Handler.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
@@ -976,13 +747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/tabs-unlimited.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="429">
@@ -1061,13 +825,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/seed/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="70" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/css/default/style.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1075,13 +832,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="59" selection-start-line="5" selection-start-column="59" selection-end-line="5" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/application.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="71" selection-start-line="8" selection-start-column="71" selection-end-line="8" selection-end-column="71" />
         </state>
       </provider>
     </entry>
@@ -1109,21 +859,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/seed/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="70" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/appwork-v1_2_1 4/html-demo/tables_bootstrap-sortable.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="1194" column="10" selection-start-line="1194" selection-start-column="10" selection-end-line="1269" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#51694#51700#0" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#3;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/application.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="60" column="29" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/seed/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        <state relative-caret-position="249">
+          <caret line="68" column="81" selection-start-line="68" selection-start-column="81" selection-end-line="68" selection-end-column="81" />
           <folding>
-            <element signature="e#830#851#0#HTML" expanded="true" />
-            <element signature="e#15264#15287#0#HTML" expanded="true" />
+            <element signature="e#290#2033#0#HTML" />
+            <element signature="e#2727#2752#0#HTML" expanded="true" />
+            <element signature="e#6939#9802#0#HTML" />
+            <element signature="e#18088#18111#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SeedController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="68" column="107" selection-start-line="68" selection-start-column="107" selection-end-line="68" selection-end-column="107" />
+        <state relative-caret-position="-597">
+          <caret line="166" selection-end-line="220" selection-end-column="1" />
           <folding>
             <element signature="e#40#67#0#PHP" expanded="true" />
           </folding>

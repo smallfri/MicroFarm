@@ -18,6 +18,10 @@ class SeedController extends Controller
 {
     public function index(Request $request)
     {
+        if (!Auth::check()) {
+            return redirect('login');
+        }
+
         $user_id = Auth::user()->id;
         $days = Days::pluck('name', 'id');
 
@@ -47,14 +51,15 @@ class SeedController extends Controller
                 'userseeds_detail.seeds_measurement',
                 DB::raw('CONCAT(seeds.name," ",seeds_variety.name) as seed_name'))
                 ->where('userseed.user_id', $user_id)
-                ->join('seeds_variety','seeds_variety.id','=','userseed.variety_id')
-                ->join('seeds', 'seeds.id','=','seeds_variety.seed_id')
-                ->leftJoin('userseeds_detail', 'userseeds_detail.variety_id','=','seeds_variety.id')
+                ->join('seeds_variety', 'seeds_variety.id', '=', 'userseed.variety_id')
+                ->join('seeds', 'seeds.id', '=', 'seeds_variety.seed_id')
+                ->leftJoin('userseeds_detail', 'userseeds_detail.variety_id', '=', 'seeds_variety.id')
+                ->orderBy('maturity', 'ASC')
                 ->get();
 
 //            dd($userseedlist);
 
-            $suppliers = Supplier::pluck('name','id')->prepend('Select One', '0');
+            $suppliers = Supplier::pluck('name', 'id')->prepend('Select One', '0');
 
             $notes = GrowNotes::select('grow_notes.*', DB::raw("DATEDIFF('" . date('Y-m-d') . "' ,DATE(created_at)) AS days"))->where('user_id', $user_id)->where('variety_id', $userfirstseed->variety_id)->orderby('id', 'desc')->get();
 
@@ -65,21 +70,25 @@ class SeedController extends Controller
 
     public function create(Request $request)
     {
+        if (!Auth::check()) {
+            return redirect('login');
+        }
         $user_id = Auth::user()->id;
-        $userseedlist= Userseed::select('variety_id')->where('user_id', $user_id)->orderBy('name','DESC')->get();
+        $userseedlist = Userseed::select('variety_id')->where('user_id', $user_id)->get();
 
         $supplier = Supplier::pluck('name', 'id')->prepend('Select One', '0');
-        $seed = Seeds::select('seeds_variety.id', 'seeds.name', 'seeds_variety.name as vname')->where('status', 'active')->join('seeds_variety','seeds_variety.seed_id','=','seeds.id')->get();
+        $seed = Seeds::select('seeds_variety.id', 'seeds.name', 'seeds_variety.name as vname')->where('status', 'active')->join('seeds_variety', 'seeds_variety.seed_id', '=', 'seeds.id')->get();
 
-        $count =  count($seed);
+        $count = count($seed);
 
-//        dd($seed);
-
-        return view('layouts.seed.create', compact('seed','userseedlist', 'supplier', 'count'));
+        return view('layouts.seed.create', compact('seed', 'userseedlist', 'supplier', 'count'));
     }
 
     public function supplierseed(Request $request, $id)
     {
+        if (!Auth::check()) {
+            return redirect('login');
+        }
         $user_id = Auth::user()->id;
         $supplier = Supplier::where('status', 'active')->pluck('name', 'id')->prepend('All', '0');
         if ($id > 0) {
@@ -90,7 +99,7 @@ class SeedController extends Controller
                 'seeds_variety.name as vname',
                 'seeds_variety.supplier_id as supplier_id'
             )->where([['status', '=', 'active'], ['supplier_id', '=', $id]])
-                ->join('seeds_variety','seeds_variety.seed_id','=','seeds.id')
+                ->join('seeds_variety', 'seeds_variety.seed_id', '=', 'seeds.id')
                 ->get();
 
         } else {
@@ -99,14 +108,17 @@ class SeedController extends Controller
                 'seeds.name',
                 'seeds_variety.name as vname',
                 'seeds_variety.supplier_id as supplier_id'
-            )->where([['status', '=', 'active']])->join('seeds_variety','seeds_variety.seed_id','=','seeds.id')->get();
+            )->where([['status', '=', 'active']])->join('seeds_variety', 'seeds_variety.seed_id', '=', 'seeds.id')->get();
         }
         $allseed = SeedsVariety::with('seedname')->get();
-        return response()->json(['seed' => $seed, 'allseed' => $allseed, 'count'=> count($seed)], 200);
+        return response()->json(['seed' => $seed, 'allseed' => $allseed, 'count' => count($seed)], 200);
     }
 
     public function store(Request $request)
     {
+        if (!Auth::check()) {
+            return redirect('login');
+        }
 
         $rules = [
             'variety_id' => 'required|min:1'
@@ -118,10 +130,10 @@ class SeedController extends Controller
 
         $this->validate($request, $rules, $customMessages);
         $data = $request->all();
-        $user_id=Auth::user()->id;
-        if(!empty($request->input('variety_id'))){
-            $userseed=Userseed::where('user_id',$user_id)->delete();
-            foreach($request->input('variety_id') as $variety_id){
+        $user_id = Auth::user()->id;
+        if (!empty($request->input('variety_id'))) {
+            $userseed = Userseed::where('user_id', $user_id)->delete();
+            foreach ($request->input('variety_id') as $variety_id) {
 
                 $userseed = new Userseed();
                 $userseed->user_id = $user_id;
@@ -138,23 +150,24 @@ class SeedController extends Controller
 
     public function seedupdate(Request $request)
     {
+        if (!Auth::check()) {
+            return redirect('login');
+        }
 
-// $validatedData = $request->validate([
-//            'seed_name' => 'required|max:255',
-//            'supplier_id' => 'required',
-//            'density' => 'required',
-//            'measurement' => 'required',
-//            'tray_size' => 'required',
-//            'soak_status' => 'required',
-//            'germination' => 'required',
-//            'situation' => 'required',
-//            'medium' => 'required',
-//            'maturity' => 'required',
-//            'yield' => 'required|numeric',
-//            'seeds_measurement' => 'required',
-//        ]);
+        $validatedData = $request->validate([
+            'seed_name' => 'required|max:255',
+            'supplier_id' => 'required',
+            'measurement' => 'required',
+            'tray_size' => 'required',
+            'soak_status' => 'required',
+            'germination' => 'required',
+            'situation' => 'required',
+            'medium' => 'required',
+            'maturity' => 'required',
+            'seeds_measurement' => 'required',
+        ]);
         $user_id = Auth::user()->id;
-        $seedsexist = UserseedDetail::where('user_id', $user_id)->where('variety_id',$request->variety_id)->first();
+        $seedsexist = UserseedDetail::where('user_id', $user_id)->where('variety_id', $request->variety_id)->first();
 
         if ($seedsexist) {
             $seedsexist->seed_name = $request->seed_name;
@@ -198,8 +211,8 @@ class SeedController extends Controller
             $growNotes->user_id = $user_id;
             $growNotes->notes = $request->notes;
             $growNotes->save();
-        } 
-        
+        }
+
         Session::flash('flash_message', 'Seed(s) added!');
 
         return redirect('/seed');
