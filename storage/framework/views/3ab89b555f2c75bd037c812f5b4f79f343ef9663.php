@@ -20,7 +20,7 @@
                 </div>
                 <!-- / Content -->
 
-                <?php echo $__env->make('layouts.includes.layout-footer', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                
 
             </div> <!-- Layout footer -->
             <!-- Layout content -->

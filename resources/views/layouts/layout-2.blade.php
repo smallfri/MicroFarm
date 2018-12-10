@@ -22,7 +22,7 @@
                 </div>
                 <!-- / Content -->
 
-                @include('layouts.includes.layout-footer')
+                {{--@include('layouts.includes.layout-footer')--}}
 
             </div> <!-- Layout footer -->
             <!-- Layout content -->

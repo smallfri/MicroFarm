@@ -61,146 +61,38 @@
 
     <div id="accordion">
         <div class="card">
-            <h6 class="card-header">
-                Growing Summary
-            </h6>
-            <div class="card-datatable table-responsive" style="margin:15px 15px;">
+            <div class="card-header">
+                <a class="text-dark" data-toggle="collapse" href="#accordion-1">
+                    Growing Summary
+                </a>
+            </div>
+            <div id="accordion-1" class="collapse" data-parent="#accordion" style="padding:20px;">
+            <div class="card-datatable table-responsive">
                 <table class="table" id="summary-table">
                     <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">Seed Name</th>
+                        <th scope="col">Density</th>
+                        <th scope="col">Maturity</th>
+                        <th scope="col">Yield</th>
                     </tr>
                     </thead>
                     <tbody>
+                    <?php $__currentLoopData = $userseedlist; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <th scope="row"><?php echo e($value->seed_name); ?></th>
+                        <td><?php echo e($value->density); ?></td>
+                        <td><?php echo e($value->maturity); ?></td>
+                        <td><?php echo e($value->yield); ?></td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
                     </tbody>
                 </table>
-
+            </div>
             </div>
         </div>
-        <div class="row">
-            <!-- Content -->
-            <div class="container-fluid flex-grow-1 container-p-y">
 
-                <h4 class="font-weight-bold py-3 mb-4">
-                    <span class="text-muted font-weight-light">Tables /</span> Bootstrap Sortable
-                </h4>
-
-                <div class="table-responsive">
-                    <table class="table table-bordered table-striped sortable">
-                        <thead>
-                        <tr>
-                            <th style="width: 20%; vertical-align: middle;" rowspan="2" class="az"
-                                data-defaultsign="nospan" data-defaultsort="asc">
-                                <i class="ion ion-ios-navigate"></i>&nbsp; Name
-                            </th>
-                            <th colspan="4" data-mainsort="3" style="text-align: center;">Results</th>
-                            <th data-defaultsort="disabled"></th>
-                        </tr>
-                        <tr>
-                            <th style="width: 20%" colspan="2" data-mainsort="1" data-firstsort="desc">Round 1</th>
-                            <th style="width: 20%">Round 2</th>
-                            <th style="width: 20%">Total</th>
-                            <th style="width: 20%" data-defaultsign="month">Date</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Jack Jackson</td>
-                            <td>30.51</td>
-                            <td>17.77</td>
-                            <td>14.99</td>
-                            <td>63.27</td>
-                            <td data-dateformat="DD-MM-YYYY">04-07-2013</td>
-                        </tr>
-                        <tr>
-                            <td class="sorted">Steven White</td>
-                            <td>6.21</td>
-                            <td>67.31</td>
-                            <td>84.32</td>
-                            <td>157.84</td>
-                            <td data-dateformat="DD-MM-YYYY">14-11-2016</td>
-                        </tr>
-                        <tr>
-                            <td class="sorted">Peter White</td>
-                            <td>15.53</td>
-                            <td>7.54</td>
-                            <td>37.36</td>
-                            <td>60.43</td>
-                            <td data-dateformat="DD-MM-YYYY">25-11-2012</td>
-                        </tr>
-                        <tr>
-                            <td class="sorted">Steven Spielberg</td>
-                            <td>0.25</td>
-                            <td>7.74</td>
-                            <td>15.19</td>
-                            <td>23.18</td>
-                            <td data-dateformat="DD-MM-YYYY">14-12-2001</td>
-                        </tr>
-                        <tr>
-                            <td class="sorted">Frank White</td>
-                            <td>24.81</td>
-                            <td>5.02</td>
-                            <td>18.1</td>
-                            <td>47.93</td>
-                            <td data-dateformat="DD-MM-YYYY">11.05.2016</td>
-                        </tr>
-                        <tr>
-                            <td class="sorted">Peter Jackson</td>
-                            <td>25.54</td>
-                            <td>26.32</td>
-                            <td>5.45</td>
-                            <td>57.31</td>
-                            <td data-dateformat="DD-MM-YYYY">09.04.2003</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-            </div>
-            <!-- / Content -->
-
-            <!-- Layout footer -->
-            <nav class="layout-footer footer bg-footer-theme">
-                <div class="container-fluid d-flex flex-wrap justify-content-between text-center container-p-x pb-3">
-                    <div class="pt-3">
-                        <span class="footer-text font-weight-bolder">Appwork</span> ©
-                    </div>
-                    <div>
-                        <a href="javascript:void(0)" class="footer-link pt-3">About Us</a>
-                        <a href="javascript:void(0)" class="footer-link pt-3 ml-4">Help</a>
-                        <a href="javascript:void(0)" class="footer-link pt-3 ml-4">Contact</a>
-                        <a href="javascript:void(0)" class="footer-link pt-3 ml-4">Terms &amp; Conditions</a>
-                    </div>
-                </div>
-            </nav>
-            <!-- / Layout footer -->
-        </div>
-    </div>
-    </div>
-    </div>
-
-    </div>
     
 
     <div id="accordion">
