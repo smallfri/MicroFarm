@@ -51,6 +51,7 @@ class SeedController extends Controller
                 'userseeds_detail.seeds_measurement',
                 DB::raw('CONCAT(seeds.name," ",seeds_variety.name) as seed_name'))
                 ->where('userseed.user_id', $user_id)
+                ->where('userseeds_detail.deleted_at',NULL)
                 ->join('seeds_variety', 'seeds_variety.id', '=', 'userseed.variety_id')
                 ->join('seeds', 'seeds.id', '=', 'seeds_variety.seed_id')
                 ->leftJoin('userseeds_detail', 'userseeds_detail.variety_id', '=', 'seeds_variety.id')
@@ -218,4 +219,71 @@ class SeedController extends Controller
         return redirect('/seed');
 
     }
+
+    public function summaryUpdate(Request $request)
+    {
+
+        if (!Auth::check()) {
+            return redirect('login');
+        }
+
+
+//        $validatedData = $request->validate([
+//            'seed_name' => 'required|max:255',
+//            'density' => 'required',
+//            'maturity' => 'required',
+//            'yield' => 'required',
+//        ]);
+
+        $user_id = Auth::user()->id;
+        $seedsexist = UserseedDetail::where('user_id', $user_id)->where('variety_id', $request['variety_id'])->first();
+
+        echo $seedsexist['id'];
+
+        if ($seedsexist) {
+            $seedsexist->density = $request['density'];
+            $seedsexist->variety_id = $request['variety_id'];
+            $seedsexist->maturity = $request['maturity'];
+            $seedsexist->yield = $request['yield'];
+            $seedsexist->supplier_id = $request['supplier_id'];
+            $seedsexist->user_id = $user_id;
+            $seedsexist->update();
+
+            return '{"status":"success"}';
+
+        } else {
+            $seedsdetail = new UserseedDetail();
+            $seedsdetail->density = $request['density'];
+            $seedsdetail->variety_id = $request['variety_id'];
+            $seedsdetail->maturity = $request['maturity'];
+            $seedsdetail->yield = $request['yield'];
+            $seedsdetail->supplier_id = $request['supplier_id'];
+            $seedsdetail->user_id = $user_id;
+            $seedsdetail->save();
+
+            return '{"status":"success}';
+        }
+
+    }
+
+    public function summaryDelete(Request $request)
+    {
+        if (!Auth::check()) {
+            return redirect('login');
+        }
+
+        $user_id = Auth::user()->id;
+        $seedsexist = UserseedDetail::where('user_id', $user_id)->where('variety_id', $request['variety_id'])->where('deleted_at',NULL)->first();
+
+        return '{"status":"'.$seedsexist.'"}';
+        if($seedsexist)
+        {
+            \App\Model\UserseedDetail::destroy($seedsexist['id']);
+            return '{"status":"success}';
+
+        }
+        return '{"status":"failed}';
+
+    }
+
 }

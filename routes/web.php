@@ -37,8 +37,10 @@ Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('ver
 Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 // Mail Routes
-Route::get('/seed/create', 'SeedController@create')->name('seed/create');
-Route::post('/seed/create', 'SeedController@store');
-Route::get('/seed/supplierseed/{id}', 'SeedController@supplierseed');
-Route::get('/seed', 'SeedController@index')->name('seed');
-Route::post('/seed', 'SeedController@seedupdate');
+Route::post ('seed/summary-update', 'SeedController@summaryUpdate')->name('summary-update');
+Route::post ('seed/summary-delete', 'SeedController@summaryDelete')->name('summary-delete');
+Route::get('seed/create', 'SeedController@create')->name('seed/create');
+Route::post('seed/create', 'SeedController@store');
+Route::get('seed/supplierseed/{id}', 'SeedController@supplierseed');
+Route::get('seed', 'SeedController@index')->name('seed');
+Route::post('seed', 'SeedController@seedupdate');

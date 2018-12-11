@@ -18,6 +18,7 @@
 
                 <!-- Content -->
                 <div class="container-fluid flex-grow-1 container-p-y">
+                    @include('flash-message')
                     @yield('content')
                 </div>
                 <!-- / Content -->

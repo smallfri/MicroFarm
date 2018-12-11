@@ -1853,3 +1853,93 @@
 #55 /home/vagrant/code/Personal/appwork/public/index.php(53): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #56 {main}
 "} 
+[2018-12-10 20:36:56] local.ERROR: The command "vendor/bin/dep --file=vendor/lorisleiva/laravel-deployer/.build/deploy.php deploy " failed.
+
+Exit Code: 1(General error)
+
+Working directory: /home/vagrant/code/Personal/appwork
+
+Output:
+================
+
+
+Error Output:
+================
+ {"exception":"[object] (Symfony\\Component\\Process\\Exception\\ProcessFailedException(code: 0): The command \"vendor/bin/dep --file=vendor/lorisleiva/laravel-deployer/.build/deploy.php deploy \" failed.
+
+Exit Code: 1(General error)
+
+Working directory: /home/vagrant/code/Personal/appwork
+
+Output:
+================
+
+
+Error Output:
+================
+ at /home/vagrant/code/Personal/appwork/vendor/symfony/process/Process.php:256)
+[stacktrace]
+#0 /home/vagrant/code/Personal/appwork/vendor/lorisleiva/laravel-deployer/src/LaravelDeployer/Commands/BaseCommand.php(110): Symfony\\Component\\Process\\Process->mustRun(Object(Closure))
+#1 /home/vagrant/code/Personal/appwork/vendor/lorisleiva/laravel-deployer/src/LaravelDeployer/Commands/BaseCommand.php(58): Lorisleiva\\LaravelDeployer\\Commands\\BaseCommand->process('vendor/bin/dep ...')
+#2 /home/vagrant/code/Personal/appwork/vendor/lorisleiva/laravel-deployer/src/LaravelDeployer/Commands/Deploy.php(12): Lorisleiva\\LaravelDeployer\\Commands\\BaseCommand->dep('deploy')
+#3 [internal function]: Lorisleiva\\LaravelDeployer\\Commands\\Deploy->handle()
+#4 /home/vagrant/code/Personal/appwork/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#5 /home/vagrant/code/Personal/appwork/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#6 /home/vagrant/code/Personal/appwork/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#7 /home/vagrant/code/Personal/appwork/vendor/laravel/framework/src/Illuminate/Container/Container.php(572): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#8 /home/vagrant/code/Personal/appwork/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\\Container\\Container->call(Array)
+#9 /home/vagrant/code/Personal/appwork/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#10 /home/vagrant/code/Personal/appwork/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#11 /home/vagrant/code/Personal/appwork/vendor/symfony/console/Application.php(901): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 /home/vagrant/code/Personal/appwork/vendor/symfony/console/Application.php(262): Symfony\\Component\\Console\\Application->doRunCommand(Object(Lorisleiva\\LaravelDeployer\\Commands\\Deploy), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 /home/vagrant/code/Personal/appwork/vendor/symfony/console/Application.php(145): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 /home/vagrant/code/Personal/appwork/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 /home/vagrant/code/Personal/appwork/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 /home/vagrant/code/Personal/appwork/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 {main}
+"} 
+[2018-12-10 20:48:22] local.ERROR: The command "vendor/bin/dep --file=vendor/lorisleiva/laravel-deployer/.build/deploy.php deploy " failed.
+
+Exit Code: 1(General error)
+
+Working directory: /home/vagrant/code/Personal/appwork
+
+Output:
+================
+
+
+Error Output:
+================
+ {"exception":"[object] (Symfony\\Component\\Process\\Exception\\ProcessFailedException(code: 0): The command \"vendor/bin/dep --file=vendor/lorisleiva/laravel-deployer/.build/deploy.php deploy \" failed.
+
+Exit Code: 1(General error)
+
+Working directory: /home/vagrant/code/Personal/appwork
+
+Output:
+================
+
+
+Error Output:
+================
+ at /home/vagrant/code/Personal/appwork/vendor/symfony/process/Process.php:256)
+[stacktrace]
+#0 /home/vagrant/code/Personal/appwork/vendor/lorisleiva/laravel-deployer/src/LaravelDeployer/Commands/BaseCommand.php(110): Symfony\\Component\\Process\\Process->mustRun(Object(Closure))
+#1 /home/vagrant/code/Personal/appwork/vendor/lorisleiva/laravel-deployer/src/LaravelDeployer/Commands/BaseCommand.php(58): Lorisleiva\\LaravelDeployer\\Commands\\BaseCommand->process('vendor/bin/dep ...')
+#2 /home/vagrant/code/Personal/appwork/vendor/lorisleiva/laravel-deployer/src/LaravelDeployer/Commands/Deploy.php(12): Lorisleiva\\LaravelDeployer\\Commands\\BaseCommand->dep('deploy')
+#3 [internal function]: Lorisleiva\\LaravelDeployer\\Commands\\Deploy->handle()
+#4 /home/vagrant/code/Personal/appwork/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#5 /home/vagrant/code/Personal/appwork/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#6 /home/vagrant/code/Personal/appwork/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#7 /home/vagrant/code/Personal/appwork/vendor/laravel/framework/src/Illuminate/Container/Container.php(572): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#8 /home/vagrant/code/Personal/appwork/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\\Container\\Container->call(Array)
+#9 /home/vagrant/code/Personal/appwork/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#10 /home/vagrant/code/Personal/appwork/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#11 /home/vagrant/code/Personal/appwork/vendor/symfony/console/Application.php(901): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 /home/vagrant/code/Personal/appwork/vendor/symfony/console/Application.php(262): Symfony\\Component\\Console\\Application->doRunCommand(Object(Lorisleiva\\LaravelDeployer\\Commands\\Deploy), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 /home/vagrant/code/Personal/appwork/vendor/symfony/console/Application.php(145): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 /home/vagrant/code/Personal/appwork/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 /home/vagrant/code/Personal/appwork/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 /home/vagrant/code/Personal/appwork/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 {main}
+"} 

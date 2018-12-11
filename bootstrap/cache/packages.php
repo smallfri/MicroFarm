@@ -86,6 +86,13 @@
       'Html' => 'Collective\\Html\\HtmlFacade',
     ),
   ),
+  'lorisleiva/laravel-deployer' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Lorisleiva\\LaravelDeployer\\LaravelDeployerServiceProvider',
+    ),
+  ),
   'nesbot/carbon' => 
   array (
     'providers' => 
