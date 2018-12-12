@@ -2,25 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5850e08c-3697-4661-a4d6-80c2734f0c6c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/passwords/resendmail.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SeedController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SeedController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/application.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/application.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/seed/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/seed/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/seed/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/seed/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/flash-message.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/flash-message.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/includes/layout-sidenav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/includes/layout-sidenav.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/seed/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/seed/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/9twvT3cWscBd0OL1MWnsTx6yJSUy4Npk8NkOgAHe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/XCCVEKuqY2pl320NxclmnEkbTWlSuZ0n3ulFxJ7N" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/iF7dsODjlpN82taTrfVe3DyHPwoYsNNNE4io83ZO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/j0isltPQjY3bsigI47IL8Qfb7XsYQ0RTIwwdZXT5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/ncMJRwhu5NjfFBJe4nTUFSvPDqD3EWn7J8lDVGYj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/0e887e6d25e1f318b632b0da2e405cd09d01bcdc.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/0e887e6d25e1f318b632b0da2e405cd09d01bcdc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/189e90d8cd722a077885423eaff777a05426cf2c.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/189e90d8cd722a077885423eaff777a05426cf2c.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/5631fec3aa7a219d443e5cd3ef3779130d299243.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/5631fec3aa7a219d443e5cd3ef3779130d299243.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/8d698664b119995e60a0cc89408c1e2eeff97994.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/8d698664b119995e60a0cc89408c1e2eeff97994.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/9nmAJqiNGz5ymWHjWQrmTjSbzwGLx9vaQbCetLv1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/O2NHnH7pwTkzvheiBiElanVer7RkdvSVILtxS0z2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/1afa7ef4b9c4bbf016d03319cf119bc3ccba137f.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/1afa7ef4b9c4bbf016d03319cf119bc3ccba137f.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/8e32048d66ebaefaf742e0d66fa45c988515adbb.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/8e32048d66ebaefaf742e0d66fa45c988515adbb.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/views/9670b37872cb56bb8d2263f7968dd23dc50338bd.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/9670b37872cb56bb8d2263f7968dd23dc50338bd.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/edcf97a0bb61b2f3e0642a9d65d44183ba259da1.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/edcf97a0bb61b2f3e0642a9d65d44183ba259da1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel-2018-12-12.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel-2018-12-12.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,8 +34,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/layout-2.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="69" />
+            <state relative-caret-position="180">
+              <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -45,8 +43,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/flash-message.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" selection-end-line="11" selection-end-column="6" />
+            <state relative-caret-position="397">
+              <caret line="27" column="69" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -54,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/seed/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-388">
-              <caret line="156" column="49" selection-start-line="156" selection-end-line="180" />
+            <state relative-caret-position="469">
+              <caret line="69" column="10" lean-forward="true" selection-start-line="59" selection-start-column="4" selection-end-line="69" selection-end-column="10" />
               <folding>
                 <element signature="e#2859#2880#0#HTML" expanded="true" />
               </folding>
@@ -66,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/application.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-407">
-              <caret line="58" column="11" selection-start-line="58" selection-start-column="11" selection-end-line="58" selection-end-column="11" />
+            <state relative-caret-position="277">
+              <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
             </state>
           </provider>
         </entry>
@@ -82,40 +80,55 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="18" selection-end-column="9" />
+            <state relative-caret-position="251">
+              <caret line="27" column="12" lean-forward="true" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="40" column="92" lean-forward="true" selection-start-line="40" selection-start-column="92" selection-end-line="40" selection-end-column="92" />
+            <state relative-caret-position="149">
+              <caret line="99" column="35" lean-forward="true" selection-end-line="163" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SeedController.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="290" lean-forward="true" selection-start-line="290" selection-end-line="290" />
+            <state relative-caret-position="505">
+              <caret line="129" column="26" selection-start-line="129" selection-start-column="26" selection-end-line="129" selection-end-column="26" />
               <folding>
-                <element signature="e#40#67#0#PHP" expanded="true" />
+                <element signature="n#section#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Model/UserseedDetail.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+            <state relative-caret-position="653">
+              <caret line="76" column="103" selection-start-line="76" selection-start-column="103" selection-end-line="76" selection-end-column="103" />
+              <folding>
+                <element signature="e#45#81#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SeedController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="75" column="29" lean-forward="true" selection-start-line="75" selection-end-line="76" />
+              <folding>
+                <element signature="e#40#67#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,8 +144,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dd( q</find>
-      <find>dd(</find>
       <find>dd($data)</find>
       <find>RegisterController::create</find>
       <find>dashbo</find>
@@ -160,7 +171,9 @@
       <find>:</find>
       <find>/dashboard</find>
       <find>card-header</find>
+      <find>Please check the form below for errors</find>
       <find>All</find>
+      <find>Already have an account?</find>
     </findStrings>
     <replaceStrings>
       <replace>/assets/vendor</replace>
@@ -174,8 +187,9 @@
     <dirStrings>
       <dir>$PROJECT_DIR$/app/Models</dir>
       <dir>$PROJECT_DIR$/public/assets/css</dir>
-      <dir>$PROJECT_DIR$/resources/views</dir>
       <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/resources/views</dir>
+      <dir>$PROJECT_DIR$/resources</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -195,7 +209,6 @@
         <option value="$PROJECT_DIR$/resources/views/flash-messages/flash-message.blade.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" />
         <option value="$USER_HOME$/Downloads/appwork-v1_2_1 3/laravel-demo/resources/views/dashboards/dashboard-2.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/seed/index.php" />
@@ -203,13 +216,11 @@
         <option value="$PROJECT_DIR$/app/Models/Contact.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
         <option value="$PROJECT_DIR$/public/js/tabs-unlimited.js" />
         <option value="$PROJECT_DIR$/public/js/app.js" />
         <option value="$USER_HOME$/Downloads/appwork-v1_2_1/html-demo/ui_accordion.html" />
         <option value="$PROJECT_DIR$/resources/views/layouts/includes/layout-navbar.blade.php" />
         <option value="$PROJECT_DIR$/public/assets/css/default/style.min.css" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/includes/layout-sidenav.blade.php" />
         <option value="$USER_HOME$/Downloads/appwork-v1_2_1 4/html-demo/tables_bootstrap-sortable.html" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/config/deploy.php" />
@@ -221,9 +232,14 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/application.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/seed/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/seed/form.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/seed/index.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/seed/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/includes/layout-sidenav.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/flash-message.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SeedController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" />
       </list>
     </option>
   </component>
@@ -421,6 +437,14 @@
               <item name="appwork" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="passwords" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appwork" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appwork" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="errors" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -429,6 +453,14 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appwork" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appwork" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+              <item name="includes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="appwork" type="b2602c69:ProjectViewProjectNode" />
@@ -469,6 +501,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/auth" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/public/images" />
     </key>
@@ -506,12 +539,12 @@
       <option name="presentableId" value="Default" />
       <updated>1544283445288</updated>
       <workItem from="1544283446580" duration="50264000" />
-      <workItem from="1544500120207" duration="29368000" />
+      <workItem from="1544500120207" duration="33887000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79632000" />
+    <option name="totallyTimeSpent" value="84151000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="356" y="23" width="1607" height="972" extended-state="0" />
@@ -531,8 +564,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49921995" weight="0.32954547" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50078005" side_tool="true" weight="0.32954547" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49921995" visible="true" weight="0.32954547" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50159746" side_tool="true" visible="true" weight="0.32954547" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49840257" visible="true" weight="0.32954547" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -544,11 +577,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/layout-1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/vendor/css/rtl/uikit.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -672,16 +700,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/includes/layout-sidenav.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="32" lean-forward="true" selection-end-line="32" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#span#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/appwork-v1_2_1 4/html-demo/tables_bootstrap-sortable.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -705,13 +723,6 @@
     <entry file="file://$PROJECT_DIR$/1.png" />
     <entry file="file://$PROJECT_DIR$/11-small.png" />
     <entry file="file://$PROJECT_DIR$/4-small.png" />
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -736,13 +747,6 @@
     <entry file="file://$PROJECT_DIR$/webpack.mix.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="115" column="40" lean-forward="true" selection-start-line="111" selection-start-column="28" selection-end-line="115" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2018-12-11.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2885" />
@@ -755,13 +759,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
           <caret line="88" column="11" lean-forward="true" selection-start-line="88" selection-start-column="11" selection-end-line="89" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/layout-2.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -779,17 +776,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/application.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Model/UserseedDetail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-407">
-          <caret line="58" column="11" selection-start-line="58" selection-start-column="11" selection-end-line="58" selection-end-column="11" />
+        <state relative-caret-position="68">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/flash-message.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SeedController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" selection-end-line="11" selection-end-column="6" />
+        <state relative-caret-position="288">
+          <caret line="75" column="29" lean-forward="true" selection-start-line="75" selection-end-line="76" />
+          <folding>
+            <element signature="e#40#67#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="653">
+          <caret line="76" column="103" selection-start-line="76" selection-start-column="103" selection-end-line="76" selection-end-column="103" />
+          <folding>
+            <element signature="e#45#81#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/includes/layout-sidenav.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/seed/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="69" column="10" lean-forward="true" selection-start-line="59" selection-start-column="4" selection-end-line="69" selection-end-column="10" />
+          <folding>
+            <element signature="e#2859#2880#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -800,36 +827,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Model/UserseedDetail.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/application.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        <state relative-caret-position="277">
+          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/seed/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/flash-message.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-388">
-          <caret line="156" column="49" selection-start-line="156" selection-end-line="180" />
-          <folding>
-            <element signature="e#2859#2880#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="397">
+          <caret line="27" column="69" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/layout-2.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="40" column="92" lean-forward="true" selection-start-line="40" selection-start-column="92" selection-end-line="40" selection-end-column="92" />
+        <state relative-caret-position="251">
+          <caret line="27" column="12" lean-forward="true" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SeedController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="290" lean-forward="true" selection-start-line="290" selection-end-line="290" />
+        <state relative-caret-position="149">
+          <caret line="99" column="35" lean-forward="true" selection-end-line="163" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="129" column="26" selection-start-line="129" selection-start-column="26" selection-end-line="129" selection-end-column="26" />
           <folding>
-            <element signature="e#40#67#0#PHP" expanded="true" />
+            <element signature="n#section#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>

@@ -17,14 +17,32 @@
         </li>
 
         <li class="sidenav-item{{ Request::is('seed/create') ? ' active' : '' }}">
-            <a href="{{ route('seed/create') }}" class="sidenav-link"><i class="sidenav-icon ion ion-md-desktop"></i>
+            <a href="{{ route('seed/create') }}" class="sidenav-link"><i class="sidenav-icon ion ion-ios-keypad"></i>
                 <div>Seeds</div>
             </a>
         </li>
 
         <li class="sidenav-item{{ Request::is('seed') ? ' active' : '' }}">
-            <a href="{{ route('seed') }}" class="sidenav-link"><i class="sidenav-icon ion ion-md-desktop"></i>
+            <a href="{{ route('seed') }}" class="sidenav-link"><i class="sidenav-icon ion ion-ios-leaf"></i>
                 <div>Growing Journal</div>
+            </a>
+        </li>
+
+        <li class="sidenav-item">
+            <a href="https://microfarmmanager.com/coupons/" class="sidenav-link" target="_blank"><i class="sidenav-icon ion ion-md-pricetags"></i>
+                <div>Coupons & Deals</div>
+            </a>
+        </li>
+
+        <li class="sidenav-item">
+            <a href="https://microfarmmanager.com/classroom/" class="sidenav-link" target="_blank"><i class="sidenav-icon fas fa-graduation-cap"></i>
+                <div>Classroom</div>
+            </a>
+        </li>
+
+        <li class="sidenav-item">
+            <a href="/logout" class="sidenav-link"><i class="sidenav-icon ion oi oi-account-logout"></i>
+                <div>Logout</div>
             </a>
         </li>
 

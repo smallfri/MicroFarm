@@ -136,7 +136,7 @@
                     <!-- / Form -->
 
                     <div class="text-center text-muted">
-                        Already have an account? <a href="javascript:void(0)">Sign In</a>
+                        Forgot your password? <a href="/password/reset">Reset Password</a>
                     </div>
 
                 </div>

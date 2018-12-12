@@ -87,58 +87,46 @@
             <!-- Have to add `.d-flex` to control width via `.col-*` classes -->
             <div class="d-flex col-sm-7 col-md-5 col-lg-12 px-0 px-xl-4 mx-auto">
 
-                <div class="w-100">
+                <section id="wrapper" class="login-register">
+                    @if(session('status'))
+                        {
+                        <div class="alert alert-success">Thanks, an email has been set with password reset instructions.</div>
+                        }
+                    @endif
+                    <div class="login-box">
+                        <div class="white-box">
+                            <form class="form-horizontal" role="form" method="POST" action="{{ route('password.email') }}">
+                                <h4>Password Reset</h4>
+                                {{ csrf_field() }}
 
-                    <!-- Logo -->
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div class="">
-                            <div class="w-100 position-relative">
-                                <img src="/images/logo-medium.png">
-                            </div>
+                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                    @if ($errors->has('email'))
+                                        <span class="help-block"><strong>{{ $errors->first('email') }}</strong></span>
+                                    @endif
+                                    <input type="text" class="form-control" id="email" name="email" placeholder="Email"/>
+                                </div>
+
+                                <div>
+                                    <button type="submit" class="btn btn-default submit">Send Password Reset Link</button>
+                                </div>
+
+                                <div class="clearfix"></div>
+
+                                <div class="separator">
+
+                                    <div class="clearfix"></div>
+                                    <br />
+
+                                    <div>
+                                        <h3>MicroFarmManager.com</h3>
+                                        <p>&copy; 2018 All Rights Reserved.</p>
+                                    </div>
+                                </div>
+                            </form>
+
                         </div>
                     </div>
-                    <!-- / Logo -->
-
-                    <h4 class="text-center text-lighter font-weight-normal mt-5 mb-0" style="margin-bottom:20% !important;margin-top:20% !important;">Login to Your Account.</h4>
-
-                    <!-- Form -->
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
-                        <div class="form-group">
-                            <label class="form-label">Your email</label>
-                            <input id="email" type="email" name="email" class="form-control" placeholder="Email address"
-                                   value="{{ old('email') }}" required>
-
-                            @if ($errors->has('email'))
-                                <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                            @endif                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Password</label>
-                            <input id="password" type="password" class="form-control"
-                                   placeholder="Password" name="password" required>
-                            @if ($errors->has('password'))
-                                <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                            @endif
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-block mt-4">Sign In</button>
-                        <div class="text-light small mt-4">
-                            By clicking "Sign Up", you agree to our
-                            <a href="javascript:void(0)">terms of service and privacy policy</a>. We’ll occasionally
-                            send you account related emails.
-                        </div>
-                    </form>
-                    <!-- / Form -->
-
-                    <div class="text-center text-muted">
-                        Forgot your password? <a href="/password/reset">Reset Password</a>
-                    </div>
-
-                </div>
+                </section>
             </div>
         </div>
         <!-- / Form container -->
@@ -162,3 +150,22 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

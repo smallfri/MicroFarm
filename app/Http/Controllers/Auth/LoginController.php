@@ -3,7 +3,13 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Model\Userseed;
+use App\User;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -42,7 +48,7 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
-    public function authenticate(Request $request)
+    public function login(Request $request)
     {
         $credentials = array(
             'email' => $request->get('email'),
@@ -59,11 +65,25 @@ class LoginController extends Controller
                 if ($user->is_active == 1 && Auth::attempt($credentials)) {
 
                     Session::flash('flash_success',"Login Success !!");
-                    if(Auth::user()->hasRole('SU')){
-                        return redirect('/seed/create');
-                    }else{
+
+                    //redirect based on having seeds or not
+                    $userSeeds = Userseed::where('user_id', $user->id)->where('deleted_at',NULL)->get();
+
+                    if(count($userSeeds)>0)
+                    {
+                        return redirect('/seed');
+                    }
+                    else{
+                        Session::flash('flash_success',"Please choose at least one seed to get started.");
+
                         return redirect('/seed/create');
                     }
+
+//                    if(Auth::user()->hasRole('SU')){
+//                        return redirect('/seed/create');
+//                    }else{
+//                        return redirect('/seed/create');
+//                    }
 
                 } else {
                     Session::flash('flash_error',"Your Account Has Not Activated Yet");

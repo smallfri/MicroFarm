@@ -124,9 +124,9 @@ class SeedController extends Controller
         ];
 
         $customMessages = [
-            'variety_id.required' => 'Please Select Atleast 1 Checkbox',
+            'variety_id.required' => 'Please Select At least 1 Checkbox',
         ];
-
+//exit(print_r($request->input('variety_id')));
         $this->validate($request, $rules, $customMessages);
         $user_id = Auth::user()->id;
         if (!empty($request->input('variety_id'))) {
@@ -291,6 +291,7 @@ class SeedController extends Controller
         $seedsExist = Userseed::where('user_id', $user_id)->where('variety_id', $request->variety_id)->where('deleted_at', NULL)->first();
 
         if ($user_id) {
+
             if ($seedsDetailExist) {
                 $seedsDetailExist->deleted_at = date("Y-m-d H:i:s");
                 $seedsDetailExist->update();
