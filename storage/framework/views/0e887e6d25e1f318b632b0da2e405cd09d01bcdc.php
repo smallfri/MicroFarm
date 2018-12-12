@@ -22,13 +22,13 @@ foreach ($userseedlist as $userseeds)
 
         </div>
         <div id="div1">
-            <div id="seedlist">
+            <div id="seedlist2">
 
 
             </div>
         </div>
         <div id="div2">
-            <div id="seedlist2">
+            <div id="seedlist">
             </div>
         </div>
     </div>

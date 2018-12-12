@@ -1,3 +1,8 @@
+<script type="application/javascript">
+    $(document).ready(function() {
+        $('#summary-table').DataTable();
+    } );
+</script>
 <?php $__env->startSection('content'); ?>
     <!-- begin page-header -->
     <h4 class="font-weight-bold py-3 mb-4">

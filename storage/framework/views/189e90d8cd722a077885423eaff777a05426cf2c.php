@@ -4,10 +4,15 @@
 
 <?php $__env->startSection('content'); ?>
     <h4 class="media align-items-center font-weight-bold py-3 mb-4">
+        <?php if(Auth::check()): ?>
         <img src="<?php echo e(Gravatar::image(Auth::user()->email)); ?>">
+        <?php endif; ?>
         <div class="media-body ml-3">
-            Welcome back, <?php echo e(Auth::user()->name); ?>
+            Welcome back
+            <?php if(Auth::check()): ?>
+                , <?php echo e(Auth::user()->name); ?>
 
+            <?php endif; ?>
             <div class="text-muted text-tiny mt-1"><small class="font-weight-normal"><?php echo date_format(now(), 'g:ia \o\n l jS F Y');?></small></div>
         </div>
     </h4>

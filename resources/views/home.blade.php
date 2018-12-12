@@ -6,9 +6,14 @@
 
 @section('content')
     <h4 class="media align-items-center font-weight-bold py-3 mb-4">
+        @if (Auth::check())
         <img src="{{ Gravatar::image(Auth::user()->email) }}">
+        @endif
         <div class="media-body ml-3">
-            Welcome back, {{ Auth::user()->name }}
+            Welcome back
+            @if (Auth::check())
+                , {{ Auth::user()->name }}
+            @endif
             <div class="text-muted text-tiny mt-1"><small class="font-weight-normal"><?php echo date_format(now(), 'g:ia \o\n l jS F Y');?></small></div>
         </div>
     </h4>

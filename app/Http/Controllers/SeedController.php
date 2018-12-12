@@ -51,14 +51,12 @@ class SeedController extends Controller
                 'userseeds_detail.seeds_measurement',
                 DB::raw('CONCAT(seeds.name," ",seeds_variety.name) as seed_name'))
                 ->where('userseed.user_id', $user_id)
-                ->where('userseeds_detail.deleted_at',NULL)
+                ->where('userseeds_detail.deleted_at', NULL)
                 ->join('seeds_variety', 'seeds_variety.id', '=', 'userseed.variety_id')
                 ->join('seeds', 'seeds.id', '=', 'seeds_variety.seed_id')
                 ->leftJoin('userseeds_detail', 'userseeds_detail.variety_id', '=', 'seeds_variety.id')
-                ->orderBy('maturity', 'ASC')
+                ->orderBy('seeds_variety.id', 'ASC')
                 ->get();
-
-//            dd($userseedlist);
 
             $suppliers = Supplier::pluck('name', 'id')->prepend('Select One', '0');
 
@@ -130,7 +128,6 @@ class SeedController extends Controller
         ];
 
         $this->validate($request, $rules, $customMessages);
-        $data = $request->all();
         $user_id = Auth::user()->id;
         if (!empty($request->input('variety_id'))) {
             $userseed = Userseed::where('user_id', $user_id)->delete();
@@ -155,18 +152,18 @@ class SeedController extends Controller
             return redirect('login');
         }
 
-        $validatedData = $request->validate([
-            'seed_name' => 'required|max:255',
-            'supplier_id' => 'required',
-            'measurement' => 'required',
-            'tray_size' => 'required',
-            'soak_status' => 'required',
-            'germination' => 'required',
-            'situation' => 'required',
-            'medium' => 'required',
-            'maturity' => 'required',
-            'seeds_measurement' => 'required',
-        ]);
+//        $validatedData = $request->validate([
+//            'seed_name' => 'required|max:255',
+//            'supplier_id' => 'required',
+//            'measurement' => 'required',
+//            'tray_size' => 'required',
+//            'soak_status' => 'required',
+//            'germination' => 'required',
+//            'situation' => 'required',
+//            'medium' => 'required',
+//            'maturity' => 'required',
+//            'seeds_measurement' => 'required',
+//        ]);
         $user_id = Auth::user()->id;
         $seedsexist = UserseedDetail::where('user_id', $user_id)->where('variety_id', $request->variety_id)->first();
 
@@ -187,6 +184,16 @@ class SeedController extends Controller
             $seedsexist->seeds_measurement = $request->seeds_measurement;
             $seedsexist->notes = $request->notes;
             $seedsexist->update();
+
+            if ($request->notes != null) {
+                $growNotes = new GrowNotes();
+                $growNotes->variety_id = $request->variety_id;
+                $growNotes->user_id = $user_id;
+                $growNotes->notes = $request->notes;
+                $growNotes->save();
+            }
+            return redirect()->back()->with('message-success', 'Seed(s) updated!');
+
         } else {
             $seedsdetail = new UserseedDetail();
             $seedsdetail->seed_name = $request->seed_name;
@@ -205,19 +212,16 @@ class SeedController extends Controller
             $seedsdetail->seeds_measurement = $request->seeds_measurement;
             $seedsdetail->notes = $request->notes;
             $seedsdetail->save();
+
+            if ($request->notes != null) {
+                $growNotes = new GrowNotes();
+                $growNotes->variety_id = $request->variety_id;
+                $growNotes->user_id = $user_id;
+                $growNotes->notes = $request->notes;
+                $growNotes->save();
+            }
+            return redirect()->back()->with('message-success', 'Seed(s) added!');
         }
-        if ($request->notes != null) {
-            $growNotes = new GrowNotes();
-            $growNotes->variety_id = $request->variety_id;
-            $growNotes->user_id = $user_id;
-            $growNotes->notes = $request->notes;
-            $growNotes->save();
-        }
-
-        Session::flash('flash_message', 'Seed(s) added!');
-
-        return redirect('/seed');
-
     }
 
     public function summaryUpdate(Request $request)
@@ -226,42 +230,32 @@ class SeedController extends Controller
         if (!Auth::check()) {
             return redirect('login');
         }
-
-
-//        $validatedData = $request->validate([
-//            'seed_name' => 'required|max:255',
-//            'density' => 'required',
-//            'maturity' => 'required',
-//            'yield' => 'required',
-//        ]);
-
         $user_id = Auth::user()->id;
-        $seedsexist = UserseedDetail::where('user_id', $user_id)->where('variety_id', $request['variety_id'])->first();
-
-        echo $seedsexist['id'];
+        $seedsexist = UserseedDetail::where('user_id', $user_id)->where('variety_id', $request->variety_id)->first();
 
         if ($seedsexist) {
-            $seedsexist->density = $request['density'];
-            $seedsexist->variety_id = $request['variety_id'];
-            $seedsexist->maturity = $request['maturity'];
-            $seedsexist->yield = $request['yield'];
-            $seedsexist->supplier_id = $request['supplier_id'];
-            $seedsexist->user_id = $user_id;
+            $seedsexist->density = $request->density;
+            $seedsexist->maturity = $request->maturity;
+            $seedsexist->yield = $request->yield;
+            $seedsexist->supplier_id = $request->supplier_id;
             $seedsexist->update();
 
             return '{"status":"success"}';
-
         } else {
             $seedsdetail = new UserseedDetail();
-            $seedsdetail->density = $request['density'];
-            $seedsdetail->variety_id = $request['variety_id'];
-            $seedsdetail->maturity = $request['maturity'];
-            $seedsdetail->yield = $request['yield'];
-            $seedsdetail->supplier_id = $request['supplier_id'];
+            $seedsdetail->density = $request->density;
+            $seedsdetail->variety_id = $request->variety_id;
+            $seedsdetail->maturity = $request->maturity;
+            $seedsdetail->yield = $request->yield;
+            $seedsdetail->supplier_id = $request->supplier_id;
             $seedsdetail->user_id = $user_id;
             $seedsdetail->save();
 
-            return '{"status":"success}';
+            if ($seedsdetail->id < 0) {
+                return '{"status":"failed"}';
+            }
+
+            return '{"status":"success"}';
         }
 
     }
@@ -273,17 +267,52 @@ class SeedController extends Controller
         }
 
         $user_id = Auth::user()->id;
-        $seedsexist = UserseedDetail::where('user_id', $user_id)->where('variety_id', $request['variety_id'])->where('deleted_at',NULL)->first();
+        $seedsexist = UserseedDetail::where('user_id', $user_id)->where('variety_id', $request->variety_id)->where('deleted_at', NULL)->first();
 
-        return '{"status":"'.$seedsexist.'"}';
-        if($seedsexist)
-        {
-            \App\Model\UserseedDetail::destroy($seedsexist['id']);
-            return '{"status":"success}';
+        if ($seedsexist) {
+            $seedsexist->deleted_at = date("Y-m-d H:i:s");
+            $seedsexist->update();
+
+            return '{"status":"success"}';
 
         }
-        return '{"status":"failed}';
+        return '{"status":"failed"}';
 
+    }
+
+    public function summaryDeleteAll(Request $request)
+    {
+        if (!Auth::check()) {
+            return redirect('login');
+        }
+
+        $user_id = Auth::user()->id;
+        $seedsDetailExist = UserseedDetail::where('user_id', $user_id)->where('variety_id', $request->variety_id)->where('deleted_at', NULL)->first();
+        $seedsExist = Userseed::where('user_id', $user_id)->where('variety_id', $request->variety_id)->where('deleted_at', NULL)->first();
+
+        if ($user_id) {
+            if ($seedsDetailExist) {
+                $seedsDetailExist->deleted_at = date("Y-m-d H:i:s");
+                $seedsDetailExist->update();
+            }
+
+            if ($seedsExist) {
+                $seedsExist->deleted_at = date("Y-m-d H:i:s");
+                $seedsExist->update();
+            }
+
+            return '{"status":"success"}';
+
+        }
+        return '{"status":"failed"}';
+
+    }
+
+    public function rules()
+    {
+        return [
+            'variety_id' => 'required',
+        ];
     }
 
 }

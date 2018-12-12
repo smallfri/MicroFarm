@@ -57,9 +57,6 @@
             App.init();
             Highlight.init();
         });
-        $(document).ready(function() {
-            $('#summary-table').DataTable();
-        } );
     </script>
 
 

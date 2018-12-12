@@ -57,7 +57,17 @@
     <h4 class="font-weight-bold py-3 mb-4">
         <span class="text-muted font-weight-light">Home /</span> Growing Journal
     </h4>
-
+    <div class="alert alert-success collapse" role="alert" id="primary">
+        Your changes have been saved.
+    </div>
+    @if(session()->has('message-success'))
+        <div class="alert alert-success">
+            {{ session()->get('message-success') }}
+        </div>
+    @endif
+    <div class="alert alert-danger collapse" role="alert" id="danger">
+        There was a problem, please try again.
+    </div>
     <hr class="border-light container-m--x mt-0 mb-5">
 
 
@@ -65,7 +75,7 @@
         <div class="card">
             <div class="card-header">
                 <a class="text-dark" data-toggle="collapse" href="#accordion-1">
-                    Growing Summary
+                    <icon class="fa fa-plus-square"></icon> Growing Summary
                 </a>
             </div>
             <div id="accordion-1" class="collapse show" data-parent="#accordion" style="padding:20px;">
@@ -88,81 +98,136 @@
                                     @csrf
                                     <td>{{$value->seed_name}}</td>
                                     <td>
-                                        {!! Form::text('density', $value->density, ["class" => "form-control", "id"=>"density"]) !!}
+                                        {!! Form::text('density', $value->density, ["class" => "form-control", "id"=>"density-".$value->variety_id.""]) !!}
                                         @if ($errors->has('density'))
                                             <span class="help-block">
-                                                  <strong>{{ $errors->first('email') }}</strong>
+                                                  <strong>{{ $errors->first('density') }}</strong>
                                             </span>
                                         @endif
                                     </td>
 
                                     <td>
-                                        {!! Form::text('maturity', $value->maturity, ['class' => 'form-control', "id"=>"maturity"]) !!}
+                                        {!! Form::text('maturity1', $value->maturity, ['class' => 'form-control', "id"=>"maturity-".$value->variety_id.""]) !!}
                                         @if ($errors->has('maturity'))
                                             <span class="help-block">
-                                                  <strong>{{ $errors->first('email') }}</strong>
+                                                  <strong>{{ $errors->first('maturity') }}</strong>
                                             </span>
                                         @endif
                                     </td>
                                     <td>
-                                        {!! Form::text('yield', $value->yield, ['class' => 'form-control', "id"=>"yield"]) !!}
+                                        {!! Form::text('yield1', $value->yield, ['class' => 'form-control', "id"=>"yield-".$value->variety_id.""]) !!}
+
                                         @if ($errors->has('yield'))
                                             <span class="help-block">
-                                                  <strong>{{ $errors->first('email') }}</strong>
+                                                  <strong>{{ $errors->first('yield') }}</strong>
                                             </span>
                                         @endif
                                     </td>
                                     <td>
-                                        <input type="hidden" name="variety_id" name="variety_id"
+                                        <input type="hidden" name="variety_id" id="variety_id"
                                                value="{{$value->variety_id}}">
-                                        <input type="hidden" name="supplier_id" name="supplier_id"
+                                        <input type="hidden" name="supplier_id" id="supplier_id"
                                                value="{{$value->supplier_id}}">
                                         <div class="form-group col-md-12">
-                                            <button href="#" type="submit" class="btn btn-outline btn-success"
-                                                    id="button_{{$value->variety_id}}">
+                                            <button href="#" type="submit" class="btn btn-outline btn-success btn-sm"
+                                                    id="update_{{$value->variety_id}}"  data-toggle="tooltip" data-placement="top" title="Save Seed Details">
                                                 <i class="fa fa-save"></i>
                                             </button>
 
-                                            <button type="submit" class="btn btn-outline btn-danger"
-                                                    id="delete_{{$value->variety_id}}">
+                                            {{--<button type="submit" class="btn btn-outline btn-warning btn-sm"--}}
+                                                    {{--id="delete_{{$value->variety_id}}" data-toggle="tooltip" data-placement="top" title="Delete Only Seed Details">--}}
+                                                {{--<i class="fa fa-trash-alt"></i>--}}
+                                            {{--</button>--}}
+                                            <button type="submit" class="btn btn-outline btn-danger btn-sm"
+                                                    id="deleteAll_{{$value->variety_id}}" data-toggle="tooltip" data-placement="top" title="Delete Seed & it's Details">
                                                 <i class="fa fa-trash-alt"></i>
                                             </button>
                                         </div>
                                     </td>
                                     <script type = "text/javascript" language = "javascript">
                                         $(document).ready(function() {
+                                            $(function () {
+                                                $('[data-toggle="tooltip"]').tooltip()
+                                            });
 
-                                            $("#button_{{$value->variety_id}}").click(function(event){
+                                            function myTimeout1() {
+                                                $(".alert").hide();
+                                            }
+
+                                            {{--$("#delete_{{$value->variety_id}}").click(function(event){--}}
+
+                                                {{--$.post(--}}
+                                                    {{--"seed/summary-delete",--}}
+                                                    {{--{--}}
+                                                        {{--_token: '{{csrf_token()}}',--}}
+                                                        {{--variety_id: '{{$value->variety_id}}'--}}
+                                                    {{--},--}}
+                                                    {{--function(data) {--}}
+                                                        {{--var status = jQuery.parseJSON(data);--}}
+                                                        {{--if(status.status === 'success')--}}
+                                                        {{--{--}}
+                                                            {{--$("#primary").show();--}}
+                                                        {{--}--}}
+                                                        {{--else--}}
+                                                        {{--{--}}
+                                                            {{--$("#danger").show();--}}
+                                                        {{--}--}}
+                                                        {{--setTimeout(myTimeout1, 3000);--}}
+                                                        {{--location.reload();--}}
+                                                    {{--}--}}
+                                                {{--);--}}
+
+                                            {{--});--}}
+
+                                            $("#deleteAll_{{$value->variety_id}}").click(function(event){
 
                                                 $.post(
-                                                    "seed/summary-update",
+                                                    "seed/summary-delete-all",
                                                     {
                                                         _token: '{{csrf_token()}}',
-                                                        density: $('#density').val(),
-                                                        yield: $('#yield').val(),
-                                                        maturity: $('#maturity').val(),
-                                                        supplier_id: '{{$value->supplier_id}}',
-                                                        variety_id:'{{$value->variety_id}}'
+                                                        variety_id: '{{$value->variety_id}}'
                                                     },
                                                     function(data) {
+                                                        var status = jQuery.parseJSON(data);
+                                                        if(status.status === 'success')
+                                                        {
+                                                            $("#primary").show();
+                                                        }
+                                                        else
+                                                        {
+                                                            $("#danger").show();
+                                                        }
+                                                        setTimeout(myTimeout1, 3000);
                                                         location.reload();
                                                     }
                                                 );
 
                                             });
 
-
-                                            $("#delete_{{$value->variety_id}}").click(function(event){
+                                            $("#update_{{$value->variety_id}}").click(function(event){
 
                                                 $.post(
-                                                    "seed/summary-delete",
+                                                    "seed/summary-update",
                                                     {
                                                         _token: '{{csrf_token()}}',
-                                                        variety_id:'{{$value->variety_id}}'
+                                                        variety_id:'{{$value->variety_id}}',
+                                                        supplier_id:'{{$value->supplier_id}}',
+                                                        density: $("#density-{{$value->variety_id}}").val(),
+                                                        maturity: $("#maturity-{{$value->variety_id}}").val(),
+                                                        yield: $("#yield-{{$value->variety_id}}").val(),
                                                     },
                                                     function(data) {
-                                                        alert(data);
-                                                        location.reload();
+                                                        var status = jQuery.parseJSON(data);
+å                                                        if(status.status === 'success')
+                                                        {
+                                                            $("#primary").show();
+                                                        }
+                                                        else
+                                                        {
+                                                            $("#danger").show();
+                                                        }
+                                                        setTimeout(myTimeout1, 3000);
+                                                        // location.reload();
                                                     }
                                                 );
 
@@ -185,7 +250,7 @@
             <div class="card mb-2">
                 <div class="card-header">
                     <a class="text-dark" data-toggle="collapse" href="#accordion-2">
-                        Growing Journal
+                        <icon class="fa fa-plus-square"></icon> Growing Journal
                     </a>
                 </div>
 

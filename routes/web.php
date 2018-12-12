@@ -12,7 +12,6 @@
 */
 
 Route::get('/', 'HomeController')->name('home');
-Route::get('/seed', 'Page2Controller')->name('seed');
 
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
@@ -37,10 +36,12 @@ Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('ver
 Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 // Mail Routes
+Route::post ('seed/summary-delete-all', 'SeedController@summaryDeleteAll')->name('summary-delete-all');
+//Route::post ('seed/summary-delete', 'SeedController@summaryDelete')->name('summary-delete');
 Route::post ('seed/summary-update', 'SeedController@summaryUpdate')->name('summary-update');
-Route::post ('seed/summary-delete', 'SeedController@summaryDelete')->name('summary-delete');
 Route::get('seed/create', 'SeedController@create')->name('seed/create');
 Route::post('seed/create', 'SeedController@store');
 Route::get('seed/supplierseed/{id}', 'SeedController@supplierseed');
+Route::get('seed', 'SeedController@index')->name('seed');
 Route::get('seed', 'SeedController@index')->name('seed');
 Route::post('seed', 'SeedController@seedupdate');

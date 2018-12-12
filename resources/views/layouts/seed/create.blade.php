@@ -1,5 +1,9 @@
 @extends('layouts.layout-2')
-
+<script type="application/javascript">
+    $(document).ready(function() {
+        $('#summary-table').DataTable();
+    } );
+</script>
 @section('content')
     <!-- begin page-header -->
     <h4 class="font-weight-bold py-3 mb-4">
