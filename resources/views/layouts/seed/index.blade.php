@@ -88,8 +88,10 @@
                         <tr>
                             <th scope="col">Seed Name</th>
                             <th scope="col">Density</th>
+                            <th scope="col"></th>
                             <th scope="col">Maturity</th>
                             <th scope="col">Yield</th>
+                            <th scope="col"></th>
                             <th scope="col"></th>
                         </tr>
                         </thead>
@@ -106,9 +108,13 @@
                                             </span>
                                     @endif
                                 </td>
+                                <td>
+                                    {!! Form::select('seed_measurement',['OUNCES'=>'OUNCES','GRAMS'=>'GRAMS','ML'=>'ML', 'POUNDS'=>'POUNDS', 'KILOS'=>'KILOS'] ,(isset($value->seed_measurement) && $value->seed_measurement != '' ) ? $value->seed_measurement : '', ['class' => 'form-control',"id"=>"seed_measurement-".$value->variety_id.""]) !!}
+
+                                </td>
 
                                 <td>
-                                    {!! Form::text('maturity1', $value->maturity, ['class' => 'form-control', "id"=>"maturity-".$value->variety_id.""]) !!}
+                                    {!! Form::text('maturity', $value->maturity, ['class' => 'form-control', "id"=>"maturity-".$value->variety_id.""]) !!}
                                     @if ($errors->has('maturity'))
                                         <span class="help-block">
                                                   <strong>{{ $errors->first('maturity') }}</strong>
@@ -116,13 +122,17 @@
                                     @endif
                                 </td>
                                 <td>
-                                    {!! Form::text('yield1', $value->yield, ['class' => 'form-control', "id"=>"yield-".$value->variety_id.""]) !!}
+                                    {!! Form::text('yield', $value->yield, ['class' => 'form-control', "id"=>"yield-".$value->variety_id.""]) !!}
 
                                     @if ($errors->has('yield'))
                                         <span class="help-block">
                                                   <strong>{{ $errors->first('yield') }}</strong>
                                             </span>
                                     @endif
+                                </td>
+                                <td>
+                                    {!! Form::select('measurement',['OUNCES'=>'OUNCES','GRAMS'=>'GRAMS','ML'=>'ML', 'POUNDS'=>'POUNDS', 'KILOS'=>'KILOS'] ,(isset($value->measurement) && $value->measurement != '' ) ? $value->measurement : '', ['class' => 'form-control',"id"=>"measurement-".$value->variety_id.""]) !!}
+
                                 </td>
                                 <td>
                                     <input type="hidden" name="variety_id" id="variety_id"
@@ -215,14 +225,48 @@
                                                     density: $("#density-{{$value->variety_id}}").val(),
                                                     maturity: $("#maturity-{{$value->variety_id}}").val(),
                                                     yield: $("#yield-{{$value->variety_id}}").val(),
+                                                    measurement: $("#measurement-{{$value->variety_id}}").val(),
+                                                    seed_measurement: $("#seed-measurement-{{$value->variety_id}}").val()
                                                 },
                                                 function (data) {
                                                     var status = jQuery.parseJSON(data);
                                                     if (status.status === 'success') {
                                                         $("#primary").show();
+
                                                         $("#accordion-2").toggle();
                                                         $("#accordion-1").addClass('collapse');
-                                                        $(document).scrollTop( $("#accordion-2  ").offset().top );
+
+                                                        var yield = $("#yield-{{$value->variety_id}}").val();
+                                                        var density = $("#density-{{$value->variety_id}}").val();
+                                                        var maturity =  $("#maturity-{{$value->variety_id}}").val();
+                                                        var measurement = $("#measurement-{{$value->variety_id}}").val();
+                                                        var seed_measurement = $("#seed-measurement-{{$value->variety_id}}").val();
+
+                                                        alert(yield);
+
+
+                                                        $('#yield').val(yield);
+                                                        $('#density').val(density);
+                                                        $('#maturity').val(maturity);
+                                                        $('#measurement').val(measurement);
+                                                        $('#seed_measurement').val(seed_measurement);
+
+                                                        $('#nav-{{$value->variety_id}}').tab('show');
+
+
+                                                        $("html, body").animate({ scrollTop: $(document).height() - $("#accordion-2").height() }, "slow");
+                                                        return false;
+
+                                                        var li_count = $('.nav-tabs li').length;
+                                                        var current_active = $('.nav-tabs li.active').index();
+
+                                                        if(current_active<li_count){
+                                                            $('.nav-tabs li.active').next('li').find('a').attr('data-toggle','tab').tab('active show');
+                                                        }
+
+
+
+
                                                     } else {
                                                         $("#danger").show();
                                                     }
@@ -278,8 +322,8 @@
                                         </li>
                                         @foreach($userseedlist as $key => $value)
                                             <li class="nav-item">
-                                                <a href="#nav-tab2-{{$value->variety_id}}" data-toggle="tab"
-                                                   class="nav-link {{ $key == count($userseedlist) - 1 ? 'active show' : 'adfasdfasdf' }}">{{$value->seed_name}}</a>
+                                                <a href="#nav-tab2-{{$value->variety_id}}" data-toggle="tab" id="nav-{{$value->variety_id}}"
+                                                   class="nav-link {{ $key == count($userseedlist) - 1 ? 'active show' : '' }}">{{$value->seed_name}}</a>
                                             </li>
                                         @endforeach
                                         <li class="nav-item next-button" style=""><a href="javascript:;"
@@ -313,13 +357,23 @@
                                                             <label class="form-label">Supplier</label>
                                                             {!! Form::select('supplier_id',$suppliers ,[$value->supplier_id], ['class' => 'form-control']) !!}
                                                         </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label class="form-label">Seed Density</label>
-                                                            {!! Form::text('density', $value->density, ['class' => 'form-control']) !!}
 
-                                                        </div>
                                                     </div>
 
+
+
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label class="form-label">Seed Density</label>
+                                                            {!! Form::text('density', $value->density, ['class' => 'form-control', 'id'=>'density']) !!}
+
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label class="form-label">Measurement</label>
+                                                        {!! Form::select('seed_measurement',['OUNCES'=>'OUNCES','GRAMS'=>'GRAMS','ML'=>'ML', 'POUNDS'=>'POUNDS', 'KILOS'=>'KILOS'] ,(isset($value->measurement) && $value->measurement != '' ) ? $value->measurement : '', ['class' => 'form-control',"id"=>"measurement"]) !!}
+                                                        </div>
+
+                                                    </div>
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
                                                             <label class="form-label">Tray Size</label>
@@ -357,7 +411,7 @@
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
                                                             <label class="form-label">Days to Maturity</label>
-                                                            {!! Form::select('maturity',$days,(isset($value->maturity) && $value->maturity != '' ) ? $value->maturity : '', ['class' => 'form-control']) !!}
+                                                            {!! Form::select('maturity',$days,(isset($value->maturity) && $value->maturity != '' ) ? $value->maturity : '', ['class' => 'form-control', 'id'=>'maturity']) !!}
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <label class="form-label">Best Medium</label>
@@ -369,8 +423,12 @@
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
                                                             <label class="form-label">Yield</label>
-                                                            {!! Form::text('yield',(isset($value->yield) && $value->yield !='' ) ? $value->yield : '', ['class' => 'form-control']) !!}
+                                                            {!! Form::text('yield',(isset($value->yield) && $value->yield !='' ) ? $value->yield : '', ['class' => 'form-control', 'id'=>'yield']) !!}
 
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label class="form-label">Measurement</label>
+                                                            {!! Form::select('measurement',['OUNCES'=>'OUNCES','GRAMS'=>'GRAMS','ML'=>'ML', 'POUNDS'=>'POUNDS', 'KILOS'=>'KILOS'] ,(isset($value->measurement) && $value->measurement != '' ) ? $value->measurement : '', ['class' => 'form-control',"id"=>"measurement"]) !!}
                                                         </div>
                                                     </div>
 
