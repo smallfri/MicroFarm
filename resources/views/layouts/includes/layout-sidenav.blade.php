@@ -18,7 +18,7 @@
 
         <li class="sidenav-item{{ Request::is('seed/create') ? ' active' : '' }}">
             <a href="{{ route('seed/create') }}" class="sidenav-link"><i class="sidenav-icon ion ion-ios-keypad"></i>
-                <div>Seeds</div>
+                <div>Seed Selection</div>
             </a>
         </li>
 

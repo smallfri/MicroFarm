@@ -9,48 +9,21 @@
     <script>
 
         $(function () {
-            $('#summary-table').dataTable({
-                footerCallback: function (row, data, start, end, display) {
-                    var api = this.api(), data;
 
-                    function getSummary(colIndex, tmpl, avg, percents) {
-                        var len = 0;
-                        var sum = api.column(colIndex).data()
-                            .reduce(function (a, b) {
-                                len++;
-                                return a + (numeral(b).value() * (percents ? 100 : 1));
-                            }, 0);
-
-                        var result = sum / (avg ? len : 1);
-
-                        if (percents) {
-                            result = result / 100;
-                        }
-
-                        $(api.column(colIndex).footer()).html(numeral(result).format(tmpl));
-                    }
-
-                    getSummary(1, '0,0'); // Unique visits
-                    getSummary(2, '0,0'); // Views
-                    getSummary(3, '0.00%', true, true); // Failure
-                    getSummary(4, '0.00', true); // Avg. view depth
-
-                    // Get average time on site
-                    avgTimeLen = 0;
-                    var totalSeconds = api.column(5).data()
-                        .reduce(function (a, b) {
-                            var seconds = moment(b, 'm:s').unix() - moment('0:0', 'm:s').unix();
-
-                            avgTimeLen++;
-                            return a + seconds;
-                        }, 0);
-                    var avgTime = Math.floor(totalSeconds / avgTimeLen);
-                    var avgMinutes = Math.floor(avgTime / 60);
-                    var avgSeconds = avgTime - (avgMinutes * 60);
-
-                    $(api.column(5).footer()).html(avgMinutes + ':' + avgSeconds);
-                }
-            });
+            $(document).ready(function() {
+                $('#summary-table').DataTable( {
+                    columnDefs: [ {
+                        targets: [ 0 ],
+                        orderData: [ 0, 1 ]
+                    }, {
+                        targets: [ 1 ],
+                        orderData: [ 1, 0 ]
+                    }, {
+                        targets: [ 4 ],
+                        orderData: [ 4, 0 ]
+                    } ]
+                } );
+            } );
         });
     </script>
     <!-- begin page-header -->
@@ -466,7 +439,6 @@
                                                                                     aria-controls="data-table-responsive"
                                                                                     rowspan="1"
                                                                                     colspan="1"
-                                                                                    style="max-width: 60%;"
                                                                                     aria-sort="ascending"
                                                                                     aria-label=": activate to sort column descending">
                                                                                     Created At:
@@ -474,10 +446,10 @@
 
                                                                                 <th class="text-nowrap sorting"
                                                                                     tabindex="0"
+                                                                                    style="width:480px"
                                                                                     aria-controls="data-table-responsive"
                                                                                     rowspan="1"
                                                                                     colspan="1"
-                                                                                    style=""
                                                                                     aria-label="Rendering engine: activate to sort column ascending">
                                                                                     Note:
                                                                                 </th>

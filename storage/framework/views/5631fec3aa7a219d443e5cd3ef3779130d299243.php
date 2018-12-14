@@ -6,7 +6,7 @@
 <?php $__env->startSection('content'); ?>
     <!-- begin page-header -->
     <h4 class="font-weight-bold py-3 mb-4">
-        <span class="text-muted font-weight-light">Home /</span> Seeds
+        <span class="text-muted font-weight-light">Home /</span> Seed Selection
     </h4>
 
     <hr class="border-light container-m--x mt-0 mb-5">

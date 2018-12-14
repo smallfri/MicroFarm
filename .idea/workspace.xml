@@ -3,15 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="5850e08c-3697-4661-a4d6-80c2734f0c6c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SeedController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SeedController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/UserseedDetail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/UserseedDetail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/includes/layout-sidenav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/includes/layout-sidenav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/seed/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/seed/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/seed/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/seed/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/FL1r3OunO4D5h6YXQM2Zv1m9tgKpsxCV2YuXuDc8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/OnOmQug0c00OVzgi06S0Crgf3VD329I9F3XE1ZSy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/TY5o2sl3zF96IVGAWGbc0d7we9wrGD6ESxcmnyJ5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/TYh40P2jAjLKmmUj2BESfB35QZYilh85xRiY4tQx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/lFmDJ75aALGccUdGCoSj1Gz29PWveEBsR1bglfzq" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/5631fec3aa7a219d443e5cd3ef3779130d299243.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/5631fec3aa7a219d443e5cd3ef3779130d299243.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/views/9670b37872cb56bb8d2263f7968dd23dc50338bd.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/9670b37872cb56bb8d2263f7968dd23dc50338bd.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/edcf97a0bb61b2f3e0642a9d65d44183ba259da1.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/edcf97a0bb61b2f3e0642a9d65d44183ba259da1.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/includes/layout-sidenav.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="380">
-              <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+              <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -45,20 +43,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/seed/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="243" column="56" selection-start-line="243" selection-start-column="56" selection-end-line="243" selection-end-column="56" />
+            <state relative-caret-position="4817">
+              <caret line="475" column="108" selection-start-line="475" selection-start-column="108" selection-end-line="475" selection-end-column="108" />
               <folding>
-                <element signature="e#18754#19869#0#HTML" />
+                <element signature="e#30861#30880#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/lorisleiva/laravel-deployer/tests/DeploymentTestCase.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/seed/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2090">
-              <caret line="110" column="24" selection-start-line="110" selection-start-column="24" selection-end-line="110" selection-end-column="24" />
+            <state relative-caret-position="171">
+              <caret line="9" column="79" selection-start-line="9" selection-start-column="79" selection-end-line="9" selection-end-column="79" />
             </state>
           </provider>
         </entry>
@@ -75,7 +73,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SeedController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1008">
+            <state relative-caret-position="4218">
               <caret line="232" selection-start-line="232" selection-end-line="232" />
               <folding>
                 <element signature="e#40#67#0#PHP" expanded="true" />
@@ -144,8 +142,8 @@
       <find>seeds-measurement</find>
       <find>measurement</find>
       <find>seeds_measurement</find>
-      <find>seeds_measurement-</find>
       <find>seeds_measurement-6</find>
+      <find>seeds_measurement-</find>
     </findStrings>
     <replaceStrings>
       <replace>/assets/vendor</replace>
@@ -202,16 +200,16 @@
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/application.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/seed/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/seed/form.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/includes/layout-sidenav.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/flash-message.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" />
         <option value="$PROJECT_DIR$/app/Model/UserseedDetail.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SeedController.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/includes/layout-sidenav.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/seed/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/seed/index.blade.php" />
       </list>
     </option>
@@ -329,7 +327,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="356" />
     <option name="y" value="23" />
     <option name="width" value="2553" />
@@ -342,7 +340,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -406,6 +403,14 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="layouts" type="462c0819:PsiDirectoryNode" />
+              <item name="includes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appwork" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appwork" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
               <item name="seed" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -438,6 +443,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -488,18 +494,19 @@
       <updated>1544283445288</updated>
       <workItem from="1544283446580" duration="50264000" />
       <workItem from="1544500120207" duration="33887000" />
-      <workItem from="1544713673034" duration="7192000" />
+      <workItem from="1544713673034" duration="7759000" />
+      <workItem from="1544796968593" duration="784000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91989000" />
+    <option name="totallyTimeSpent" value="93340000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="356" y="23" width="2553" height="1376" extended-state="0" />
+    <frame x="0" y="23" width="2553" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.06650737" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.06690562" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -513,8 +520,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49921995" weight="0.32954547" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50139385" side_tool="true" visible="true" weight="0.14563863" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49860615" visible="true" weight="0.14563863" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50179213" side_tool="true" visible="true" weight="0.19458897" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4982079" visible="true" weight="0.19458897" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -722,13 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/seed/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="32" selection-start-line="14" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/flash-message.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="397">
@@ -760,6 +760,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/lorisleiva/laravel-deployer/tests/DeploymentTestCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2090">
+          <caret line="110" column="24" selection-start-line="110" selection-start-column="24" selection-end-line="110" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/layout-2.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -770,14 +777,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/includes/layout-sidenav.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
-          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/lorisleiva/laravel-deployer/tests/DeploymentTestCase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2090">
-          <caret line="110" column="24" selection-start-line="110" selection-start-column="24" selection-end-line="110" selection-end-column="24" />
+          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -785,6 +785,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="26" column="59" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SeedController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4218">
+          <caret line="232" selection-start-line="232" selection-end-line="232" />
+          <folding>
+            <element signature="e#40#67#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Model/UserseedDetail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="16" column="192" selection-start-line="16" selection-start-column="192" selection-end-line="16" selection-end-column="192" />
         </state>
       </provider>
     </entry>
@@ -798,29 +815,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Model/UserseedDetail.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/seed/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="16" column="192" selection-start-line="16" selection-start-column="192" selection-end-line="16" selection-end-column="192" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SeedController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="232" selection-start-line="232" selection-end-line="232" />
-          <folding>
-            <element signature="e#40#67#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="171">
+          <caret line="9" column="79" selection-start-line="9" selection-start-column="79" selection-end-line="9" selection-end-column="79" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/seed/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="243" column="56" selection-start-line="243" selection-start-column="56" selection-end-line="243" selection-end-column="56" />
+        <state relative-caret-position="4817">
+          <caret line="475" column="108" selection-start-line="475" selection-start-column="108" selection-end-line="475" selection-end-column="108" />
           <folding>
-            <element signature="e#18754#19869#0#HTML" />
+            <element signature="e#30861#30880#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
