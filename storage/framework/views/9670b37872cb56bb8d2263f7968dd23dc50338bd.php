@@ -109,7 +109,7 @@
                                     <?php endif; ?>
                                 </td>
                                 <td>
-                                    <?php echo Form::select('seed_measurement',['OUNCES'=>'OUNCES','GRAMS'=>'GRAMS','ML'=>'ML', 'POUNDS'=>'POUNDS', 'KILOS'=>'KILOS'] ,(isset($value->seed_measurement) && $value->seed_measurement != '' ) ? $value->seed_measurement : '', ['class' => 'form-control',"id"=>"seed_measurement-".$value->variety_id.""]); ?>
+                                    <?php echo Form::select('seeds_measurement',['OUNCES'=>'OUNCES','GRAMS'=>'GRAMS','ML'=>'ML', 'POUNDS'=>'POUNDS', 'KILOS'=>'KILOS'] ,(isset($value->seeds_measurement) && $value->seeds_measurement != '' ) ? $value->seeds_measurement : '', ['class' => 'form-control',"id"=>"seeds_measurement-".$value->variety_id.""]); ?>
 
 
                                 </td>
@@ -230,7 +230,7 @@
                                                     maturity: $("#maturity-<?php echo e($value->variety_id); ?>").val(),
                                                     yield: $("#yield-<?php echo e($value->variety_id); ?>").val(),
                                                     measurement: $("#measurement-<?php echo e($value->variety_id); ?>").val(),
-                                                    seed_measurement: $("#seed-measurement-<?php echo e($value->variety_id); ?>").val()
+                                                    seeds_measurement: $("#seeds_measurement-<?php echo e($value->variety_id); ?>").val()
                                                 },
                                                 function (data) {
                                                     var status = jQuery.parseJSON(data);
@@ -244,22 +244,19 @@
                                                         var density = $("#density-<?php echo e($value->variety_id); ?>").val();
                                                         var maturity =  $("#maturity-<?php echo e($value->variety_id); ?>").val();
                                                         var measurement = $("#measurement-<?php echo e($value->variety_id); ?>").val();
-                                                        var seed_measurement = $("#seed-measurement-<?php echo e($value->variety_id); ?>").val();
-
-                                                        alert(yield);
-
+                                                        var seeds_measurement = $("#seeds_measurement-<?php echo e($value->variety_id); ?>").val();
+                                                        
 
                                                         $('#yield').val(yield);
                                                         $('#density').val(density);
                                                         $('#maturity').val(maturity);
                                                         $('#measurement').val(measurement);
-                                                        $('#seed_measurement').val(seed_measurement);
+                                                        $('#seeds_measurement').val(seeds_measurement);
 
                                                         $('#nav-<?php echo e($value->variety_id); ?>').tab('show');
 
 
                                                         $("html, body").animate({ scrollTop: $(document).height() - $("#accordion-2").height() }, "slow");
-                                                        return false;
 
                                                         var li_count = $('.nav-tabs li').length;
                                                         var current_active = $('.nav-tabs li.active').index();
@@ -377,7 +374,7 @@
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <label class="form-label">Measurement</label>
-                                                        <?php echo Form::select('seed_measurement',['OUNCES'=>'OUNCES','GRAMS'=>'GRAMS','ML'=>'ML', 'POUNDS'=>'POUNDS', 'KILOS'=>'KILOS'] ,(isset($value->measurement) && $value->measurement != '' ) ? $value->measurement : '', ['class' => 'form-control',"id"=>"measurement"]); ?>
+                                                        <?php echo Form::select('seeds_measurement',['OUNCES'=>'OUNCES','GRAMS'=>'GRAMS','ML'=>'ML', 'POUNDS'=>'POUNDS', 'KILOS'=>'KILOS'] ,(isset($value->seeds_measurement) && $value->seeds_measurement != '' ) ? $value->seeds_measurement : '', ['class' => 'form-control',"id"=>"seeds_measurement"]); ?>
 
                                                         </div>
 

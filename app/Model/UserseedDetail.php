@@ -14,7 +14,7 @@ class UserseedDetail extends Model
      * @var array
      */
     protected $fillable = [
-        'seed_name','supplier_name','density','tray_size','seed_id','user_userseed_id','soak_status','germination','situation','medium','maturity','yield','seeds_measurement','notes','status','deleted_at'
+        'seed_name','supplier_name','density','tray_size','seed_id','user_userseed_id','soak_status','germination','situation','medium','maturity','yield','seeds_measurement', 'measurement', 'notes','status','deleted_at'
     ];
 
     /**

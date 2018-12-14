@@ -230,13 +230,17 @@ class SeedController extends Controller
         if (!Auth::check()) {
             return redirect('login');
         }
+
         $user_id = Auth::user()->id;
         $seedsexist = UserseedDetail::where('user_id', $user_id)->where('variety_id', $request->variety_id)->first();
 
+
         if ($seedsexist) {
             $seedsexist->density = $request->density;
+            $seedsexist->seeds_measurement = $request->seeds_measurement;
             $seedsexist->maturity = $request->maturity;
             $seedsexist->yield = $request->yield;
+            $seedsexist->measurement = $request->measurement;
             $seedsexist->supplier_id = $request->supplier_id;
             $seedsexist->update();
 
@@ -244,9 +248,11 @@ class SeedController extends Controller
         } else {
             $seedsdetail = new UserseedDetail();
             $seedsdetail->density = $request->density;
+            $seedsdetail->seeds_measurement = $request->seeds_measurement;
             $seedsdetail->variety_id = $request->variety_id;
             $seedsdetail->maturity = $request->maturity;
             $seedsdetail->yield = $request->yield;
+            $seedsdetail->measurement = $request->measurement;
             $seedsdetail->supplier_id = $request->supplier_id;
             $seedsdetail->user_id = $user_id;
             $seedsdetail->save();
