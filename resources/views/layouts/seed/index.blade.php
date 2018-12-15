@@ -422,7 +422,7 @@
                                                     <div class="form-row">
 
                                                         <div class="col-md-12 pt-10 pb-10">
-                                                            <?php $notes = \APP\Model\GrowNotes::select('grow_notes.*')->where('user_id', $value->user_id)->where('variety_id', $value->variety_id)->orderby('id', 'desc')->get();
+                                                            <?php $notes = \App\GrowNotes::select('grow_notes.*')->where('user_id', $value->user_id)->where('variety_id', $value->variety_id)->orderby('id', 'desc')->get();
 
                                                             ?>
                                                             @if($notes != null)

@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\SeedsVariety;
+use App\SeedsVariety;
 use Illuminate\Http\Request;
-use App\Model\Seeds;
+use App\Seeds;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
-use App\Model\Userseed;
-use App\Model\Supplier;
-use App\Model\UserseedDetail;
-use App\Model\Days;
-use App\Model\GrowNotes;
+use App\Userseed;
+use App\Supplier;
+use App\UserseedDetail;
+use App\Days;
+use App\GrowNotes;
 
 class SeedController extends Controller
 {
@@ -57,6 +57,8 @@ class SeedController extends Controller
                 ->leftJoin('userseeds_detail', 'userseeds_detail.variety_id', '=', 'seeds_variety.id')
                 ->orderBy('seeds_variety.id', 'ASC')
                 ->get();
+
+//            dd($userseedlist);
 
             $suppliers = Supplier::pluck('name', 'id')->prepend('Select One', '0');
 
@@ -130,7 +132,7 @@ class SeedController extends Controller
         $this->validate($request, $rules, $customMessages);
         $user_id = Auth::user()->id;
         if (!empty($request->input('variety_id'))) {
-            $userseed = Userseed::where('user_id', $user_id)->delete();
+            $userseed = Userseed::where('user_id', $user_id)->join('seeds_variety','seeds_variety.id','=','userseed.variety_id')->where('seeds_variety.supplier_id','=',$request->input('supplier'))->delete();
             foreach ($request->input('variety_id') as $variety_id) {
 
                 $userseed = new Userseed();

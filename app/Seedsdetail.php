@@ -4,7 +4,7 @@ namespace App;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 
-class SeedsDetail extends Model
+class Seedsdetail extends Model
 {
      use SoftDeletes;
   public $table="seeds_detail";
@@ -35,11 +35,11 @@ class SeedsDetail extends Model
     }
 
      public function userseedName(){
-         return $this->hasMany('App\Model\Seeds','id','seed_id')->where('status','active');
+         return $this->hasMany('App\Seeds','id','seed_id')->where('status','active');
     }
 
     public function seedsupplierName(){
-         return $this->hasMany('App\Model\Seedsupplier','supplier_seed_id','seed_id')
+         return $this->hasMany('App\Seedsupplier','supplier_seed_id','seed_id')
          ->join('supplier','supplier.id','=','seed_supplier.supplier_id')
          ;
     }

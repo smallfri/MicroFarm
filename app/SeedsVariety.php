@@ -27,6 +27,6 @@ class SeedsVariety extends Model
     ];
 
     public function seedname(){
-        return $this->hasMany('App\Model\Seeds','id','supplier_seed_id')->where('status',1);
+        return $this->hasMany('App\Seeds','id','supplier_seed_id')->where('status',1);
     }
 }

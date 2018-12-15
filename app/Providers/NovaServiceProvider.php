@@ -42,11 +42,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function gate()
     {
         Gate::define('viewNova', function ($user) {
-            return in_array($user->email, [
-                //
-            ]);
+            return $user->hasRole('admin');
         });
     }
+
 
     /**
      * Get the cards that should be displayed on the Nova dashboard.

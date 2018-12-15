@@ -4214,7 +4214,7 @@ Did you mean one of these?
 #53 /home/vagrant/code/Personal/appwork/public/index.php(53): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #54 {main}
 "} 
-[2018-12-09 17:36:51] local.ERROR: Class 'App\Model\Days' not found {"userId":55,"email":"smallfriinc@gmail.com","exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'App\\Model\\Days' not found at /home/vagrant/code/Personal/appwork/app/Http/Controllers/SeedController.php:22)
+[2018-12-09 17:36:51] local.ERROR: Class 'App\Days' not found {"userId":55,"email":"smallfriinc@gmail.com","exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'App\\Model\\Days' not found at /home/vagrant/code/Personal/appwork/app/Http/Controllers/SeedController.php:22)
 [stacktrace]
 #0 [internal function]: App\\Http\\Controllers\\SeedController->index(Object(Illuminate\\Http\\Request))
 #1 /home/vagrant/code/Personal/appwork/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
@@ -5040,7 +5040,7 @@ Did you mean one of these?
 #57 /home/vagrant/code/Personal/appwork/public/index.php(53): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #58 {main}
 "} 
-[2018-12-09 22:25:50] local.ERROR: Class 'App\Model\Seeds' not found {"userId":55,"email":"smallfriinc@gmail.com","exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'App\\Seeds' not found at /home/vagrant/code/Personal/appwork/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasRelationships.php:670)
+[2018-12-09 22:25:50] local.ERROR: Class 'App\Seeds' not found {"userId":55,"email":"smallfriinc@gmail.com","exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'App\\Seeds' not found at /home/vagrant/code/Personal/appwork/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasRelationships.php:670)
 [stacktrace]
 #0 /home/vagrant/code/Personal/appwork/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasRelationships.php(283): Illuminate\\Database\\Eloquent\\Model->newRelatedInstance('App\\\\Seeds')
 #1 /home/vagrant/code/Personal/appwork/app/Model/SeedsVariety.php(30): Illuminate\\Database\\Eloquent\\Model->hasMany('App\\\\Seeds', 'id', 'supplier_seed_i...')
@@ -5108,7 +5108,7 @@ Did you mean one of these?
 #63 /home/vagrant/code/Personal/appwork/public/index.php(53): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #64 {main}
 "} 
-[2018-12-09 22:26:01] local.ERROR: Class 'App\Model\Seeds' not found {"userId":55,"email":"smallfriinc@gmail.com","exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'App\\Seeds' not found at /home/vagrant/code/Personal/appwork/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasRelationships.php:670)
+[2018-12-09 22:26:01] local.ERROR: Class 'App\Seeds' not found {"userId":55,"email":"smallfriinc@gmail.com","exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'App\\Seeds' not found at /home/vagrant/code/Personal/appwork/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasRelationships.php:670)
 [stacktrace]
 #0 /home/vagrant/code/Personal/appwork/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasRelationships.php(283): Illuminate\\Database\\Eloquent\\Model->newRelatedInstance('App\\\\Seeds')
 #1 /home/vagrant/code/Personal/appwork/app/Model/SeedsVariety.php(30): Illuminate\\Database\\Eloquent\\Model->hasMany('App\\\\Seeds', 'id', 'supplier_seed_i...')

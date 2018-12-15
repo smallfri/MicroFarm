@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Userseed extends Model
 {
-     use SoftDeletes;
+//     use SoftDeletes;
      public $table="userseed";
     /**
      * The attributes that are mass assignable.
@@ -27,15 +27,15 @@ class Userseed extends Model
     ];
 
      public function userseedName(){
-         return $this->hasMany('App\Model\Seeds','id','variety_id')->where('status','active');
+         return $this->hasMany('App\Seeds','id','variety_id')->where('status','active');
     }
 
     public function userseedDetail(){
-         return $this->hasMany('App\Model\SeedsDetail','seed_id','variety_id')->with('germinationDays','maturityDays');
+         return $this->hasMany('App\SeedsDetail','seed_id','variety_id')->with('germinationDays','maturityDays');
     }
 
     public function seedsupplierName(){
-         return $this->hasMany('App\Model\Seedsupplier','supplier_seed_id','variety_id')
+         return $this->hasMany('App\Seedsupplier','supplier_seed_id','variety_id')
          ->join('supplier','supplier.id','=','seed_supplier.supplier_id')
          ;
     }

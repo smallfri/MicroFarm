@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','password-confirm'
+        'name', 'email', 'password', 'password-confirm'
     ];
 
     /**
@@ -27,4 +27,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function hasRole($role)
+    {
+        return User::where('role', $role)->get();
+    }
+
 }
