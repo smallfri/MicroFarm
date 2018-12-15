@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Model;
+namespace App;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 
-class SeedSupplier extends Model
+class SeedsVariety extends Model
 {
-     use SoftDeletes;
-    public $table="seed_supplier";
-     /**
+    use SoftDeletes;
+    public $table="seeds_variety";
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'supplier_seed_id','supplier_id','deleted_at'
+        'seed_id','name','supplier_id','deleted_at'
     ];
 
     /**
@@ -23,9 +23,10 @@ class SeedSupplier extends Model
      * @var array
      */
     protected $hidden = [
-      'created_at', 'updated_at'
+        'created_at', 'updated_at'
     ];
+
     public function seedname(){
-         return $this->hasMany('App\Model\Seeds','id','supplier_seed_id')->where('status','active');
+        return $this->hasMany('App\Model\Seeds','id','supplier_seed_id')->where('status',1);
     }
 }

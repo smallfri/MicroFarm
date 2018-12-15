@@ -1,23 +1,21 @@
 <?php
 
-namespace App\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+namespace App;
+
 use Illuminate\Database\Eloquent\Model;
 
-class Variety extends Model
+class Days extends Model
 {
-     use SoftDeletes;
-    public $table="variety";
-    /**
+   /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name','status','deleted_at'
+        'name'
     ];
 
-     /**
+    /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
@@ -25,6 +23,4 @@ class Variety extends Model
     protected $hidden = [
       'created_at', 'updated_at'
     ];
-
-   
 }

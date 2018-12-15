@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Model;
+namespace App;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 
-class SeedsDetail extends Model
+class UserseedDetail extends Model
 {
-     use SoftDeletes;
-  public $table="seeds_detail";
+    use SoftDeletes;
+  public $table="userseeds_detail";
      /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'seed_id','soak_status','germination','situation','medium','maturity','yield','seeds_measurement','notes','status','deleted_at'
+        'seed_name','supplier_name','density','tray_size','seed_id','user_userseed_id','soak_status','germination','situation','medium','maturity','yield','seeds_measurement', 'measurement', 'notes','status','deleted_at'
     ];
 
     /**
@@ -23,7 +23,7 @@ class SeedsDetail extends Model
      * @var array
      */
     protected $hidden = [
-      'created_at', 'updated_at'
+      'created_at', 'updated_at','seed_id'
     ];
 
     public function germinationDays(){
@@ -34,14 +34,8 @@ class SeedsDetail extends Model
        return $this->hasMany('App\Days','id','maturity');
     }
 
-     public function userseedName(){
-         return $this->hasMany('App\Model\Seeds','id','seed_id')->where('status','active');
-    }
-
     public function seedsupplierName(){
-         return $this->hasMany('App\Model\Seedsupplier','supplier_seed_id','seed_id')
-         ->join('supplier','supplier.id','=','seed_supplier.supplier_id')
-         ;
+         return $this->hasMany('App\Supplier','id','supplier_name');
     }
 
 }
