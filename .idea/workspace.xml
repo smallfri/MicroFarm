@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5850e08c-3697-4661-a4d6-80c2734f0c6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Days.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Days.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/GrowNotes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GrowNotes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/HasRoles.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/HasRoles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Permission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Permission.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Role.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/SeedSupplier.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Seeds.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Seeds.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/SeedsDetail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/SeedsDetail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/SeedsVariety.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/SeedsVariety.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Setting.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Setting.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Supplier.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Supplier.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Trait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Trait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Userseed.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Userseed.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/UserseedDetail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/UserseedDetail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Variety.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Variety.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/application.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/application.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/2byA81A7WyIZsblEBtbuzmtpkfo1u2RSVeNAvYTR" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/CQzuomxr8sA0omFtpSb9FRlw0GvfqtVILRLKz9du" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/kV4qBDZpkedoJ1BLu6SkItA5uJLjvJ2tXVnJiVpA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/8d698664b119995e60a0cc89408c1e2eeff97994.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/8d698664b119995e60a0cc89408c1e2eeff97994.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,13 +69,46 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Nova/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
+            <state relative-caret-position="1059">
               <caret line="75" column="40" lean-forward="true" selection-start-line="75" selection-start-column="40" selection-end-line="75" selection-end-column="40" />
               <folding>
                 <element signature="e#28#55#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Nova/Metrics/NewUsersPerDay.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+              <folding>
+                <element signature="e#36#49#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1671">
+              <caret line="88" column="11" lean-forward="true" selection-start-line="88" selection-start-column="11" selection-end-line="89" selection-end-column="33" />
+              <folding>
+                <element signature="e#45#58#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -178,7 +187,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/index.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_12_08_214738_create_subscriptions_table.php" />
         <option value="$PROJECT_DIR$/app/Exceptions/Handler.php" />
         <option value="$PROJECT_DIR$/resources/views/errors/500.blade.php" />
@@ -210,7 +218,6 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/seed/form.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/flash-message.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" />
         <option value="$PROJECT_DIR$/app/Model/UserseedDetail.php" />
@@ -229,6 +236,8 @@
         <option value="$PROJECT_DIR$/app/Nova/SeedsVariety.php" />
         <option value="$PROJECT_DIR$/app/Nova/Metrics/NewUsers.php" />
         <option value="$PROJECT_DIR$/app/Nova/User.php" />
+        <option value="$PROJECT_DIR$/app/Nova/Metrics/NewUsersPerDay.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
       </list>
     </option>
   </component>
@@ -374,6 +383,27 @@
               <item name="appwork" type="b2602c69:ProjectViewProjectNode" />
               <item name="appwork" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appwork" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appwork" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appwork" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appwork" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appwork" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appwork" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Nova" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -475,7 +505,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97366000" />
+    <option name="totallyTimeSpent" value="98752000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2553" height="1053" extended-state="6" />
@@ -493,10 +523,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4990044" visible="true" weight="0.32882413" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4990044" weight="0.32882413" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50099564" side_tool="true" visible="true" weight="0.32882413" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4982079" weight="0.19458897" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50219035" side_tool="true" visible="true" weight="0.19458897" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49780965" visible="true" weight="0.19458897" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -508,9 +538,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/assets/css/default/style.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/css/default/style.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -575,13 +602,6 @@
     <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2018-12-11.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2885" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="88" column="11" lean-forward="true" selection-start-line="88" selection-start-column="11" selection-end-line="89" selection-end-column="33" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/seed/form.blade.php">
@@ -661,13 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/seed/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -680,11 +693,6 @@
         <state relative-caret-position="-334">
           <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3661" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Role.php">
@@ -826,10 +834,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Nova/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
+        <state relative-caret-position="1059">
           <caret line="75" column="40" lean-forward="true" selection-start-line="75" selection-start-column="40" selection-end-line="75" selection-end-column="40" />
           <folding>
             <element signature="e#28#55#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Nova/Metrics/NewUsersPerDay.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+          <folding>
+            <element signature="e#36#49#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1671">
+          <caret line="88" column="11" lean-forward="true" selection-start-line="88" selection-start-column="11" selection-end-line="89" selection-end-column="33" />
+          <folding>
+            <element signature="e#45#58#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
