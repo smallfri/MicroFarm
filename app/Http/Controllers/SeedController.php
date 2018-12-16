@@ -132,7 +132,13 @@ class SeedController extends Controller
         $this->validate($request, $rules, $customMessages);
         $user_id = Auth::user()->id;
         if (!empty($request->input('variety_id'))) {
-            $userseed = Userseed::where('user_id', $user_id)->join('seeds_variety','seeds_variety.id','=','userseed.variety_id')->where('seeds_variety.supplier_id','=',$request->input('supplier'))->delete();
+//            $userseed = Userseed::where('user_id', $user_id)->delete();
+            DB::raw('
+                DELETE userseed
+                FROM userseed
+                INNER JOIN seeds_variety ON seeds_variety.id = userseed.variety_id
+                WHERE userseed.user_id = '.$user_id.' AND seeds_variety.supplier_id = '.$request->input("supplier")
+                );
             foreach ($request->input('variety_id') as $variety_id) {
 
                 $userseed = new Userseed();

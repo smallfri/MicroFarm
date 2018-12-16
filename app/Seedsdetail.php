@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Seedsdetail extends Model
 {
-     use SoftDeletes;
+    // use SoftDeletes;
   public $table="seeds_detail";
      /**
      * The attributes that are mass assignable.
