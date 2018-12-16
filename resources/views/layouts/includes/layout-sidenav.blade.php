@@ -22,6 +22,12 @@
             </a>
         </li>
 
+        <li class="sidenav-item{{ Request::is('seed/summary') ? ' active' : '' }}">
+            <a href="{{ route('seed-summary') }}" class="sidenav-link"><i class="sidenav-icon ion ion-ios-clipboard"></i>
+                <div>Seed Summary</div>
+            </a>
+        </li>
+
         <li class="sidenav-item{{ Request::is('seed') ? ' active' : '' }}">
             <a href="{{ route('seed') }}" class="sidenav-link"><i class="sidenav-icon ion ion-ios-leaf"></i>
                 <div>Growing Journal</div>

@@ -43,238 +43,11 @@
     <hr class="border-light container-m--x mt-0 mb-5">
 
 
-    <div id="accordion">
-        <div class="card">
-            <div class="card-header">
-                <a class="text-dark" data-toggle="collapse" href="#accordion-1">
-                    <icon class="fa fa-plus-square"></icon>
-                    Growing Summary
-                </a>
-            </div>
-            <div id="accordion-1" class="collapse show" data-parent="#accordion" style="padding:20px;">
-
-
-                <div class="card-datatable table-responsive" id="">
-                    <table class="table" id="summary-table">
-                        <thead>
-                        <tr>
-                            <th scope="col">Seed Name</th>
-                            <th scope="col">Density</th>
-                            <th scope="col"></th>
-                            <th scope="col">Maturity</th>
-                            <th scope="col">Yield</th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php $__currentLoopData = $userseedlist; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <tr>
-                                <?php echo csrf_field(); ?>
-                                <td><?php echo e($value->seed_name); ?></td>
-                                <td>
-                                    <?php echo Form::text('density', $value->density, ["class" => "form-control", "id"=>"density-".$value->variety_id.""]); ?>
-
-                                    <?php if($errors->has('density')): ?>
-                                        <span class="help-block">
-                                                  <strong><?php echo e($errors->first('density')); ?></strong>
-                                            </span>
-                                    <?php endif; ?>
-                                </td>
-                                <td>
-                                    <?php echo Form::select('seeds_measurement',['OUNCES'=>'OUNCES','GRAMS'=>'GRAMS','ML'=>'ML', 'POUNDS'=>'POUNDS', 'KILOS'=>'KILOS'] ,(isset($value->seeds_measurement) && $value->seeds_measurement != '' ) ? $value->seeds_measurement : '', ['class' => 'form-control',"id"=>"seeds_measurement-".$value->variety_id.""]); ?>
-
-
-                                </td>
-
-                                <td>
-                                    <?php echo Form::text('maturity', $value->maturity, ['class' => 'form-control', "id"=>"maturity-".$value->variety_id.""]); ?>
-
-                                    <?php if($errors->has('maturity')): ?>
-                                        <span class="help-block">
-                                                  <strong><?php echo e($errors->first('maturity')); ?></strong>
-                                            </span>
-                                    <?php endif; ?>
-                                </td>
-                                <td>
-                                    <?php echo Form::text('yield', $value->yield, ['class' => 'form-control', "id"=>"yield-".$value->variety_id.""]); ?>
-
-
-                                    <?php if($errors->has('yield')): ?>
-                                        <span class="help-block">
-                                                  <strong><?php echo e($errors->first('yield')); ?></strong>
-                                            </span>
-                                    <?php endif; ?>
-                                </td>
-                                <td>
-                                    <?php echo Form::select('measurement',['OUNCES'=>'OUNCES','GRAMS'=>'GRAMS','ML'=>'ML', 'POUNDS'=>'POUNDS', 'KILOS'=>'KILOS'] ,(isset($value->measurement) && $value->measurement != '' ) ? $value->measurement : '', ['class' => 'form-control',"id"=>"measurement-".$value->variety_id.""]); ?>
-
-
-                                </td>
-                                <td>
-                                    <input type="hidden" name="variety_id" id="variety_id"
-                                           value="<?php echo e($value->variety_id); ?>">
-                                    <input type="hidden" name="supplier_id" id="supplier_id"
-                                           value="<?php echo e($value->supplier_id); ?>">
-                                    <div class="form-group col-md-12">
-                                        <button href="#" type="submit" class="btn btn-outline btn-success btn-sm"
-                                                id="update_<?php echo e($value->variety_id); ?>" data-toggle="tooltip"
-                                                data-placement="top" title="Save Seed Details">
-                                            <i class="fa fa-save"></i>
-                                        </button>
-
-                                        
-                                        
-                                        
-                                        
-                                        <button type="submit" class="btn btn-outline btn-danger btn-sm"
-                                                id="deleteAll_<?php echo e($value->variety_id); ?>" data-toggle="tooltip"
-                                                data-placement="top" title="Delete Seed & it's Details">
-                                            <i class="fa fa-trash-alt"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                                <script type="text/javascript" language="javascript">
-                                    $(document).ready(function () {
-                                        $(function () {
-                                            $('[data-toggle="tooltip"]').tooltip()
-                                        });
-
-                                        function myTimeout1() {
-                                            $(".alert").hide();
-                                        }
-
-                                        
-
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-
-                                        
-
-                                        $("#deleteAll_<?php echo e($value->variety_id); ?>").click(function (event) {
-
-                                            $.post(
-                                                "seed/summary-delete-all",
-                                                {
-                                                    _token: '<?php echo e(csrf_token()); ?>',
-                                                    variety_id: '<?php echo e($value->variety_id); ?>'
-                                                },
-                                                function (data) {
-                                                    var status = jQuery.parseJSON(data);
-                                                    if (status.status === 'success') {
-                                                        $("#primary").show();
-                                                    } else {
-                                                        $("#danger").show();
-                                                    }
-                                                    setTimeout(myTimeout1, 3000);
-                                                    location.reload();
-                                                }
-                                            );
-
-                                        });
-
-                                        $("#update_<?php echo e($value->variety_id); ?>").click(function (event) {
-
-                                            $.post(
-                                                "seed/summary-update",
-                                                {
-                                                    _token: '<?php echo e(csrf_token()); ?>',
-                                                    variety_id: '<?php echo e($value->variety_id); ?>',
-                                                    supplier_id: '<?php echo e($value->supplier_id); ?>',
-                                                    density: $("#density-<?php echo e($value->variety_id); ?>").val(),
-                                                    maturity: $("#maturity-<?php echo e($value->variety_id); ?>").val(),
-                                                    yield: $("#yield-<?php echo e($value->variety_id); ?>").val(),
-                                                    measurement: $("#measurement-<?php echo e($value->variety_id); ?>").val(),
-                                                    seeds_measurement: $("#seeds_measurement-<?php echo e($value->variety_id); ?>").val()
-                                                },
-                                                function (data) {
-                                                    var status = jQuery.parseJSON(data);
-                                                    if (status.status === 'success') {
-                                                        $("#primary").show();
-
-                                                        $("#accordion-2").toggle();
-                                                        $("#accordion-1").addClass('collapse');
-
-                                                        var yield = $("#yield-<?php echo e($value->variety_id); ?>").val();
-                                                        var density = $("#density-<?php echo e($value->variety_id); ?>").val();
-                                                        var maturity =  $("#maturity-<?php echo e($value->variety_id); ?>").val();
-                                                        var measurement = $("#measurement-<?php echo e($value->variety_id); ?>").val();
-                                                        var seeds_measurement = $("#seeds_measurement-<?php echo e($value->variety_id); ?>").val();
-
-
-                                                        $('#yield').val(yield);
-                                                        $('#density').val(density);
-                                                        $('#maturity').val(maturity);
-                                                        $('#measurement').val(measurement);
-                                                        $('#seeds_measurement').val(seeds_measurement);
-
-                                                        $('#nav-<?php echo e($value->variety_id); ?>').tab('show');
-
-
-                                                        $("html, body").animate({ scrollTop: $(document).height() - $("#accordion-2").height() }, "slow");
-
-                                                        var li_count = $('.nav-tabs li').length;
-                                                        var current_active = $('.nav-tabs li.active').index();
-
-                                                        if(current_active<li_count){
-                                                            $('.nav-tabs li.active').next('li').find('a').attr('data-toggle','tab').tab('active show');
-                                                        }
-
-
-
-
-                                                    } else {
-                                                        $("#danger").show();
-                                                    }
-                                                    setTimeout(myTimeout1, 3000);
-                                                    // location.reload();
-                                                }
-                                            );
-
-                                        });
-
-                                    });
-                                </script>
-                            </tr>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        </tbody>
-                    </table>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
     
 
-    <div id="accordion">
         <div class="card mb-2">
-            <div class="card-header">
-                <a class="text-dark" data-toggle="collapse" href="#accordion-2">
-                    <icon class="fa fa-plus-square"></icon>
-                    Growing Journal
-                </a>
-            </div>
 
-            <div id="accordion-2" class="collapse" data-parent="#accordion">
+
                 <div class="card-body">
                     <div>
                         <div class="panel panel-default panel-with-tabs" data-sortable-id="ui-unlimited-tabs-2">
@@ -330,7 +103,7 @@
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
                                                             <label class="form-label">Supplier</label>
-                                                            <?php echo Form::select('supplier_id',$suppliers ,[$value->supplier_id], ['class' => 'form-control']); ?>
+                                                            <?php echo Form::select('supplier_id',$suppliers ,[$value->supplier_id], ['class' => 'form-control','disabled' => true]); ?>
 
                                                         </div>
 
@@ -501,8 +274,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
 <?php $__env->stopSection(); ?>
 

@@ -15,7 +15,8 @@
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.4.0",
         "lorisleiva/laravel-deployer": "^0.2.5",
-        "sentry/sentry-laravel": "^0.11.0"
+        "sentry/sentry-laravel": "^0.11.0",
+        "stevebauman/inventory": "*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

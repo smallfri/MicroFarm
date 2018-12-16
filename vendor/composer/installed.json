@@ -60,6 +60,63 @@
         ]
     },
     {
+        "name": "baum/baum",
+        "version": "1.1.1",
+        "version_normalized": "1.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/etrepat/baum.git",
+            "reference": "9290bed862d329aaaef666a71e0a2734afc28286"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/etrepat/baum/zipball/9290bed862d329aaaef666a71e0a2734afc28286",
+            "reference": "9290bed862d329aaaef666a71e0a2734afc28286",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/console": "5.*",
+            "illuminate/database": "5.*",
+            "illuminate/events": "5.*",
+            "illuminate/filesystem": "5.*",
+            "illuminate/support": "5.*",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "d11wtq/boris": "~1.0.10",
+            "mockery/mockery": "~0.9",
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2015-03-04T12:07:54+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Baum": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Estanislau Trepat",
+                "email": "estanis@etrepat.com",
+                "homepage": "http://etrepat.com"
+            }
+        ],
+        "description": "Baum is an implementation of the Nested Set pattern for Eloquent models.",
+        "keywords": [
+            "Laravel 4",
+            "database",
+            "eloquent",
+            "laravel",
+            "laravel 5",
+            "nested set"
+        ]
+    },
+    {
         "name": "beyondcode/laravel-dump-server",
         "version": "1.2.2",
         "version_normalized": "1.2.2.0",
@@ -1455,17 +1512,17 @@
     },
     {
         "name": "laravel/framework",
-        "version": "v5.7.16",
-        "version_normalized": "5.7.16.0",
+        "version": "v5.7.17",
+        "version_normalized": "5.7.17.0",
         "source": {
             "type": "git",
             "url": "https://github.com/laravel/framework.git",
-            "reference": "9acea9e0a356cba7e6a13f8784d5532a82fee92a"
+            "reference": "a15898e2de5f5ae5548a09349c558ef0435d495a"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/laravel/framework/zipball/9acea9e0a356cba7e6a13f8784d5532a82fee92a",
-            "reference": "9acea9e0a356cba7e6a13f8784d5532a82fee92a",
+            "url": "https://api.github.com/repos/laravel/framework/zipball/a15898e2de5f5ae5548a09349c558ef0435d495a",
+            "reference": "a15898e2de5f5ae5548a09349c558ef0435d495a",
             "shasum": ""
         },
         "require": {
@@ -1567,7 +1624,7 @@
             "symfony/dom-crawler": "Required to use most of the crawler integration testing tools (^4.1).",
             "symfony/psr-http-message-bridge": "Required to psr7 bridging features (^1.0)."
         },
-        "time": "2018-12-05T14:36:24+00:00",
+        "time": "2018-12-12T14:38:09+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1727,17 +1784,17 @@
     },
     {
         "name": "laravel/slack-notification-channel",
-        "version": "v1.0.2",
-        "version_normalized": "1.0.2.0",
+        "version": "v1.0.3",
+        "version_normalized": "1.0.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/laravel/slack-notification-channel.git",
-            "reference": "0ede60acbbf5f91be2e45d0c0b4d95e2f3837252"
+            "reference": "6e164293b754a95f246faf50ab2bbea3e4923cc9"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/laravel/slack-notification-channel/zipball/0ede60acbbf5f91be2e45d0c0b4d95e2f3837252",
-            "reference": "0ede60acbbf5f91be2e45d0c0b4d95e2f3837252",
+            "url": "https://api.github.com/repos/laravel/slack-notification-channel/zipball/6e164293b754a95f246faf50ab2bbea3e4923cc9",
+            "reference": "6e164293b754a95f246faf50ab2bbea3e4923cc9",
             "shasum": ""
         },
         "require": {
@@ -1749,7 +1806,7 @@
             "mockery/mockery": "^1.0",
             "phpunit/phpunit": "^7.0"
         },
-        "time": "2018-12-04T12:58:59+00:00",
+        "time": "2018-12-12T13:12:06+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3552,17 +3609,17 @@
     },
     {
         "name": "phpunit/phpunit",
-        "version": "7.5.0",
-        "version_normalized": "7.5.0.0",
+        "version": "7.5.1",
+        "version_normalized": "7.5.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/sebastianbergmann/phpunit.git",
-            "reference": "520723129e2b3fc1dc4c0953e43c9d40e1ecb352"
+            "reference": "c23d78776ad415d5506e0679723cb461d71f488f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/520723129e2b3fc1dc4c0953e43c9d40e1ecb352",
-            "reference": "520723129e2b3fc1dc4c0953e43c9d40e1ecb352",
+            "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c23d78776ad415d5506e0679723cb461d71f488f",
+            "reference": "c23d78776ad415d5506e0679723cb461d71f488f",
             "shasum": ""
         },
         "require": {
@@ -3601,7 +3658,7 @@
             "ext-xdebug": "*",
             "phpunit/php-invoker": "^2.0"
         },
-        "time": "2018-12-07T07:08:12+00:00",
+        "time": "2018-12-12T07:20:32+00:00",
         "bin": [
             "phpunit"
         ],
@@ -4911,18 +4968,68 @@
         ]
     },
     {
-        "name": "stripe/stripe-php",
-        "version": "v6.24.0",
-        "version_normalized": "6.24.0.0",
+        "name": "stevebauman/inventory",
+        "version": "v1.7.5",
+        "version_normalized": "1.7.5.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/stripe/stripe-php.git",
-            "reference": "e608b6538b45d233db66838c389c6548c1152a27"
+            "url": "https://github.com/stevebauman/inventory.git",
+            "reference": "5da85f1d75119d102cd10f603dcff78da63987e9"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/stripe/stripe-php/zipball/e608b6538b45d233db66838c389c6548c1152a27",
-            "reference": "e608b6538b45d233db66838c389c6548c1152a27",
+            "url": "https://api.github.com/repos/stevebauman/inventory/zipball/5da85f1d75119d102cd10f603dcff78da63987e9",
+            "reference": "5da85f1d75119d102cd10f603dcff78da63987e9",
+            "shasum": ""
+        },
+        "require": {
+            "baum/baum": "1.0.* | 1.1.*",
+            "illuminate/database": "4.* | 5.*",
+            "illuminate/support": "4.* | 5.*",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "0.9.*",
+            "phpunit/phpunit": "4.*"
+        },
+        "time": "2015-06-17T14:09:02+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Stevebauman\\Inventory\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Steve Bauman",
+                "email": "steven_bauman@outlook.com"
+            }
+        ],
+        "description": "Inventory management using Laravel 4 / 5",
+        "keywords": [
+            "inventory",
+            "inventory-management",
+            "laravel"
+        ]
+    },
+    {
+        "name": "stripe/stripe-php",
+        "version": "v6.26.0",
+        "version_normalized": "6.26.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/stripe/stripe-php.git",
+            "reference": "ba85ad7c1618462083a7e9a542ded929232e8bff"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/stripe/stripe-php/zipball/ba85ad7c1618462083a7e9a542ded929232e8bff",
+            "reference": "ba85ad7c1618462083a7e9a542ded929232e8bff",
             "shasum": ""
         },
         "require": {
@@ -4936,7 +5043,7 @@
             "phpunit/phpunit": "~4.0",
             "squizlabs/php_codesniffer": "~2.0"
         },
-        "time": "2018-11-28T16:32:29+00:00",
+        "time": "2018-12-11T21:33:24+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {

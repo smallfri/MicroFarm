@@ -111,6 +111,8 @@
       <path value="$PROJECT_DIR$/vendor/deployer/recipes" />
       <path value="$PROJECT_DIR$/vendor/pimple/pimple" />
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/vendor/baum/baum" />
+      <path value="$PROJECT_DIR$/vendor/stevebauman/inventory" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

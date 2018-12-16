@@ -37,8 +37,9 @@ Route::get('email/resend', 'Auth\VerificationController@resend')->name('verifica
 
 // Mail Routes
 Route::post ('seed/summary-delete-all', 'SeedController@summaryDeleteAll')->name('summary-delete-all');
-//Route::post ('seed/summary-delete', 'SeedController@summaryDelete')->name('summary-delete');
 Route::post ('seed/summary-update', 'SeedController@summaryUpdate')->name('summary-update');
+Route::get ('seed/summary', 'SeedController@seedSummary')->name('seed-summary');
+Route::post ('seed/detail/{variety_id}', 'SeedController@seedDetail')->name('seed-detail');
 Route::get('seed/create', 'SeedController@create')->name('seed/create');
 Route::post('seed/create', 'SeedController@store');
 Route::get('seed/supplierseed/{id}', 'SeedController@supplierseed');
