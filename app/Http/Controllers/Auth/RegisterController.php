@@ -41,6 +41,27 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function register(Request $request)
+    {
+        if($this->validator((array) $request))
+        {
+            $User = $this->create($request);
+            $this->sendEmail($User);
+            $this->sendadminEmail($User);
+            return redirect('/login')->with('flash_success', 'Your account has been created, Please see your email for futher instructions.');
+
+        }
+        else
+        {
+            return redirect('/login')->with('flash_success', 'There was a problem with your submission.');
+
+        }
+
+//        exit("HERE");
+
+
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -69,6 +90,7 @@ class RegisterController extends Controller
         return User::create([
             'name' => $request['name'],
             'email' => $request['email'],
+            'role_id' => 3,
             'password' => bcrypt($request['password']),
             'activation_token' => sha1(time() . uniqid() . $request['email']),
             'activation_time' => \Carbon\Carbon::now(),
@@ -124,7 +146,7 @@ class RegisterController extends Controller
             $user->save();
 
             $this->sendEmail($user);
-            return back()->with('flash_success', 'We resent you account activation email. Please check your email inbox.');
+            return back()->with('flash_success', 'We resent your account activation email. Please check your email inbox.');
         }else{
             return back()->with('flash_error', 'No user Found.');
         }

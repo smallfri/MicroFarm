@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
 Route::get('/', 'HomeController')->name('home');
 
@@ -23,6 +24,11 @@ Route::get('logout', function(){
 // Registration Routes...
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('register', 'Auth\RegisterController@register');
+
+Route::get('/activate-account/{token}', 'Auth\RegisterController@activateAccount');
+Route::get('/resend-activation', 'Auth\RegisterController@resendActivationEmail');
+Route::post('/resend-activation', 'Auth\RegisterController@resendActivationEmailToUser');
+
 
 // Password Reset Routes...
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');

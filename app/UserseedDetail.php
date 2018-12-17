@@ -27,6 +27,10 @@ class UserseedDetail extends Model
         'created_at', 'updated_at', 'seed_id'
     ];
 
+    protected $casts = [
+        'deleted_at' => 'datetime'
+    ];
+
     public function germinationDays()
     {
         return $this->hasMany('App\Days', 'id', 'germination');

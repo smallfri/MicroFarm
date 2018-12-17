@@ -44,4 +44,8 @@ class Seedsdetail extends Model
          ;
     }
 
+    protected $casts = [
+        'deleted_at' => 'datetime'
+    ];
+
 }

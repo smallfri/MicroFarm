@@ -12,6 +12,7 @@
         "laravel/cashier": "^8.0",
         "laravel/framework": "5.7.*",
         "laravel/nova": "*",
+        "laravel/socialite": "^3.2",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.4.0",
         "lorisleiva/laravel-deployer": "^0.2.5",

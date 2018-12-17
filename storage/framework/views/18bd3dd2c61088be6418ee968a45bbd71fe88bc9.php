@@ -180,7 +180,7 @@
                                                 $("#danger").show();
                                             }
                                             setTimeout(myTimeout1, 3000);
-                                            // location.reload();
+                                            window.location.reload(true);
                                         }
                                     );
 

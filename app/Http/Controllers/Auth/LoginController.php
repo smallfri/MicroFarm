@@ -71,7 +71,7 @@ class LoginController extends Controller
 
                     if(count($userSeeds)>0)
                     {
-                        return redirect('/seed');
+                        return redirect('/seed/summary');
                     }
                     else{
                         Session::flash('flash_success',"Please choose at least one seed to get started.");

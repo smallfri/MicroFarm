@@ -92,14 +92,14 @@
                     <!-- Logo -->
                     <div class="d-flex justify-content-center align-items-center">
                         <div class="">
-                            <div class="w-100 position-relative">
-                                <img src="/images/logo-medium.png">
+                            <div class="w-300 position-relative">
+                                <img src="/images/logo-large.png">
                             </div>
                         </div>
                     </div>
                     <!-- / Logo -->
 
-                    <h4 class="text-center text-lighter font-weight-normal mt-5 mb-0" style="margin-bottom:20% !important;margin-top:20% !important;">Login</h4>
+                    <h4 class="text-center text-lighter font-weight-normal mt-5 mb-0">Register</h4>
 
                     <!-- Form -->
                     <form class="form-horizontal form-material" method="POST" action="{{ route('register') }}">
@@ -155,7 +155,7 @@
                     <!-- / Form -->
 
                     <div class="text-center text-muted">
-                        Already have an account? <a href="javascript:void(0)">Sign In</a>
+                        Already have an account? <a href="/login">Sign In</a>
                     </div>
 
                 </div>

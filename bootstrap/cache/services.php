@@ -31,18 +31,19 @@
     27 => 'Illuminate\\Notifications\\NexmoChannelServiceProvider',
     28 => 'Laravel\\Nova\\NovaCoreServiceProvider',
     29 => 'Illuminate\\Notifications\\SlackChannelServiceProvider',
-    30 => 'Laravel\\Tinker\\TinkerServiceProvider',
-    31 => 'Collective\\Html\\HtmlServiceProvider',
-    32 => 'Lorisleiva\\LaravelDeployer\\LaravelDeployerServiceProvider',
-    33 => 'Carbon\\Laravel\\ServiceProvider',
-    34 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
-    35 => 'Sentry\\SentryLaravel\\SentryLaravelServiceProvider',
-    36 => 'Stevebauman\\Inventory\\InventoryServiceProvider',
-    37 => 'App\\Providers\\AppServiceProvider',
-    38 => 'App\\Providers\\AuthServiceProvider',
-    39 => 'App\\Providers\\EventServiceProvider',
-    40 => 'App\\Providers\\NovaServiceProvider',
-    41 => 'App\\Providers\\RouteServiceProvider',
+    30 => 'Laravel\\Socialite\\SocialiteServiceProvider',
+    31 => 'Laravel\\Tinker\\TinkerServiceProvider',
+    32 => 'Collective\\Html\\HtmlServiceProvider',
+    33 => 'Lorisleiva\\LaravelDeployer\\LaravelDeployerServiceProvider',
+    34 => 'Carbon\\Laravel\\ServiceProvider',
+    35 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+    36 => 'Sentry\\SentryLaravel\\SentryLaravelServiceProvider',
+    37 => 'Stevebauman\\Inventory\\InventoryServiceProvider',
+    38 => 'App\\Providers\\AppServiceProvider',
+    39 => 'App\\Providers\\AuthServiceProvider',
+    40 => 'App\\Providers\\EventServiceProvider',
+    41 => 'App\\Providers\\NovaServiceProvider',
+    42 => 'App\\Providers\\RouteServiceProvider',
   ),
   'eager' => 
   array (
@@ -177,6 +178,7 @@
     'translation.loader' => 'Illuminate\\Translation\\TranslationServiceProvider',
     'validator' => 'Illuminate\\Validation\\ValidationServiceProvider',
     'validation.presence' => 'Illuminate\\Validation\\ValidationServiceProvider',
+    'Laravel\\Socialite\\Contracts\\Factory' => 'Laravel\\Socialite\\SocialiteServiceProvider',
     'command.tinker' => 'Laravel\\Tinker\\TinkerServiceProvider',
     'html' => 'Collective\\Html\\HtmlServiceProvider',
     'form' => 'Collective\\Html\\HtmlServiceProvider',
@@ -220,6 +222,9 @@
     array (
     ),
     'Illuminate\\Validation\\ValidationServiceProvider' => 
+    array (
+    ),
+    'Laravel\\Socialite\\SocialiteServiceProvider' => 
     array (
     ),
     'Laravel\\Tinker\\TinkerServiceProvider' => 

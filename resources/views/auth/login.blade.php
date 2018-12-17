@@ -91,15 +91,18 @@
 
                     <!-- Logo -->
                     <div class="d-flex justify-content-center align-items-center">
+                        <a href="/register"><button class="btn btn-warning">Begin your FREE access!
+                            </button></a></div>
+                    <div class="d-flex justify-content-center align-items-center">
                         <div class="">
                             <div class="w-100 position-relative">
-                                <img src="/images/logo-medium.png">
+                                <img src="/images/logo-large.png">
                             </div>
                         </div>
                     </div>
                     <!-- / Logo -->
 
-                    <h4 class="text-center text-lighter font-weight-normal mt-5 mb-0" style="margin-bottom:20% !important;margin-top:20% !important;">Login to Your Account.</h4>
+                    <h4 class="text-center text-lighter font-weight-normal mt-5 mb-0">Login to Your Account.</h4>
 
                     <!-- Form -->
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
@@ -127,7 +130,7 @@
 
                         <button type="submit" class="btn btn-primary btn-block mt-4">Sign In</button>
                         <div class="text-light small mt-4">
-                            By clicking "Sign Up", you agree to our
+                            By clicking "Sign In", you agree to our
                             <a href="javascript:void(0)">terms of service and privacy policy</a>. We’ll occasionally
                             send you account related emails.
                         </div>
@@ -135,6 +138,8 @@
                     <!-- / Form -->
 
                     <div class="text-center text-muted">
+                        Ready to sign up? <a href="/register">It's free!</a>
+                    </div><div class="text-center text-muted">
                         Forgot your password? <a href="/password/reset">Reset Password</a>
                     </div>
 
