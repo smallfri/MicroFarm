@@ -35,7 +35,7 @@ class Seedsdetail extends Resource
      * @var array
      */
     public static $search = [
-        'id','variety_id','soak_status','germination','situation','medium','maturity','yield','seeds_measurement','notes','status','deleted_at'
+        'id','variety_id','soak_status','germination','situation','medium','maturity','yield','seeds_measurement','notes','status','deleted_at','density'
     ];
 
     /**
@@ -56,7 +56,8 @@ class Seedsdetail extends Resource
             Text::make('Situation', 'situation')->sortable()->rules('max:191'),
             Text::make('Medium', 'medium')->sortable()->rules('max:191'),
             Text::make('Maturity', 'maturity')->sortable()->rules('max:191'),
-            Text::make('Maturity', 'maturity')->sortable()->rules('max:191'),
+            Number::make('Density', 'density')->sortable()->rules('max:11'),
+            Number::make('Measurement', 'measurement')->sortable()->rules('max:11'),
             Number::make('Yield', 'yield')->sortable()->rules('max:11'),
             Text::make('Seeds Measurement', 'seeds_measurement')->sortable()->rules('max:191'),
             Boolean::make('Status', 'status')->sortable(),

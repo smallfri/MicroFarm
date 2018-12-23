@@ -28,7 +28,8 @@ Route::post('register', 'Auth\RegisterController@register');
 Route::get('/activate-account/{token}', 'Auth\RegisterController@activateAccount');
 Route::get('/resend-activation', 'Auth\RegisterController@resendActivationEmail');
 Route::post('/resend-activation', 'Auth\RegisterController@resendActivationEmailToUser');
-
+Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 
 // Password Reset Routes...
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');

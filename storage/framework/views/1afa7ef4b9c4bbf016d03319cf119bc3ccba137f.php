@@ -135,6 +135,14 @@
                             <a href="javascript:void(0)">terms of service and privacy policy</a>. We’ll occasionally
                             send you account related emails.
                         </div>
+
+                        
+                            
+                                
+                                
+                                
+                            
+                        
                     </form>
                     <!-- / Form -->
 

@@ -14,7 +14,7 @@ class Seedsdetail extends Model
      * @var array
      */
     protected $fillable = [
-        'seed_id','soak_status','germination','situation','medium','maturity','yield','seeds_measurement','notes','status','deleted_at'
+        'seed_id','soak_status','germination','situation','medium','maturity','yield','seeds_measurement','notes','status','deleted_at','density'
     ];
 
     /**
