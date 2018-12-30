@@ -10,6 +10,7 @@ use Laravel\Nova\Fields\Password;
 
 class User extends Resource
 {
+    public static $isPremium = false;
     /**
      * The model the resource corresponds to.
      *

@@ -44,4 +44,5 @@
 
 			return Feature::where('name', '=', $featureName)->first()->description;
 		}
+		
 	}

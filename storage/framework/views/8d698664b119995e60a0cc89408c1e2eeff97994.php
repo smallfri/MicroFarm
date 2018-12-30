@@ -5,6 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="_token" content="<?php echo e(csrf_token()); ?>">
 
     <title><?php echo e(isset($title) ? $title.' - ' : ''); ?> MicroFarmManager.com</title>
 
@@ -80,7 +81,6 @@
     <script src="<?php echo e(mix('/vendor/js/layout-helpers.js')); ?>"></script>
 
     <!-- Libs -->
-
     <!-- `perfec>t-scrollbar` library required by SideNav plugin -->
     <link rel="stylesheet" href="<?php echo e(mix('/vendor/libs/perfect-scrollbar/perfect-scrollbar.css')); ?>">
 

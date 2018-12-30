@@ -53,3 +53,30 @@ Route::get('seed/supplierseed/{id}', 'SeedController@supplierseed');
 Route::get('seed', 'SeedController@index')->name('seed');
 Route::get('seed', 'SeedController@index')->name('seed');
 Route::post('seed', 'SeedController@seedupdate');
+
+
+// Inventory Routes
+Route::get ('inventory', 'InventoryController@index')->name('inventory');
+Route::get ('metrics/create', 'InventoryController@metricsCreate')->name('metrics-create');
+Route::post ('metrics/create', 'InventoryController@metricsStore')->name('metrics-store');
+
+
+Route::get ('inventory/create', 'InventoryController@inventoryCreate')->name('inventory-create');
+Route::post ('inventory/create', 'InventoryController@inventoryStore')->name('inventory-store');
+
+Route::get ('location/create', 'InventoryController@locationCreate')->name('location-create');
+Route::post ('location/create', 'InventoryController@locationStore')->name('location-store');
+
+Route::get ('inventory/manage', 'InventoryController@manage')->name('inventory-manage');
+Route::post ('inventory/manage', 'InventoryController@manageStore')->name('inventory-store');
+
+Route::post ('inventory/manage/{isid}', 'InventoryController@addQuantity')->name('quantity_add');
+Route::get('inventory/manage/{isid}', 'InventoryController@addQuantity')->name('quantity_add');
+
+Route::get ('inventory/category', 'InventoryController@category')->name('category-create');
+Route::post ('inventory/category', 'InventoryController@categoryStore')->name('category-store');
+
+Route::get ('inventory/item', 'InventoryController@item')->name('item-create');
+Route::post ('inventory/item', 'InventoryController@itemStore')->name('item-store');
+
+

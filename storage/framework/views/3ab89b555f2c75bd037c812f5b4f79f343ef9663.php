@@ -16,7 +16,7 @@
 
                 <!-- Content -->
                 <div class="container-fluid flex-grow-1 container-p-y">
-                    <?php echo $__env->make('flash-message', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                    <?php echo $__env->make('flash-messages.flash-message', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                     <?php echo $__env->yieldContent('content'); ?>
                 </div>
                 <!-- / Content -->

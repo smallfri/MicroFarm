@@ -56,7 +56,7 @@ class LoginController extends Controller
             'is_active' => 1
         );
 
-        $user = User::where("email", $request->email)->where('status','active')->first();
+        $user = User::where("email", $request->email)->where('is_active',1)->first();
 
         if ($user) {
 
@@ -74,7 +74,7 @@ class LoginController extends Controller
                         return redirect('/seed/summary');
                     }
                     else{
-                        Session::flash('flash_success',"Please choose at least one seed to get started.");
+                        Session::flash('success',"Please choose at least one seed to get started.");
 
                         return redirect('/seed/create');
                     }
@@ -86,14 +86,13 @@ class LoginController extends Controller
 //                    }
 
                 } else {
-                    Session::flash('flash_error',"Your Account Has Not Activated Yet");
-                    Session::flash('is_active_error', 'Yes');
+                    Session::flash('error',"Your Account Has Not Activated Yet");
                 }
             } else {
-                Session::flash('flash_error',"Invalid Username or Password");
+                Session::flash('error',"Invalid Username or Password");
             }
         } else {
-            Session::flash('flash_error',"Invalid Username or Password");
+            Session::flash('error',"Invalid Username or Password 2");
         }
 
         return redirect()->back()->withInput();

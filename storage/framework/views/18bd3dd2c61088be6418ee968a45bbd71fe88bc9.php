@@ -150,7 +150,7 @@
                                             } else {
                                                 $("#danger").show();
                                             }
-                                            setTimeout(myTimeout1, 3000);
+                                            setTimeout(myTimeout1, 5000);
                                             location.reload();
                                         }
                                     );
@@ -179,7 +179,7 @@
                                             } else {
                                                 $("#danger").show();
                                             }
-                                            setTimeout(myTimeout1, 3000);
+                                            setTimeout(myTimeout1, 5000);
                                             window.location.reload(true);
                                         }
                                     );

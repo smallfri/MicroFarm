@@ -67,7 +67,7 @@
         <!-- Do not display the container on extra small, small and medium screens -->
         <div class="d-none d-lg-flex col-lg-8 align-items-center ui-bg-cover ui-bg-overlay-container p-5"
              style="background-image: url('/images/microgreens_home1-min.jpg');">
-            <div class="ui-bg-overlay bg-dark opacity-50"></div>
+\            <div class="ui-bg-overlay bg-dark opacity-50"></div>
 
             <!-- Text -->
             <div class="w-100 text-white px-5">
@@ -83,12 +83,15 @@
 
         <!-- Form container -->
         <div class="d-flex col-lg-4 align-items-center bg-white p-5">
-            <!-- Inner container -->
+
+        <!-- Inner container -->
             <!-- Have to add `.d-flex` to control width via `.col-*` classes -->
             <div class="d-flex col-sm-7 col-md-5 col-lg-12 px-0 px-xl-4 mx-auto">
 
                 <div class="w-100">
-
+                    <div style="margin: 20px 0;">
+                @include('flash-messages.flash-message')
+                </div>
                     <!-- Logo -->
                     <div class="d-flex justify-content-center align-items-center">
                         <a href="/register"><button class="btn btn-warning">Begin your FREE access!
