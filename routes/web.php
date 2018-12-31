@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes();
+//Auth::routes();
 
 Route::get('/', 'HomeController')->name('home');
 
@@ -71,7 +71,6 @@ Route::get ('inventory/manage', 'InventoryController@manage')->name('inventory-m
 Route::post ('inventory/manage', 'InventoryController@manageStore')->name('inventory-store');
 
 Route::post ('inventory/manage/{isid}', 'InventoryController@addQuantity')->name('quantity_add');
-Route::get('inventory/manage/{isid}', 'InventoryController@addQuantity')->name('quantity_add');
 
 Route::get ('inventory/category', 'InventoryController@category')->name('category-create');
 Route::post ('inventory/category', 'InventoryController@categoryStore')->name('category-store');

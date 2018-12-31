@@ -155,10 +155,11 @@ class InventoryController extends Controller
             return redirect('login');
         }
 
-        $inventories = Inventories::select('inventory_stocks.id AS isid','inventories.*','inventory_stocks.*', 'locations.*')
+        $inventories = Inventories::select('inventory_stocks.id AS isid','categories.name as category', 'metrics.symbol', 'inventories.*','inventory_stocks.*')
             ->where('inventories.user_id',Auth::user()->id)
             ->join('inventory_stocks', 'inventory_stocks.inventory_id', '=','inventories.id')
-            ->join('locations', 'inventory_stocks.location_id', '=','locations.id')
+            ->join('categories', 'categories.id', '=','inventories.category_id')
+            ->join('metrics', 'metrics.id', '=','inventories.metric_id')
             ->get();
 
         $inventories2 = Inventories::where('user_id',Auth::user()->id)->pluck('name','id');
@@ -178,23 +179,24 @@ class InventoryController extends Controller
         }
 
         $validatedData = $request->validate([
-            'location' => 'required',
             'inventory' => 'required',
             'cost' => 'required',
             'quantity' => 'required',
             'reason' => 'required'
         ]);
 
-        $check = InventoryStocks::where('location_id',$request->location)->where('inventory_id',$request->inventory)->count();
+        $check = InventoryStocks::where('location_id',1)->where('inventory_id',$request->inventory)->count();
 
         if($check)
         {
             return redirect()->back()->with('error', 'This item already exists at this location.');
         }
 
+        $location = Location::where('user_id',Auth::user()->id)->first();
+
         $stock = new InventoryStock;
         $stock->inventory_id = $request->inventory;
-        $stock->location_id = $request->location;
+        $stock->location_id = $location->id;
         $stock->quantity = $request->quantity;
         $stock->cost = $request->cost;
         $stock->reason = $request->reason;
@@ -301,42 +303,24 @@ class InventoryController extends Controller
         ]);
 
 
-        $location = Location::find(6);
+        $location = Location::where('user_id',Auth::user()->id)->first();
 
-        $item = Inventory::find(11);
+        $item = Inventory::find($inventoryStocksId);
 
         $stock = $item->getStockFromLocation($location);
-
-        /*
-        * Reason and cost are always optional
-        */
-        $reason = 'I bought some';
-        $cost = '5.20';
-
-
-
-
-
-
-
 
         if($request->adjust)
         {
             /*
          * Remember, you're adding the amount of your metric, in this case Litres
          */
-            $stock->put($request->quantity, 'Added from interface', $cost);
+            $stock->put($request->quantity, 'Added from interface', $request->cost);
         }
         else{
             $stock->take($request->quantity, 'Subtracted from interface');
         }
 
         return redirect()->back()->with('success', 'Stock Updated');
-
-
-
-
-
 
     }
 }

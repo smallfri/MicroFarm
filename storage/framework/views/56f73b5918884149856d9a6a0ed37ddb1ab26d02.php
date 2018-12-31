@@ -6,7 +6,7 @@
 
     <div class="card">
         <h6 class="card-header">
-            Items
+           Inventoried Items
         </h6>
         <div class="card-datatable table-responsive">
             <table class="datatables-demo table table-striped table-bordered" id="metrics-table">

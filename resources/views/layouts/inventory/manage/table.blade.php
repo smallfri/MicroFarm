@@ -12,8 +12,8 @@
         <table class="datatables-demo table table-striped table-bordered" id="metrics-table">
             <thead>
             <tr>
-                <th scope="col">Location</th>
                 <th scope="col">Description</th>
+                <th scope="col">Category</th>
                 <th scope="col">SKU</th>
                 <th scope="col">Quantity</th>
                 <th scope="col"></th>
@@ -23,10 +23,10 @@
             @foreach($inventories as $key => $value)
                 <tr>
                     @csrf
-                    <td>{{$value->name}}</td>
                     <td>{{$value->description}}</td>
+                    <td>{{$value->category}}</td>
                     <td>{{$value->sku}}</td>
-                    <td>{{$value->quantity}}</td>
+                    <td>{{$value->quantity}} / {{$value->symbol}}</td>
                     <td>
                         <div style="text-align: center">
 
@@ -42,7 +42,7 @@
                                         Adjust
                                         <span class="font-weight-light">Stock</span>
                                         <br>
-                                        <small class="text-muted">This will update the stock of this item in its {{$value->name}} location.</small>
+                                        <small class="text-muted">This will update the stock of this item.</small>
                                     </h3>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
                                 </div>
@@ -81,5 +81,10 @@
             @endforeach
             </tbody>
         </table>
+        <script type="application/javascript">
+            $(document).ready(function() {
+                $('#metrics-table').DataTable();
+            } );
+        </script>
     </div>
 </div>

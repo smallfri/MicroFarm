@@ -1,6 +1,7 @@
 <div class="card mb-3">
     <h6 class="card-header">
-        Add Item Quantity <i class="ion ion-ios-help-buoy" data-toggle="tooltip" data-placement="top" data-state="primary" title="Add quantity to your items."></i>
+        Add Item Quantity <i class="ion ion-ios-help-buoy" data-toggle="tooltip" data-placement="top" data-state="primary" title="In this step, you can add an initial quantity to your item. The next time you
+want to add or subtract from this total, please click the Manage Quantity in the table below."></i>
 
     </h6>
     <div class="panel-body">
@@ -17,11 +18,10 @@
                             <?php echo Form::text('quantity', null, ['class' => 'form-control', 'id'=>'quantity']); ?>
 
                     </div>
-                    <div class="form-group col-md-6">
-                        <label class="form-label">Item Location</label>
-                        <?php echo Form::select('location',$locations ,null, ['class' => 'form-control']); ?>
-
-                    </div>
+                    
+                        
+                        
+                    
                     <div class="form-group col-md-6">
                         <label class="form-label">Item Cost</label>
                         <?php echo Form::text('cost', null, ['class' => 'form-control', 'id'=>'cost']); ?>

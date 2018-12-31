@@ -62,23 +62,22 @@ use App\Feature;
                             <div>Create Category</div>
                         </a>
                     </li>
+
+                    <li class="sidenav-item">
+                        <a href="<?php echo e(route('location-create')); ?>" class="sidenav-link">
+                            <div>Locations</div>
+                        </a>
+                    </li>
                 <?php endif; ?>
-
-                <li class="sidenav-item">
-                    <a href="<?php echo e(route('location-create')); ?>" class="sidenav-link">
-                        <div>Locations</div>
-                    </a>
-                </li>
-
                 <li class="sidenav-item">
                     <a href="<?php echo e(route('inventory-create')); ?>" class="sidenav-link">
-                        <div>Items</div>
+                        <div>Create Item</div>
                     </a>
                 </li>
 
                 <li class="sidenav-item">
                     <a href="<?php echo e(route('inventory-manage')); ?>" class="sidenav-link">
-                        <div>Manage</div>
+                        <div>Manage Item Quantity</div>
                     </a>
                 </li>
 

@@ -12,8 +12,8 @@
         <table class="datatables-demo table table-striped table-bordered" id="metrics-table">
             <thead>
             <tr>
-                <th scope="col">Location</th>
                 <th scope="col">Description</th>
+                <th scope="col">Category</th>
                 <th scope="col">SKU</th>
                 <th scope="col">Quantity</th>
                 <th scope="col"></th>
@@ -23,10 +23,10 @@
             <?php $__currentLoopData = $inventories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
                     <?php echo csrf_field(); ?>
-                    <td><?php echo e($value->name); ?></td>
                     <td><?php echo e($value->description); ?></td>
+                    <td><?php echo e($value->category); ?></td>
                     <td><?php echo e($value->sku); ?></td>
-                    <td><?php echo e($value->quantity); ?></td>
+                    <td><?php echo e($value->quantity); ?> / <?php echo e($value->symbol); ?></td>
                     <td>
                         <div style="text-align: center">
 
@@ -43,7 +43,7 @@
                                         Adjust
                                         <span class="font-weight-light">Stock</span>
                                         <br>
-                                        <small class="text-muted">This will update the stock of this item in its <?php echo e($value->name); ?> location.</small>
+                                        <small class="text-muted">This will update the stock of this item.</small>
                                     </h3>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
                                 </div>
@@ -83,5 +83,10 @@
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </tbody>
         </table>
+        <script type="application/javascript">
+            $(document).ready(function() {
+                $('#metrics-table').DataTable();
+            } );
+        </script>
     </div>
 </div>

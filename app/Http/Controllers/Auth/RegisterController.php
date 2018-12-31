@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Location;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -48,7 +50,7 @@ class RegisterController extends Controller
             $User = $this->create($request);
             $this->sendEmail($User);
             $this->sendadminEmail($User);
-            return redirect('/login')->with('flash_success', 'Your account has been created, Please see your email for futher instructions.');
+            return redirect('/login')->with('flash_success', 'Your account has been created, Please see your email for more instructions.');
 
         }
         else
@@ -116,6 +118,12 @@ class RegisterController extends Controller
         $user->activation_time = null;
         $user->is_active = 1;
         $user->save();
+
+        //set location
+        $location = new Location();
+        $location->name = 'Warehouse';
+        $location->user_id = Auth::user()->id;
+        $location->save();
 
 
         if (!$this->guard()->check()) {
