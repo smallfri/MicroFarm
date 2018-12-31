@@ -100,6 +100,7 @@ use App\Feature;
         </li>
 
         <li class="sidenav-item">
+            <div class="sidenav-divider mt-0"></div>
             <a href="/logout" class="sidenav-link"><i class="sidenav-icon ion oi oi-account-logout"></i>
                 <div>Logout</div>
             </a>

@@ -57,8 +57,8 @@
                                             <input type="text" class="form-control" id="cost" name="cost" placeholder="">
                                         </div>
                                     </div>
-                                    <div class="form-row">
-                                        <div class="form-group col mb-0">
+                                    <div class="form-row" style="margin-top:20px;">
+                                        <div class="form-group col">
                                             <label for="adjust" class="form-label">Adjust</label>
                                             <select class="form-control" name="adjust" id="adjust">
                                                 <option value="1">Add to Inventory</option>
