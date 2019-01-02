@@ -612,6 +612,8 @@ class ComposerStaticInitfcc0dab9a7cf993f7432bdee27539c01
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Inventories' => __DIR__ . '/../..' . '/app/Inventories.php',
+        'App\\InventorySkus' => __DIR__ . '/../..' . '/app/InventorySkus.php',
+        'App\\InventoryStocks' => __DIR__ . '/../..' . '/app/InventoryStocks.php',
         'App\\Item' => __DIR__ . '/../..' . '/app/Item.php',
         'App\\Location' => __DIR__ . '/../..' . '/app/Location.php',
         'App\\Metric' => __DIR__ . '/../..' . '/app/Metric.php',

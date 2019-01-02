@@ -32,14 +32,15 @@ class SeedController extends Controller
 
         } else {
             $userseedlist = Userseed::select(
+                'userseed.id AS user_seed_id',
                 'userseed.variety_id',
                 'userseed.user_id',
                 'userseed.variety_id as variety_id',
                 'seeds_variety.id as id',
                 'userseed.status',
-                'userseeds_detail.seed_id',
                 'seeds_variety.supplier_id as supplier_id',
                 'url',
+                'userseeds_detail.id AS user_seed_detail_id',
                 'userseeds_detail.density',
                 'userseeds_detail.tray_size',
                 'userseeds_detail.maturity',
@@ -54,7 +55,7 @@ class SeedController extends Controller
                 ->where('userseeds_detail.deleted_at', NULL)
                 ->join('seeds_variety', 'seeds_variety.id', '=', 'userseed.variety_id')
                 ->join('seeds', 'seeds.id', '=', 'seeds_variety.seed_id')
-                ->leftJoin('userseeds_detail', 'userseeds_detail.variety_id', '=', 'seeds_variety.id')
+                ->leftJoin('userseeds_detail', 'userseeds_detail.user_seed_id', '=', 'userseed.id')
                 ->orderBy('seeds_variety.id', 'ASC')
                 ->get();
 
@@ -161,6 +162,7 @@ class SeedController extends Controller
             return redirect('login');
         }
 
+//        dd($request->all());
 //        $validatedData = $request->validate([
 //            'seed_name' => 'required|max:255',
 //            'supplier_id' => 'required',
@@ -174,10 +176,11 @@ class SeedController extends Controller
 //            'seeds_measurement' => 'required',
 //        ]);
         $user_id = Auth::user()->id;
-        $seedsexist = UserseedDetail::where('user_id', $user_id)->where('variety_id', $request->variety_id)->first();
+        $seedsexist = UserseedDetail::where('user_id', $user_id)->where('user_seed_id', $request->user_seed_id)->first();
 
         if ($seedsexist) {
             $seedsexist->seed_name = $request->seed_name;
+            $seedsexist->user_seed_id = $request->user_seed_id;
             $seedsexist->variety_id = $request->variety_id;
             $seedsexist->supplier_id = $request->supplier_id;
             $seedsexist->density = $request->density;
@@ -206,6 +209,7 @@ class SeedController extends Controller
         } else {
             $seedsdetail = new UserseedDetail();
             $seedsdetail->seed_name = $request->seed_name;
+            $seedsdetail->user_seed_id = $request->user_seed_id;
             $seedsdetail->variety_id = $request->variety_id;
             $seedsdetail->supplier_id = $request->supplier_id;
             $seedsdetail->density = $request->density;
@@ -256,6 +260,7 @@ class SeedController extends Controller
 
         if ($seedsexist) {
             $seedsexist->seed_name = $request->seed_name;
+            $seedsexist->user_seed_id = $request->user_seed_id;
             $seedsexist->variety_id = $request->variety_id;
             $seedsexist->supplier_id = $request->supplier_id;
             $seedsexist->density = $request->density;
@@ -284,6 +289,7 @@ class SeedController extends Controller
         } else {
             $seedsdetail = new UserseedDetail();
             $seedsdetail->seed_name = $request->seed_name;
+            $seedsdetail->user_seed_id = $request->user_seed_id;
             $seedsdetail->variety_id = $request->variety_id;
             $seedsdetail->supplier_id = $request->supplier_id;
             $seedsdetail->density = $request->density;
@@ -327,15 +333,17 @@ class SeedController extends Controller
 
         } else {
             $userseedlist = Userseed::select(
+                'seeds.id AS seed_id',
                 'userseed.variety_id',
                 'userseed.user_id',
                 'userseed.variety_id as variety_id',
                 'seeds_variety.id as id',
                 'userseed.status',
-                'userseeds_detail.seed_id',
+                'userseeds_detail.user_seed_id',
                 'seeds_variety.supplier_id as supplier_id',
                 'url',
                 'userseeds_detail.density',
+                'userseeds_detail.user_seed_id',
                 'userseeds_detail.tray_size',
                 'userseeds_detail.maturity',
                 'userseeds_detail.measurement',
@@ -365,7 +373,6 @@ class SeedController extends Controller
 
     public function summaryUpdate(Request $request)
     {
-
         if (!Auth::check()) {
             return redirect('login');
         }
@@ -451,6 +458,69 @@ class SeedController extends Controller
 
         }
         return '{"status":"failed"}';
+
+    }
+
+    public function duplicate($user_seed_id, $user_seed_detail_id)
+    {
+        if (!Auth::check()) {
+            return redirect('login');
+        }
+
+        //duplicate seed
+        $seed = Userseed::find($user_seed_id);
+        $newSeed = $seed->replicate();
+        $newSeed->is_dup = 1;
+        $newSeed->save();
+
+
+        if($user_seed_detail_id>0)
+        {
+            //duplicate seed details
+            $seed = UserseedDetail::find($user_seed_detail_id);
+            $newSeed = $seed->replicate();
+            $newSeed->save();
+        }
+
+
+        return redirect()->back()->with('success', 'This seed has been duplicated.');
+
+
+    }
+
+    public static function getSeedName($value)
+    {
+        if($value['user_seed_detail_id'])
+        {
+            $details = UserseedDetail::find($value['user_seed_id']);
+
+            $seed = Userseed::find($details['user_seed_id']);
+
+            $name = $details['seed_name'];
+
+            if($seed['is_dup'])
+            {
+                $name .=' (DUP)';
+            }
+            return $name;
+        }
+        else
+        {
+            $seedsVariety = SeedsVariety::find($value['variety_id']);
+
+            $seed = Seeds::find($seedsVariety['seed_id']);
+
+            $name = $seed['name'] .' '. $seedsVariety['name'];
+
+            if($value['is_dup'])
+            {
+                $name .= ' (DUP)';
+            }
+
+            return $name;
+        }
+
+
 
     }
 

@@ -70,8 +70,8 @@
                                         </li>
                                         @foreach($userseedlist as $key => $value)
                                             <li class="nav-item">
-                                                <a href="#nav-tab2-{{$value->variety_id}}" data-toggle="tab" id="nav-{{$value->variety_id}}"
-                                                   class="nav-link {{ $key == count($userseedlist) - 1 ? 'active show' : '' }}">{{$value->seed_name}}</a>
+                                                <a href="#nav-tab2-{{$value->user_seed_id}}" data-toggle="tab" id="nav-{{$value->user_seed_id}}"
+                                                   class="nav-link {{ $key == count($userseedlist) - 1 ? 'active show' : '' }}">{{App\Http\Controllers\SeedController::getSeedName($value)}}</a>
                                             </li>
                                         @endforeach
                                         <li class="nav-item next-button" style=""><a href="javascript:;"
@@ -86,15 +86,19 @@
                             <!-- begin tab-content -->
                             <div class="tab-content">
                                 @foreach($userseedlist as $key => $value)
-
                                     <div class="tab-pane fade {{ $key == count($userseedlist)-1 ? 'active show' : '' }}"
-                                         id="nav-tab2-{{$value->variety_id}}">
-                                        <h3 class="m-t-10">{{$value->seed_name}}</h3>
-                                        <form action="#" method="post" name="{{$value->variety_id}}">
-                                            <input type="hidden" value="{{$value->supplier_id}}" name="xyz"
-                                                   id="xyz">
+                                         id="nav-tab2-{{$value->user_seed_id}}">
+                                        <h3 class="m-t-10">{{App\Http\Controllers\SeedController::getSeedName($value)}}
+                                            <a href="/duplicate/{{$value->user_seed_id}}/<?php echo ($value->user_seed_detail_id>0) ? $value->user_seed_detail_id : 0;?>" class="btn btn-sm btn-info" data-toggle="tooltip" data-placement="top" data-state="primary" title="This will allow you to use the same seed in multiple trays and track those details separately.">DUPLICATE SEED</a></h3>
+                                        <form action="#" method="post" name="{{$value->user_seed_id}}">
+                                            <input type="hidden" value="{{$value->seed_name}}" name="seed_name"
+                                                   id="seed_name">
+                                            <input type="hidden" value="{{$value->supplier_id}}" name="supplier_id"
+                                                   id="supplier_id">
                                             <input type="hidden" value="{{$value->variety_id}}" name="variety_id"
                                                    id="variety_id">
+                                            <input type="hidden" value="{{$value->user_seed_id}}" name="user_seed_id"
+                                                   id="user_seed_id">
                                             {{csrf_field()}}
                                             <div class="col-md-12 pt-10 pb-10">
                                                 <div class="form-group">

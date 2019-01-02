@@ -49,6 +49,8 @@ return array(
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Inventories' => $baseDir . '/app/Inventories.php',
+    'App\\InventorySkus' => $baseDir . '/app/InventorySkus.php',
+    'App\\InventoryStocks' => $baseDir . '/app/InventoryStocks.php',
     'App\\Item' => $baseDir . '/app/Item.php',
     'App\\Location' => $baseDir . '/app/Location.php',
     'App\\Metric' => $baseDir . '/app/Metric.php',

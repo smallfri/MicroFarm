@@ -53,6 +53,7 @@ Route::get('seed/supplierseed/{id}', 'SeedController@supplierseed');
 Route::get('seed', 'SeedController@index')->name('seed');
 Route::get('seed', 'SeedController@index')->name('seed');
 Route::post('seed', 'SeedController@seedupdate');
+Route::get('duplicate/{user_seed_id}/{user_seed_detail_id}', 'SeedController@duplicate');
 
 
 // Inventory Routes

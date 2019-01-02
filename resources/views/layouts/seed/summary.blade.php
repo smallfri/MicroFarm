@@ -101,6 +101,8 @@
                                    value="{{$value->variety_id}}">
                             <input type="hidden" name="supplier_id" id="supplier_id"
                                    value="{{$value->supplier_id}}">
+                            <input type="hidden" name="user_seed_id" id="user_seed_id"
+                                   value="{{$value->seed_id}}">
                             <div class="form-group col-md-12">
                                 <button href="#" type="submit" class="btn btn-outline btn-info btn-sm"
                                         data-toggle="modal"
