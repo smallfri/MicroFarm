@@ -1,7 +1,6 @@
 <div class="card mb-3">
     <h6 class="card-header">
-        Create New Item <i class="ion ion-ios-help-buoy" data-toggle="tooltip" data-placement="top" data-state="primary"
-                           title="Create an item. You will add items quantities in Manage Inventory."></i>
+        Create New Item <i class="ion ion-ios-help-buoy" data-toggle="tooltip" data-placement="top" data-state="primary" title="Create an item. You will add items quantities in Manage Item Quantity."></i>
     </h6>
     <script type="application/javascript">
         $('[data-toggle="tooltip"]').tooltip();

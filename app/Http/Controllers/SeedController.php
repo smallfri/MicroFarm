@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Log;
 use App\SeedsVariety;
+use Http\Client\Exception;
 use Illuminate\Http\Request;
 use App\Seeds;
 use Illuminate\Support\Facades\Auth;
@@ -256,8 +258,7 @@ class SeedController extends Controller
 //            'seeds_measurement' => 'required',
 //        ]);
         $user_id = Auth::user()->id;
-        $seedsexist = UserseedDetail::where('user_id', $user_id)->where('variety_id', $request->variety_id)->first();
-
+        $seedsexist = UserseedDetail::where('user_id', $user_id)->where('user_seed_id', $request->user_seed_id)->first();
         if ($seedsexist) {
             $seedsexist->seed_name = $request->seed_name;
             $seedsexist->user_seed_id = $request->user_seed_id;
@@ -333,17 +334,16 @@ class SeedController extends Controller
 
         } else {
             $userseedlist = Userseed::select(
-                'seeds.id AS seed_id',
+                'userseed.id AS user_seed_id',
                 'userseed.variety_id',
                 'userseed.user_id',
                 'userseed.variety_id as variety_id',
                 'seeds_variety.id as id',
                 'userseed.status',
-                'userseeds_detail.user_seed_id',
                 'seeds_variety.supplier_id as supplier_id',
                 'url',
+                'userseeds_detail.id AS user_seed_detail_id',
                 'userseeds_detail.density',
-                'userseeds_detail.user_seed_id',
                 'userseeds_detail.tray_size',
                 'userseeds_detail.maturity',
                 'userseeds_detail.measurement',
@@ -357,7 +357,7 @@ class SeedController extends Controller
                 ->where('userseeds_detail.deleted_at', NULL)
                 ->join('seeds_variety', 'seeds_variety.id', '=', 'userseed.variety_id')
                 ->join('seeds', 'seeds.id', '=', 'seeds_variety.seed_id')
-                ->leftJoin('userseeds_detail', 'userseeds_detail.variety_id', '=', 'seeds_variety.id')
+                ->leftJoin('userseeds_detail', 'userseeds_detail.user_seed_id', '=', 'userseed.id')
                 ->orderBy('seeds_variety.id', 'ASC')
                 ->get();
 
@@ -378,10 +378,11 @@ class SeedController extends Controller
         }
 
         $user_id = Auth::user()->id;
-        $seedsexist = UserseedDetail::where('user_id', $user_id)->where('variety_id', $request->variety_id)->first();
-
+        $seedsexist = UserseedDetail::where('user_id', $user_id)->where('user_seed_id', $request->user_seed_id)->first();
 
         if ($seedsexist) {
+
+            $seedsexist->user_seed_id = $request->user_seed_id;
             $seedsexist->density = $request->density;
             $seedsexist->seeds_measurement = $request->seeds_measurement;
             $seedsexist->maturity = $request->maturity;
@@ -393,6 +394,7 @@ class SeedController extends Controller
             return '{"status":"success"}';
         } else {
             $seedsdetail = new UserseedDetail();
+            $seedsdetail->user_seed_id = $request->user_seed_id;
             $seedsdetail->density = $request->density;
             $seedsdetail->seeds_measurement = $request->seeds_measurement;
             $seedsdetail->variety_id = $request->variety_id;
@@ -419,7 +421,7 @@ class SeedController extends Controller
         }
 
         $user_id = Auth::user()->id;
-        $seedsexist = UserseedDetail::where('user_id', $user_id)->where('variety_id', $request->variety_id)->where('deleted_at', NULL)->first();
+        $seedsexist = UserseedDetail::where('user_id', $user_id)->where('user_seed_id', $request->user_seed_id)->where('deleted_at', NULL)->first();
 
         if ($seedsexist) {
             $seedsexist->deleted_at = date("Y-m-d H:i:s");
@@ -439,8 +441,8 @@ class SeedController extends Controller
         }
 
         $user_id = Auth::user()->id;
-        $seedsDetailExist = UserseedDetail::where('user_id', $user_id)->where('variety_id', $request->variety_id)->where('deleted_at', NULL)->first();
-        $seedsExist = Userseed::where('user_id', $user_id)->where('variety_id', $request->variety_id)->where('deleted_at', NULL)->first();
+        $seedsDetailExist = UserseedDetail::where('user_id', $user_id)->where('user_seed_id', $request->user_seed_id)->where('deleted_at', NULL)->first();
+        $seedsExist = Userseed::where('user_id', $user_id)->where('id', $request->user_seed_id)->where('deleted_at', NULL)->first();
 
         if ($user_id) {
 
@@ -473,18 +475,19 @@ class SeedController extends Controller
         $newSeed->is_dup = 1;
         $newSeed->save();
 
+        $id = $newSeed->id;
+
 
         if($user_seed_detail_id>0)
         {
             //duplicate seed details
             $seed = UserseedDetail::find($user_seed_detail_id);
             $newSeed = $seed->replicate();
+            $newSeed->user_seed_id = $id;
             $newSeed->save();
         }
 
-
         return redirect()->back()->with('success', 'This seed has been duplicated.');
-
 
     }
 
@@ -492,7 +495,8 @@ class SeedController extends Controller
     {
         if($value['user_seed_detail_id'])
         {
-            $details = UserseedDetail::find($value['user_seed_id']);
+//            dd($value);
+            $details = UserseedDetail::find($value['user_seed_detail_id']);
 
             $seed = Userseed::find($details['user_seed_id']);
 
@@ -512,7 +516,7 @@ class SeedController extends Controller
 
             $name = $seed['name'] .' '. $seedsVariety['name'];
 
-            if($value['is_dup'])
+            if($seed['is_dup'])
             {
                 $name .= ' (DUP)';
             }

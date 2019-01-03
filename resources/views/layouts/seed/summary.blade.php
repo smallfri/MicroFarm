@@ -26,190 +26,198 @@
 
         $(function () {
 
-            $(document).ready(function() {
-                $('#summary-table').DataTable( {
-                    columnDefs: [ {
-                        targets: [ 0 ],
-                        orderData: [ 0, 1 ]
+            $(document).ready(function () {
+                $('#summary-table').DataTable({
+                    columnDefs: [{
+                        targets: [0],
+                        orderData: [0, 1]
                     }, {
-                        targets: [ 1 ],
-                        orderData: [ 1, 0 ]
+                        targets: [1],
+                        orderData: [1, 0]
                     }, {
-                        targets: [ 4 ],
-                        orderData: [ 4, 0 ]
-                    } ]
-                } );
-            } );
+                        targets: [4],
+                        orderData: [4, 0]
+                    }]
+                });
+            });
         });
     </script>
-<div class="card mb-4">
-    <div class="card-body">
-        <div class="card-datatable table-responsive" id="">
-            <table class="table" id="summary-table">
-                <thead>
-                <tr>
-                    <th scope="col">Seed Name</th>
-                    <th scope="col">Density</th>
-                    <th scope="col"></th>
-                    <th scope="col">Maturity</th>
-                    <th scope="col">Yield</th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($userseedlist as $key => $value)
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="card-datatable table-responsive" id="">
+                <table class="table" id="summary-table">
+                    <thead>
                     <tr>
-                        @csrf
-                        <td>{{$value->seed_name}}</td>
-                        <td>
-                            {!! Form::text('density', $value->density, ["class" => "form-control", "id"=>"density-".$value->variety_id.""]) !!}
-                            @if ($errors->has('density'))
-                                <span class="help-block">
+                        <th scope="col">Seed Name</th>
+                        <th scope="col">Density</th>
+                        <th scope="col"></th>
+                        <th scope="col">Maturity</th>
+                        <th scope="col">Yield</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($userseedlist as $key => $value)
+                        <tr>
+                            @csrf
+                            <td>{{App\Http\Controllers\SeedController::getSeedName($value)}}</td>
+                            <td>
+                                {!! Form::text('density', $value->density, ["class" => "form-control", "id"=>"density-".$value->user_seed_id.""]) !!}
+                                @if ($errors->has('density'))
+                                    <span class="help-block">
                                                   <strong>{{ $errors->first('density') }}</strong>
                                             </span>
-                            @endif
-                        </td>
-                        <td>
-                            {!! Form::select('seeds_measurement',['OUNCES'=>'OUNCES','GRAMS'=>'GRAMS','ML'=>'ML', 'POUNDS'=>'POUNDS', 'KILOS'=>'KILOS'] ,(isset($value->seeds_measurement) && $value->seeds_measurement != '' ) ? $value->seeds_measurement : '', ['class' => 'form-control',"id"=>"seeds_measurement-".$value->variety_id.""]) !!}
+                                @endif
+                            </td>
+                            <td>
+                                {!! Form::select('seeds_measurement',['OUNCES'=>'OUNCES','GRAMS'=>'GRAMS','ML'=>'ML', 'POUNDS'=>'POUNDS', 'KILOS'=>'KILOS'] ,(isset($value->seeds_measurement) && $value->seeds_measurement != '' ) ? $value->seeds_measurement : '', ['class' => 'form-control',"id"=>"seeds_measurement-".$value->user_seed_id.""]) !!}
 
-                        </td>
+                            </td>
 
-                        <td>
-                            {!! Form::text('maturity', $value->maturity, ['class' => 'form-control', "id"=>"maturity-".$value->variety_id.""]) !!}
-                            @if ($errors->has('maturity'))
-                                <span class="help-block">
+                            <td>
+                                {!! Form::text('maturity', $value->maturity, ['class' => 'form-control', "id"=>"maturity-".$value->user_seed_id.""]) !!}
+                                @if ($errors->has('maturity'))
+                                    <span class="help-block">
                                                   <strong>{{ $errors->first('maturity') }}</strong>
                                             </span>
-                            @endif
-                        </td>
-                        <td>
-                            {!! Form::text('yield', $value->yield, ['class' => 'form-control', "id"=>"yield-".$value->variety_id.""]) !!}
+                                @endif
+                            </td>
+                            <td>
+                                {!! Form::text('yield', $value->yield, ['class' => 'form-control', "id"=>"yield-".$value->user_seed_id.""]) !!}
 
-                            @if ($errors->has('yield'))
-                                <span class="help-block">
+                                @if ($errors->has('yield'))
+                                    <span class="help-block">
                                                   <strong>{{ $errors->first('yield') }}</strong>
                                             </span>
-                            @endif
-                        </td>
-                        <td>
-                            {!! Form::select('measurement',['OUNCES'=>'OUNCES','GRAMS'=>'GRAMS','ML'=>'ML', 'POUNDS'=>'POUNDS', 'KILOS'=>'KILOS'] ,(isset($value->measurement) && $value->measurement != '' ) ? $value->measurement : '', ['class' => 'form-control',"id"=>"measurement-".$value->variety_id.""]) !!}
+                                @endif
+                            </td>
+                            <td>
+                                {!! Form::select('measurement',['OUNCES'=>'OUNCES','GRAMS'=>'GRAMS','ML'=>'ML', 'POUNDS'=>'POUNDS', 'KILOS'=>'KILOS'] ,(isset($value->measurement) && $value->measurement != '' ) ? $value->measurement : '', ['class' => 'form-control',"id"=>"measurement-".$value->user_seed_id.""]) !!}
 
-                        </td>
-                        <td>
-                            <input type="hidden" name="variety_id" id="variety_id"
-                                   value="{{$value->variety_id}}">
-                            <input type="hidden" name="supplier_id" id="supplier_id"
-                                   value="{{$value->supplier_id}}">
-                            <input type="hidden" name="user_seed_id" id="user_seed_id"
-                                   value="{{$value->seed_id}}">
-                            <div class="form-group col-md-12">
-                                <button href="#" type="submit" class="btn btn-outline btn-info btn-sm"
-                                        data-toggle="modal"
-                                        data-placement="top" title="View Seed Details" data-target="#view-modal-{{$value->variety_id}}">
-                                    <i class="fas fa-search-plus"></i>
-                                </button>
+                            </td>
+                            <td>
+                                <input type="hidden" name="variety_id" id="variety_id"
+                                       value="{{$value->variety_id}}">
+                                <input type="hidden" name="supplier_id" id="supplier_id"
+                                       value="{{$value->supplier_id}}">
+                                <input type="hidden" name="user_seed_id" id="user_seed_id"
+                                       value="{{$value->user_seed_id}}">
+                                <div class="form-group col-md-12">
+                                    <button href="#" type="submit" class="btn btn-outline btn-info btn-sm"
+                                            data-toggle="modal"
+                                            data-placement="top" title="View Seed Details"
+                                            data-target="#view-modal-{{$value->user_seed_id}}">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
 
-                                <button href="#" type="submit" class="btn btn-outline btn-success btn-sm"
-                                        id="update_{{$value->variety_id}}" data-toggle="tooltip"
-                                        data-placement="top" title="Save Seed Details">
-                                    <i class="fa fa-save"></i>
-                                </button>
+                                    <button href="#" type="submit" class="btn btn-outline btn-success btn-sm"
+                                            id="update_{{$value->user_seed_id}}" data-toggle="tooltip"
+                                            data-placement="top" title="Save Seed Details">
+                                        <i class="fa fa-save"></i>
+                                    </button>
 
-                                <button type="submit" class="btn btn-outline btn-danger btn-sm"
-                                        id="deleteAll_{{$value->variety_id}}" data-toggle="tooltip"
-                                        data-placement="top" title="Delete Seed & it's Details">
-                                    <i class="fa fa-trash-alt"></i>
-                                </button>
-                            </div>
-                        </td>
-                        <script type="text/javascript" language="javascript">
-                            $(document).ready(function () {
-                                $(function () {
-                                    $('[data-toggle="tooltip"]').tooltip()
-                                });
+                                    <button type="submit" class="btn btn-outline btn-danger btn-sm"
+                                            id="deleteAll_{{$value->user_seed_id}}" data-toggle="tooltip"
+                                            data-placement="top" title="Delete Seed & it's Details">
+                                        <i class="fa fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </td>
+                            <script type="text/javascript" language="javascript">
+                                $(document).ready(function () {
+                                    $(function () {
+                                        $('[data-toggle="tooltip"]').tooltip()
+                                    });
 
-                                function myTimeout1() {
-                                    $(".alert").hide();
-                                }
+                                    function myTimeout1() {
+                                        $(".alert").hide();
+                                    }
 
-                                $("#deleteAll_{{$value->variety_id}}").click(function (event) {
+                                    $("#deleteAll_{{$value->user_seed_id}}").click(function (event) {
 
-                                    $.post(
-                                        "/seed/summary-delete-all",
-                                        {
-                                            _token: '{{csrf_token()}}',
-                                            variety_id: '{{$value->variety_id}}'
-                                        },
-                                        function (data) {
-                                            var status = jQuery.parseJSON(data);
-                                            if (status.status === 'success') {
-                                                $("#primary").show();
-                                            } else {
-                                                $("#danger").show();
+                                        $.post(
+                                            "/seed/summary-delete-all",
+                                            {
+                                                _token: '{{csrf_token()}}',
+                                                user_seed_id: '{{$value->user_seed_id}}'
+                                            },
+                                            function (data) {
+                                                var status = jQuery.parseJSON(data);
+                                                if (status.status === 'success') {
+                                                    $("#primary").show();
+                                                } else {
+                                                    $("#danger").show();
+                                                }
+                                                setTimeout(myTimeout1, 5000);
+                                                location.reload();
                                             }
-                                            setTimeout(myTimeout1, 5000);
-                                            location.reload();
-                                        }
-                                    );
+                                        );
 
-                                });
+                                    });
 
-                                $("#update_{{$value->variety_id}}").click(function (event) {
+                                    $("#update_{{$value->user_seed_id}}").click(function (event) {
 
-                                    $.post(
-                                        "/seed/summary-update",
-                                        {
-                                            _token: '{{csrf_token()}}',
-                                            variety_id: '{{$value->variety_id}}',
-                                            supplier_id: '{{$value->supplier_id}}',
-                                            density: $("#density-{{$value->variety_id}}").val(),
-                                            maturity: $("#maturity-{{$value->variety_id}}").val(),
-                                            yield: $("#yield-{{$value->variety_id}}").val(),
-                                            measurement: $("#measurement-{{$value->variety_id}}").val(),
-                                            seeds_measurement: $("#seeds_measurement-{{$value->variety_id}}").val()
-                                        },
-                                        function (data) {
-                                            var status = jQuery.parseJSON(data);
-                                            if (status.status === 'success') {
+                                        $.post(
+                                            "/seed/summary-update",
+                                            {
+                                                _token: '{{csrf_token()}}',
+                                                variety_id: '{{$value->variety_id}}',
+                                                supplier_id: '{{$value->supplier_id}}',
+                                                density: $("#density-{{$value->user_seed_id}}").val(),
+                                                maturity: $("#maturity-{{$value->user_seed_id}}").val(),
+                                                yield: $("#yield-{{$value->user_seed_id}}").val(),
+                                                measurement: $("#measurement-{{$value->user_seed_id}}").val(),
+                                                seeds_measurement: $("#seeds_measurement-{{$value->user_seed_id}}").val(),
+                                                user_seed_id: '{{$value->user_seed_id}}'
+                                            },
+                                            function (data) {
 
-                                                $("#primary").show();
-                                            } else {
-                                                $("#danger").show();
+                                                var status = jQuery.parseJSON(data);
+                                                if (status.status === 'success') {
+
+                                                    $("#primary").show();
+                                                } else {
+                                                    $("#danger").show();
+                                                }
+                                                setTimeout(myTimeout1, 5000);
+                                                window.location.reload(true);
                                             }
-                                            setTimeout(myTimeout1, 5000);
-                                            window.location.reload(true);
-                                        }
-                                    );
+                                        );
+
+                                    });
 
                                 });
+                            </script>
 
-                            });
-                        </script>
-
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
     @foreach($userseedlist as $key => $value)
-        <div class="modal fade" id="view-modal-{{$value->variety_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal fade" id="view-modal-{{$value->user_seed_id}}" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">{{$value->seed_name}}</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">{{App\Http\Controllers\SeedController::getSeedName($value)}}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="/seed/detail/{{$value->variety_id}}" method="post" name="{{$value->variety_id}}">
-                            <input type="hidden" value="{{$value->supplier_id}}" name="xyz"
-                                   id="xyz">
+                        <form action="/seed/detail/{{$value->user_seed_id}}" method="post" name="{{$value->user_seed_id}}">
+                            <input type="hidden" value="{{$value->supplier_id}}" name="supplier_id"
+                                   id="supplier_id">
                             <input type="hidden" value="{{$value->variety_id}}" name="variety_id"
                                    id="variety_id">
+                            <input type="hidden" name="user_seed_id" id="user_seed_id"
+                                   value="{{$value->user_seed_id}}">
+                            <input type="hidden" name="seed_name" id="seed_name"
+                                   value="{{$value->seed_name}}">
                             {{csrf_field()}}
                             <div class="col-md-12 pt-10 pb-10">
                                 <div class="form-group">
@@ -222,7 +230,6 @@
                                         </div>
 
                                     </div>
-
 
 
                                     <div class="form-row">
